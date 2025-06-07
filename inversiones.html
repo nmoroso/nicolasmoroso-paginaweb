@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Inversiones</title>
+
+  <link rel="stylesheet" href="desk.css">
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #fbfcfd;
+    }
+  </style>
+  <!-- Scripts adicionales si son necesarios, como Calendly o Google Tag Manager -->
+</head>
+<body>
+
+ <!-- HEADER -->
+ <header>
+  <div class="header-container">
+    <div class="menu-wrapper">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="header-logo">
+     <a href="index.html" class="logo">
+        <img src="logo.png" alt="Terapia Financiera" />
+        <span class="logo-text">
+        inicio<span class="orange-f"></span>
+        </span>
+      </a>
+    </div>
+  
+
+
+
+    <!-- Navegación -->
+    <nav class="header-nav">
+      <ul>
+        <li>
+          <a href="educacion.html" class="nav-item">
+            <span class="orange-f">Educación</span>
+          </a>
+        </li>
+    
+        <li class="simulador-dropdown">
+          <a href="#simulador" class="nav-item">
+            <span class="orange-f">Simulador</span>
+          </a>
+          <ul class="simulador-menu">
+            <li><a href="simulador.html" class="submenu-item">Créditos</a></li>
+            <li><a href="inversiones.html" class="submenu-item">Inversiones</a></li>
+          </ul>
+        </li>
+    
+        <li><a href="index.html#about" class="nav-item">Sobre Mí</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Botón de Agendar Reunión -->
+
+    <div class="header-agendar">
+      <a href="index.html#contacto" class="header-button desk-btn">CONTACTO</a>
+      <a href="index.html#contacto" class="header-button mobile-btn">CONTACTO</a>
+    </div>
+  
+  <!-- Menú desplegable en móvil -->
+  <div class="mobile-menu">
+    <ul>
+      <li>
+        <a href="educacion.html">
+          <span class="orange-f">Educación</span>
+        </a>
+      </li>
+  
+      <li class="simulador-dropdown">
+        <a>
+          <span class="orange-f">Simulador</span>
+        </a>
+        <ul class="simulador-menu">
+          <li><a href="simulador.html" class="submenu-item">Créditos</a></li>
+          <li><a href="inversiones.html" class="submenu-item">Inversiones</a></li>
+        </ul>
+      </li>
+  
+      <li><a href="index.html#about">Sobre Mí</a></li>
+   
+    </ul>
+  </div>
+</header>
+
+
+
+    
+
+
+  <!-- Contenedor para el Simulador de Inversiones -->
+  <div class="simulador-inversiones">
+    <div class="formulario">
+      <h2>Simulador de Inversión</h2>
+      <!-- Cada par label/input se agrupa en form-group -->
+      <div class="form-group">
+        <label for="frecuencia">Unidad de Tiempo</label>
+        <select id="frecuencia">
+          <option value="mensual">Mensual</option>
+          <option value="anual">Anual</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="plazo">Plazo</label>
+        <input type="number" id="plazo" min="1" placeholder="Ej: 30" />
+      </div>
+      
+      <div class="form-group">
+        <label for="tasa">Tasa (%)</label>
+        <input type="text" id="tasa" placeholder="Ej: 1%" onblur="formatPercentage(this)" onfocus="removePercentageFormatting(this)" />
+      </div>
+      
+      <div class="form-group">
+        <label for="montoInicial">Monto inicial de ahorro</label>
+        <input type="text" id="montoInicial" placeholder="Ej: $1.000.000" onblur="formatMoney(this)" onfocus="removeFormatting(this)" />
+      </div>
+      
+      <div class="form-group">
+        <label for="montoMensual">Monto de ahorro mensual</label>
+        <input type="text" id="montoMensual" placeholder="Ej: $200.000" onblur="formatMoney(this)" onfocus="removeFormatting(this)" />
+      </div>
+      
+      <button class="inversion-btn" onclick="calcularInversion()">Calcular</button>
+      <button class="inversion-clear-btn" onclick="limpiarSimulador()">Limpiar</button>
+      <button id="toggle-referencia" class="inversion-btn">Tasas Referenciales</button>
+      <div class="resultado" id="resultado"></div>
+
+      <!-- Área para el gráfico -->
+      <div class="grafico">
+        <canvas id="chart"></canvas>
+      </div>
+    </div>
+
+
+  <div class="referencia-panel" id="referencia-panel">
+      <button id="close-referencia" class="inversion-clear-btn">✕ Cerrar</button>
+      
+    <div class="referencia">
+      <h2>Tabla referencial de tasas (<span class="orange-f">Mensual</span>/Anual) </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plazo</th>
+            <th>Conservador</th>
+            <th>Moderado</th>
+            <th>Arriesgado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Corto<br>(0-1 año)</td>
+            <td class="referencia-cell">
+              <strong><span class="orange-f">0,44%</span> / 5,4%<br></strong>
+              Depósito a plazo o fondo de liquidez (MoneyMarket)
+            </td>
+            <td class="referencia-cell">
+              <strong><span class="orange-f">0,56%</span> / 6,9%<br></strong>
+              Fondo mixto simple (renta fija + variable)
+            </td>
+            <td class="referencia-cell">
+              <strong><span class="orange-f">0,71%</span> / 8,9%<br></strong>
+              ETF sectorial volátil o acciones de corto plazo
+            </td>
+          </tr>
+          <tr>
+            <td>Mediano<br>(1-3 años)</td>
+            <td class="referencia-cell">
+              <strong><span class="orange-f">0,48%</span> / 5,9%<br></strong>
+              Fondo de renta fija nacional o depósito renovable
+            </td>
+            <td class="referencia-cell">
+              <strong><span class="orange-f">0,64%</span> / 7,9%<br></strong>
+              Fondo balanceado con acciones y bonos
+            </td>
+            <td class="referencia-cell">
+              <strong><span class="orange-f">0,83%</span> / 10,4%<br></strong>
+              ETF de mercados emergentes
+            </td>
+          </tr>
+          <tr>
+            <td>Largo<br>(3+ años)</td>
+            <td class="referencia-cell">
+              <strong><span class="orange-f">0,52%</span> / 6,4%<br></strong>
+              Bonos del gobierno o fondo internacional de renta fija
+            </td>
+            <td class="referencia-cell">
+              <strong><span class="orange-f">0,71%</span> / 8,9%<br></strong>
+              ETF global diversificado (ej: ACWI)
+            </td>
+            <td class="referencia-cell">
+              <strong><span class="orange-f">0,94%</span> / 11,9%<br></strong>
+              ETF del S&P 500 o fondo de acciones tecnológicas
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <p>
+        <small>
+          <br><strong>Fuente:</strong> Banco Central de Chile (Tasa BCP 1 año: 4,9%) + primas estimadas según perfil de riesgo.<br>
+          <strong>Importante:</strong> Estos son ejemplos ilustrativos y no constituyen recomendación de inversión.<br>
+          <strong>Nota:</strong> Las tasas mostradas son <u>mensuales/anuales</u> y representan rentabilidades <u>nominales</u> (no consideran inflación).
+        </small>
+      </p>
+    </div>
+  </div>
+</div>
+  <!-- FOOTER -->
+  
+    <footer id="contact">
+      <div class="footer-container">
+        <!-- Logo Footer -->
+        <div class="footer-logo">
+          <h2>nicolasmoroso.cl</h2>
+        </div>
+        
+    <!-- Sección de Contacto -->
+    <div class="footer-section">
+      <h3>Contacto:</h3>
+      <p>
+        <img src="mailto.png" alt="Correo" class="contact-icon mail-icon">
+        <a href="mailto:info@nicolasmoroso.cl">info@nicolasmoroso.cl</a>
+      </p>
+      <p>
+        <img src="wsblanco.png" alt="WhatsApp" class="contact-icon whatsapp-icon">
+        <a href="https://wa.me/56951793156" target="_blank">+56951793156</a>
+      </p>
+    </div>
+    
+        
+        <!-- Redes Sociales -->
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/nicolas-moroso-lillo/"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/labanca.cl/"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </footer>
+
+  <!-- Botón de WhatsApp -->
+  <a href="https://wa.me/56951793156" class="whatsapp-button" target="_blank">
+    <img src="ws.png" alt="WhatsApp">
+  </a>
+
+  <!-- Elemento overlay -->
+  <div class="overlay"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="inversiones.js"></script>
+  <script src="header.js"></script>
+</body>
+</html>

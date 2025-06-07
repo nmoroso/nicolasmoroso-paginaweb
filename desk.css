@@ -1,0 +1,1196 @@
+/* =========================
+   STYLES PARA VERSIÓN ESCRITORIO
+   ========================= */
+
+  body {
+    background-color: #ffffff;
+  }
+ 
+
+/* Reinicio básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  html {
+    scroll-behavior: smooth;
+  }
+
+/* Fuente Montserrat para todo el documento */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  /* clamp(valorMínimo, valorRelativo, valorMáximo) */
+  padding-top: clamp(50px, 10vh, 100px);
+}
+:root {
+  --azul-medianoche: #2E4057;
+  --blanco: #FFFFFF;
+  --azul-profundo: #457B9D;
+  /* y las demás que uses */
+}
+
+p, 
+label {
+  color: #2E4057;
+}
+
+
+
+/* HEADER */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(60px,10vh,80px);
+  z-index: 999;
+  background-color: #19222e;
+
+  display: flex;
+  justify-content: space-between; /* Logo a la izquierda, botón a la derecha */
+  align-items: center;
+  padding: 0 30px; /* Margen izquierdo y derecho */
+  box-sizing: border-box;
+}
+
+.menu-wrapper {
+  display: none;
+  
+}
+
+/* LOGO (Terapia Financiera) */
+
+.logo img {
+  height: clamp(45px,8vh,60px);
+  margin-top: 1px;
+}
+.logo {
+  margin-left: 0px;
+  text-decoration: none; /* Asegura que no se subraye */
+  display: flex;         /* Para alinear imagen y texto horizontalmente, si lo deseas */
+  align-items: center;   /* Alinea verticalmente */
+}
+
+.logo-text {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: clamp(20px, 1.61vw, 23.2px);
+  margin-left: 10px;  /* Espacio entre la imagen y el texto */
+}
+.orange-f {
+  color: #ff6b35; /* tu color naranja */
+  font-feature-settings: "liga" 0;
+}
+
+
+/* NAVEGACIÓN CENTRAL (SOBRE MÍ, SERVICIOS, CONTACTO) */
+
+.header-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-48%);
+}
+
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 6.67vh;
+}
+
+.nav-item {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: clamp(0.59rem, 1.31vw, 1.18rem);
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrado vertical */
+  align-items: center;     /* Centrado horizontal */
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* General */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 2.4vh;        /* No se mueve */
+  left: 0;
+  width: 0%;
+  height: 3px;         /* 👈 Subimos el grosor solo aquí */
+  background-color: #ff6b35;
+  transition: width 0.3s ease;
+}
+
+/* Educación Financiera */
+.nav-multiline.nav-item::after {
+  bottom: 8px;         /* Posición más baja */
+  height: 2px;         /* 👈 Se mantiene delgado para no chocar con el texto */
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Extra para ítems con dos líneas */
+.nav-multiline span {
+  line-height: 1.2;
+}
+
+/* BOTÓN AGENDAR REUNIÓN (Derecha) */
+.header-button {
+  background-color: #457B9D; /* Color de fondo del botón */
+  color: #ffffff;            /* Texto en blanco */
+  text-decoration: none;     /* Sin subrayado */
+  padding: 8px 16px;        /* Espaciado interno */
+  margin-right: 0px;        /* Separación del borde derecho */
+  font-weight: bold;         /* Negrita */
+  transition: background-color 0.3s ease; /* Animación suave en hover */
+  font-size: clamp(0.45rem, 1vw, 0.9rem);           /* Ajusta según tu preferencia */
+  border-radius: 5px;        /* Borde ligeramente redondeado (opcional) */
+  display: inline-block; /* Para que 'text-align' surta efecto dentro del botón */
+  text-align: center;
+
+}
+
+.header-button:hover {
+  background-color: #2E4057; /* Color al pasar el mouse */
+}
+
+.simulador-dropdown {
+  position: relative;
+}
+
+.simulador-dropdown > a {
+  z-index: 2;
+  position: relative;
+}
+
+/* MENÚ DESPLEGABLE */
+.simulador-menu {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  background-color: #1e293b;
+  padding: 1.25rem; /* altura general del bloque */
+  list-style: none;
+  display: none;
+  flex-direction: column;
+ 
+  min-width: 160px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+
+  /* Animación visual */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Mostrar con hover */
+.simulador-dropdown:hover .simulador-menu {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Estilo exclusivo para enlaces del submenú */
+.submenu-item {
+
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: clamp(0.59rem, 1.31vw, 1.18rem);
+  height: clamp(2.15vh,25px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrado vertical */
+  align-items: left;     /* Centrado horizontal */
+  text-align: left; 
+  transition: all 0.3s ease;
+
+}
+
+
+
+
+.submenu-item:hover {
+ 
+  color: #ff6b35;
+}
+
+
+
+/******************* HERO *****************/
+/******************* HERO *****************/
+/******************* HERO *****************/
+
+
+.hero-banner {
+  /* Elimina cualquier margen por defecto */
+  margin: 0;
+  padding: 80px 40px;
+  height: 100vh;
+  /* Nuevo fondo: bloque de color #19222e */
+  background: #19222e;
+
+  /* Centrado de texto y layout */
+  text-align: center;
+  
+  display: flex;
+  align-items: center;   /* Centra verticalmente el contenido */
+  justify-content: flex-start; /* Centra horizontalmente */
+  margin-top:-20px
+
+}
+
+/* Contenedor para alinear texto con el resto de la página */
+.hero-banner .container {
+
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 ;
+  padding: 0 50px; /* margenes laterales */
+  background: transparent; /* asegúrate que no tenga fondo */
+  text-align: left;
+  align-items: flex-start;
+
+}
+
+/* Ajustes al texto */
+.hero-banner h1 {
+  color: #ffffff;
+  font-size: clamp(2rem, 3.33vw, 3rem);
+  margin-bottom: 8vh;
+  
+}
+
+.hero-banner p {
+  color: #ffffff;
+  font-size: clamp(1.1rem, 1.33vw, 1.2rem);
+  margin-bottom: 8vh;
+  
+
+}
+
+.typed-container {
+  /* Ajusta este valor según lo alto que pueda llegar a ser el texto typed
+     al ocupar varias líneas */
+
+      min-height: 1em;  
+      display: flex;
+      align-items: flex-start;
+
+    
+}
+
+
+/* Botón en el hero */
+.hero-button {
+  background-color: #457B9D; /* Color de fondo del botón */
+  color: #ffffff;            /* Texto en blanco */
+  text-decoration: none;     /* Sin subrayado */
+  padding: 8px 16px;        /* Espaciado interno */
+  margin-left: 0px;        /* Separación del borde derecho */
+  font-weight: bold;         /* Negrita */
+  transition: background-color 0.3s ease; /* Animación suave en hover */
+  font-size: clamp(0.45rem, 1vw, 0.9rem);           /* Ajusta según tu preferencia */
+  border-radius: 5px;        /* Borde ligeramente redondeado (opcional) */
+  display: inline-block; /* Para que 'text-align' surta efecto dentro del botón */
+  text-align: center;
+}
+
+
+
+.hero-button:hover {
+  background-color: #2E4057;
+}
+
+
+
+#typedText {
+  
+
+  color: #ff6b35;
+}
+
+.hero-content p {
+  line-height: 1.4; /* Puedes ajustar a 1.6, 1.75, 2, etc. según gusto */
+}
+
+
+/************* Secciones luego del hero ************/
+/************* Secciones luego del hero ************/
+/************* Secciones luego del hero ************/
+
+
+section {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.resaltado {
+  font-weight: 600;
+  color: #ffffff;
+  text-underline-offset: 4px;
+}
+
+.resaltado-celeste {
+  
+  color: #ffffff;
+  background-color: #457B9D;
+}
+
+/* Contenedor externo: ocupa toda la altura del viewport y centra la tarjeta */
+.about-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 
+     Si tu <body> ya es blanco, no necesitas background-color aquí.
+     Pero si prefieres forzarlo, descomenta la siguiente línea:
+  */
+  /* background-color: #fff; */
+}
+
+/* Tarjeta: 70% de ancho y 80% de alto para dar más espacio en la parte inferior */
+.about-section {
+  width: 80%;
+  height: 80%;
+  
+  /* Padding amplio para que no quede apretado */
+  padding: 8.5vw;
+
+  /* Borde y estética */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  /* Distribución interna en dos columnas (texto e imagen) */
+  display: flex;
+  gap: 40px; /* Separación entre las dos columnas */
+  align-items: center;
+}
+
+/* Columna de texto: que ocupe el espacio disponible */
+.about-text {
+  flex: 1; 
+}
+
+/* Columna de la imagen: evita que se reduzca */
+.about-image {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* Imagen: ajusta tamaño según tu preferencia */
+.about-image img {
+  width: 17.3vw;
+  height: auto;
+  border-radius: 4px; /* Opcional: esquinas suaves */
+}
+
+/* Estilos para los textos */
+.about-text h2 {
+  color: #457B9D;
+  margin-bottom: 20px;
+  font-size: clamp(1rem , 2.22vw , 2rem);
+}
+
+.about-text p {
+  margin-bottom: 1.2em;
+  line-height: 1.6;
+  color: #333;
+  font-size: clamp(0.5rem , 1.11vw , 1rem);
+}
+
+
+
+
+/* Estilos para la sección del simulador */
+/* Estilos para la sección del simulador */
+/* Estilos para la sección del simulador */
+
+
+#simulador.resource-grid {
+  margin-top: 13.33vh;
+  margin-bottom: 13.33vh;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Aplicar estos estilos a todos los links dentro de la sección del simulador */
+#simulador a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#simulador .resource-card h3 {
+  color: #457B9D;
+}
+
+
+#simulador .resource-card p {
+  color: #2E4057; 
+}
+
+
+/* FOOTER */
+.footer-container {
+  background-color: var(--azul-medianoche);
+  color: var(--blanco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Cambia de flex-start a center */
+  padding: 40px 10%;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 10.67vh;
+
+}
+
+.footer-logo h2 {
+  color: var(--blanco);
+  margin: 0 0 10px;          /* Espacio debajo del título */
+  font-weight: bold;
+}
+
+.footer-section h3 {
+  color: var(--blanco);
+  margin: 0 0 10px;          /* Espacio debajo del título */
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section a {
+  color: var(--blanco);
+  text-decoration: none;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 15px;                  /* Espacio entre íconos */
+}
+
+.footer-socials a {
+  color: var(--blanco);
+  font-size: 30px;            /* Ajusta según el tamaño de ícono deseado */
+}
+
+.footer-socials a:hover {
+  color: var(--azul-profundo);
+}
+.footer-section p {
+  margin-bottom: 10px; /* Ajusta el valor según tu preferencia */
+}
+
+/* Estilos para los íconos de contacto */
+.contact-icon {
+  width: 20px;
+  vertical-align: middle;
+}
+
+/* Espacio extra solo para el ícono de correo */
+.mail-icon {
+  margin-right: 5px;
+}
+
+
+
+/* ✅ BOTÓN DE WHATSAPP */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: clamp(50px, 9.33vh, 70px);
+  height: clamp(50px, 9.33vh, 70px);
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-button img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: none;
+  clip-path: circle(50%);
+}
+
+
+
+/* OCULTAR MENÚ MÓVIL EN ESCRITORIO */
+.mobile-menu {
+  display: none;
+}
+.menu-icon {
+  display: none !important;
+}
+
+.desk-btn { display: inline-block; }
+.mobile-btn { display: none; }
+
+/* =========================
+   FORMULARIO DE CONTACTO PERSONALIZADO
+   ========================= */
+
+   .contacto-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    background-color: #2E4057;
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 50px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .contacto-imagen {
+    flex: 1 1 400px;
+    background: url('https://images.unsplash.com/photo-1531497865144-0464ef8fb9c1') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+  }
+  
+  .contacto-imagen .texto-superior {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    position: absolute;
+  }
+  
+  .texto-superior .destacado {
+    background-color: #ff6b35;
+    color: #fff;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 1.7rem;
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+  
+  .texto-superior .subtitulo {
+    background: #fff;
+    color: #2E4057;
+    padding: 8px 18px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    display: inline-block;
+  }
+  
+  .contacto-formulario {
+    flex: 1 1 400px;
+    background-color: #e5eaef;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .contacto-formulario h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2E4057;
+    text-align: left;
+  }
+  
+  .contacto-formulario label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #2E4057;
+  }
+  
+  .contacto-formulario input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .contacto-formulario button {
+    background-color: #2E4057;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .contacto-formulario button:hover {
+    background-color: #19222e;
+  }
+  
+  /* =========================
+     RESPONSIVE
+     ========================= */
+  
+  @media (max-width: 768px) {
+    .contacto-wrapper {
+      flex-direction: column;
+    }
+  
+    .contacto-imagen, .contacto-formulario {
+      flex: 1 1 100%;
+    }
+  
+    .contacto-imagen {
+      min-height: 300px;
+    }
+  
+    .contacto-formulario {
+      padding: 30px 20px;
+    }
+  }
+  
+
+/****************************************************
+ *  ESTILOS ESPECÍFICOS PARA EL SIMULADOR (MODIFICADOS)
+ ****************************************************/
+
+/* Simulador Container */
+.simulador-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Simulador Form */
+.simulador-form {
+  flex: 1;
+  min-width: 300px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E6ED;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+}
+
+/* Form Group (label + input/select) */
+.simulador-form .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Select en el form-group */
+.simulador-form .form-group select {
+  width: 29%;
+  margin-left: auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Label: ancho fijo de 300px */
+.simulador-form .form-group label {
+  flex: 0 0 300px;
+  margin-right: 10px;
+  color: #2E4057;
+  font-weight: 600;
+}
+
+/* Tipografía para inputs, selects y botones */
+.simulador-form input[type="text"],
+.simulador-form input[type="number"],
+.simulador-form select,
+.simulador-form button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.45rem, 1vw, 0.9rem);
+  font-weight: 400;
+  color: #2E4057;
+}
+.selector-credito select {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #2E4057;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  appearance: none;
+  margin-top: 15px;
+  margin-left: 20px
+}
+
+/* Input y Number: 29% ancho */
+.simulador-form .form-group input[type="text"],
+.simulador-form .form-group input[type="number"] {
+  width: 29%;
+  margin-left: auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* (Los estilos para radios quedan sin efecto, ya que se usa select) */
+
+/* Checkbox en grupo */
+.simulador-form .form-group input[type="checkbox"] {
+  margin-right: 5px;
+  margin-bottom: 20px;
+}
+
+/* Botones */
+.simulador-form button {
+  background-color: #ff6b35;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.simulador-form button:hover {
+  background-color: #e05220;
+}
+
+/* Simulador Info (Información del Crédito) */
+.simulador-info {
+  flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E6ED;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+}
+
+/* Título de Información */
+.info-title {
+  font-size: clamp(0.6rem, 1.33vw, 1.2rem);
+  font-weight: 700;
+  color: #2E4057;
+  margin-bottom: 15px;
+}
+
+/* Cada ítem de información: Flex para separar label y valor */
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #2E4057;
+  font-size: clamp(0.475rem, 1.05vw, 0.95rem);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* Etiqueta en la info (izquierda) */
+.info-label {
+  flex: 0 0 300px;
+  text-align: left;
+}
+
+/* Valor en la info (derecha) */
+.info-value {
+  flex: 1;
+  text-align: right;
+  margin-left: 20px;
+}
+
+/* Simulador Tabla (cuadro de pagos) */
+.simulador-tabla {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #E0E6ED;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+}
+
+/* Tabla interna */
+.simulador-tabla table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(0.475rem, 1.05vw, 0.95rem);
+  color: #2E4057;
+}
+.simulador-tabla thead th {
+  background-color: #f1f1f1;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+}
+.simulador-tabla th,
+.simulador-tabla td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: right;
+}
+.simulador-tabla th:first-child,
+.simulador-tabla td:first-child {
+  text-align: center;
+}
+.simulador-tabla tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+
+
+
+/****************************************************
+ *  ESTILOS ESPECÍFICOS PARA EDUCACIÓN FINANCIERA  *
+ ****************************************************/
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.resource-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+}
+
+.download-btn {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #ff6b35;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #e05220;
+}
+
+/****************************************************
+ *  ESTILOS ESPECÍFICOS PARA SIMULADOR INVERSIONES
+ ****************************************************/
+
+/* Contenedor principal del simulador */
+.simulador-inversiones {
+  font-family: 'Montserrat', sans-serif;
+  color: #2E4057;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: nowrap;        /* Forzar que los elementos no hagan wrap */
+  gap: clamp(0.5rem, 1.11vw, 1rem);                /* Gap reducido para evitar overflow */
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+.simulador-inversiones .formulario {
+  flex: 1 1 0;
+  max-width: 50%;
+  min-width: 300px;
+}
+.simulador-inversiones .referencia {
+  flex: 0 0 100%;
+  max-width: 100%;
+  min-width: 300px;
+}
+
+/* Agrupación de label e input en una misma línea */
+.simulador-inversiones .form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.simulador-inversiones .form-group label {
+  width: 34.7vw;   /* Ajusta el ancho según tus necesidades */
+  margin-right: clamp(0.5rem, 1.11vw, 1rem);
+  font-weight: 600;
+  line-height: normal;  /* O un valor fijo, por ejemplo: 1.2 */
+  margin: 0;
+}
+
+.simulador-inversiones .form-group input,
+.simulador-inversiones .form-group select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  color: #2E4057;
+  line-height: normal;  /* O un valor fijo, por ejemplo: 1.2 */
+  margin: 0;
+}
+/* ─── Negrita para el <select> y sus <option> ─── */
+#frecuencia,
+#frecuencia option {
+  font-weight: bold;
+}
+
+/* ─── Color base de todas las opciones ─── */
+#frecuencia option {
+  color: #2E4057;
+}
+
+/* ─── Color naranja solo para la opción “Mensual” en el listado ─── */
+#frecuencia option[value="mensual"] {
+  color: #ff6b35 !important;
+}
+
+/* ─── Cuando el <select> tenga la clase orange‑f (valor seleccionado “mensual”) ─── */
+#frecuencia.orange-f {
+  color: #ff6b35 !important;
+  font-weight: bold !important;
+}
+
+/* ─── Dentro de ese <select> naranja, resetear color de TODAS las opciones ─── */
+#frecuencia.orange-f option {
+  color: #2E4057 !important;
+}
+
+/* ─── Reaplicar naranja sólo a “Mensual” dentro del <select> naranja ─── */
+#frecuencia.orange-f option[value="mensual"] {
+  color: #ff6b35 !important;
+}
+
+/* Botón de cálculo */
+.simulador-inversiones button {
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Texto del resultado de la simulación */
+.simulador-inversiones .resultado {
+  margin-top: clamp(0.75rem, 1.665vw, 1.5rem);
+  font-weight: normal;
+}
+
+/* Estilos para la tabla de referencia */
+.simulador-inversiones .referencia table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Montserrat', sans-serif;
+  color: #2E4057;
+  table-layout: fixed;  /* Forzar que respete los anchos definidos */
+}
+
+.simulador-inversiones .referencia th,
+.simulador-inversiones .referencia td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.simulador-inversiones .referencia th {
+  background-color: #f1f1f1;
+  font-weight: 700;
+}
+
+/* Anchos para columnas de la tabla */
+/* La primera columna (Plazo) ocupará un 15% */
+.simulador-inversiones .referencia table th:first-child,
+.simulador-inversiones .referencia table td:first-child {
+  width: 15%;
+}
+
+/* Las tres columnas restantes (Conservador, Moderado y Arriesgado) compartirán el restante 85% (~28.33% cada una) */
+.simulador-inversiones .referencia table th:nth-child(2),
+.simulador-inversiones .referencia table th:nth-child(3),
+.simulador-inversiones .referencia table th:nth-child(4),
+.simulador-inversiones .referencia table td:nth-child(2),
+.simulador-inversiones .referencia table td:nth-child(3),
+.simulador-inversiones .referencia table td:nth-child(4) {
+  width: 28.33%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Área y tamaño para el gráfico */
+.simulador-inversiones .grafico {
+  /* Fija un tamaño grande para el contenedor */
+  width: 50vwpx;       /* Ajusta a tu gusto */
+  height: 30vh;      /* Para hacerlo más cuadrado */
+  margin-top: clamp(1rem, 2.22vw, 2rem);
+  position: relative; /* Recomendado para no desbordar */
+}
+
+
+.simulador-inversiones canvas {
+  max-height: 400px;
+}
+.simulador-inversiones .referencia .referencia-cell strong {
+  display: block;
+  margin-top: clamp(0.25rem, 0.555vw, 0.5rem);
+  margin-bottom: clamp(0.25rem, 0.555vw, 0.5rem);
+}
+.simulador-inversiones .formulario,
+.simulador-inversiones .referencia {
+  background-color: #ffffff;
+  border: 1px solid #E0E6ED;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  padding: 20px;
+}
+.inversion-btn {
+  background-color: #ff6b35;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.formulario h2 {
+
+  margin-bottom: 2rem;
+}
+
+.inversion-btn:hover {
+  background-color: #e05220;
+}
+.simulador-inversiones,
+.simulador-inversiones .form-group input,
+.simulador-inversiones .form-group select,
+.simulador-inversiones .form-group label,
+.simulador-inversiones button {
+  font-size: clamp(0.45rem, 1vw, 0.9rem);
+}
+/* Botón de Limpiar para el simulador de inversiones */
+.inversion-clear-btn {
+  background-color: #ff6b35;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.inversion-clear-btn:hover {
+  background-color: #e05220;
+}
+/* Panel oculto por defecto */
+.referencia-panel {
+  position: fixed;
+  top: 50%; left: 50%;
+  width: 90vw;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: hidden;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  visibility: hidden;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  padding: 1%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+ 
+}
+
+/* Botón cerrar dentro */
+#close-referencia {
+  float: right;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Cuando esté “activo” */
+.referencia-panel.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 1) Quita el padding global del contenedor padre */
+.simulador-inversiones {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* 2) Centra el .formulario dentro y dale un pequeño gap al viewport */
+.simulador-inversiones .formulario {
+  margin: 0 1rem;      /* ajusta 1rem por el espacio que quieras */
+  max-width: 600px;    /* o el ancho que desees, para no hacerlo demasiado ancho */
+}
+
+/* Fondo semitransparente detrás */
+.referencia-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.referencia-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}

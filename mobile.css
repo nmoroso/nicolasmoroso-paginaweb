@@ -1,0 +1,348 @@
+ /* ====== Media Query para Móviles (max-width: 768px) ====== */
+ @media (max-width: 768px) {
+  /* Ocultamos la navegación */
+  .header-nav {
+    display: none;
+  }
+
+  /* Opcional: ajustar padding y altura para móviles */
+  .header-container {
+    height: clamp(50px,10vh,65px);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* Estilo para el ícono del menú */
+  .menu-wrapper {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    width: 200px;
+    margin-left: 5px;
+    /* Opcional: ajustar tamaño, margenes o color */
+  }
+  
+  .menu-wrapper i.fa-bars {
+    font-size: 2.5rem;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  /* Centra el logo */
+  .header-logo {
+    flex: 1;
+    
+  }
+  .logo img {
+    height: clamp(35px,7vh,50px);
+
+  }
+
+  .logo-text {
+    display: none;
+    
+  }
+    /* Mantén el botón a la derecha */
+  .header-agendar {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: right;  
+    margin-right: 5px;
+  }
+  .header-button {
+   font-size: clamp(0.75rem, 1vw, 0.9rem); 
+   padding: 4px 8px;
+  }
+.desk-btn { display: none; }
+.mobile-btn { 
+  display: block; 
+}
+
+
+
+/* Menú móvil (inicialmente oculto a la izquierda) */
+.mobile-menu {
+  display:flex;
+  position: fixed;
+  top: 0;
+  left: -40vw;            /* Fuera de la pantalla a la izquierda */
+  width: 40vw;
+  height: clamp(295px,32vh,350px);
+  background-color: #1e293b;  /* O el color que prefieras */
+  transition: left 0.3s ease;  /* Transición para el deslizamiento */
+  z-index: 998;           /* Debe estar sobre el contenido, pero debajo del header si éste tiene z-index mayor */
+  padding-top: clamp(60px, 10vh, 80px); /* Opcional, para dejar espacio por el header */
+  border-radius: 5px;
+}
+
+/* Estado activo (cuando se hace clic en el menú) */
+.mobile-menu.active {
+  left: 0;  /* Se desliza hacia adentro */
+}
+
+/* Opcional: estilos para los links del menú */
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu ul li {
+  padding: 15px 20px;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.submenu-item {
+
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+/* MENÚ DESPLEGABLE */
+.simulador-menu {
+
+  top: 0;
+  left: 100%;
+  height: clamp(200px,13.33vh);
+
+  /* Animación visual */
+  transform: translateX(10px);
+
+}
+
+  /* Desactiva el hover para el submenú (puedes comentarlo o sobrescribirlo) */
+  .simulador-dropdown:hover .simulador-menu {
+    display: none;
+  }
+  
+  /* Estado activo: cuando se le agregue la clase "active" al contenedor .simulador-dropdown */
+  .simulador-dropdown.active .simulador-menu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+
+
+
+
+
+
+
+/******************* HERO *****************/
+/******************* HERO *****************/
+/******************* HERO *****************/
+
+.hero-banner {
+  margin-top: -100px;
+  padding-left: 0;
+  height: 103dvh;
+}
+
+.hero-banner .container {
+
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px; /* margenes laterales */
+  background: transparent; /* asegúrate que no tenga fondo */
+  text-align: left;
+  align-items: flex-start;
+  padding-top:130px;
+  padding-bottom: 30px;
+}
+
+/* Ajustes al texto */
+.hero-banner h1 {
+
+  margin-bottom: 0vh;
+  font-size: clamp(1.8rem, 3.33vw, 2.5rem);
+  
+}
+
+.hero-banner p {
+  margin-bottom: 4vh;
+  line-height: 1.5;
+  font-size: clamp(0.9rem, 1.33vw, 1rem);
+
+}
+
+
+
+
+.typed-container {
+  display: block; /* o block, según necesites */
+  text-align: left;
+  min-width: 250px;  /* o un valor en rem: e.g., 15rem */
+  min-height: 4em; /* o el valor que funcione en ambos casos */
+}
+
+
+
+
+.agendar-hero {
+  background-color: #457B9D; /* Color de fondo del botón */
+  color: #ffffff;            /* Texto en blanco */
+  text-decoration: none;     /* Sin subrayado */
+  padding: 12px 40px;        /* Espaciado interno */
+  margin: 0 auto;        /* Separación del borde derecho */
+  font-weight: bold;         /* Negrita */
+  transition: background-color 0.3s ease; /* Animación suave en hover */
+  font-size: clamp(0.9rem, 1vw, 1.2rem);           /* Ajusta según tu preferencia */
+  border-radius: 5px;        /* Borde ligeramente redondeado (opcional) */
+  text-align: center;
+  justify-content: center;
+  display: inline-block;
+
+}
+.agendar-hero:hover {
+  background-color: #2E4057; /* Color al pasar el mouse */
+
+
+}
+
+
+/************* Secciones luego del hero ************/
+/************* Secciones luego del hero ************/
+/************* Secciones luego del hero ************/
+
+
+
+
+  section {
+    margin-left: 3.5vw;
+    margin-right: 3.5vw;
+  }
+
+
+  .about-section {
+    flex-direction: column;
+    gap: 20px;
+    padding: 3.5vw;
+  }
+  .about-wrapper {
+    height: 105vh;
+  }
+
+  .about-image img {
+    MARGIN-TOP: 10vh;
+    width: 45vw;
+    margin-bottom: 20px;
+    margin-bottom: 20PX;
+
+  }
+  
+  /* Estilos para los textos */
+  .about-text h2 {
+
+    font-size: clamp(1rem , 2.22vw , 2rem);
+  }
+  
+  .about-text p {
+
+    font-size: clamp(0.8rem , 1.11vw , 1rem);
+    margin-bottom: 0.5em;
+  }
+
+/* Estilos para la sección del simulador */
+#simulador.resource-grid {
+  margin-top: 14vh;
+  margin-bottom: 3vh;
+
+}
+
+
+
+/* Overlay: inicialmente oculto */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(25, 34, 46, 0.9); /* Fondo negro con 50% de opacidad */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 997; /* Debe estar debajo del menú (por ejemplo, si el menú tiene z-index 998 o superior) */
+}
+
+/* Estado activo: se muestra el overlay */
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+}
+
+/****************************************************
+ *  ESTILOS ESPECÍFICOS PARA SIMULADOR INVERSIONES
+ ****************************************************/
+
+/* Contenedor principal del simulador */
+.simulador-inversiones {
+  font-family: 'Montserrat', sans-serif;
+  color: #2E4057;
+  padding: 10px 0px;
+  display: flex;
+  flex-wrap: nowrap;        /* Forzar que los elementos no hagan wrap */
+  gap: clamp(0.5rem, 1.11vw, 1rem);                /* Gap reducido para evitar overflow */
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+
+
+.simulador-inversiones .form-group label {
+  margin-right: clamp(0.9rem, 1.11vw, 1rem);
+
+}
+.referencia-panel table {
+  font-size: clamp(0.5rem, 0.5vw, 0.9rem);
+  border-collapse: collapse;
+}
+.referencia-panel th,
+.referencia-panel td {
+  padding: clamp(0.25rem, 0.5vw, 0.5rem);
+}
+
+.referencia-panel h2 {
+  margin-bottom: 12px;
+}
+
+/* Botón de cálculo */
+.simulador-inversiones button {
+  padding: 4px 8px;
+}
+
+.simulador-inversiones .formulario,
+.simulador-inversiones .referencia {
+  padding: 4px 8px;
+}
+.inversion-btn {
+  padding: 2px 4px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.simulador-inversiones,
+.simulador-inversiones .form-group input,
+.simulador-inversiones .form-group select,
+.simulador-inversiones .form-group label,
+.simulador-inversiones button {
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+}
+/* Botón de Limpiar para el simulador de inversiones */
+.inversion-clear-btn {
+  padding: 4px 8px;
+  font-weight: bold;
+}

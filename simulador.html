@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Crédito de Consumo</title>
+
+  <link rel="stylesheet" href="desk.css">
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #fbfcfd;
+    }
+  </style>
+  <!-- Scripts adicionales si son necesarios, como Calendly o Google Tag Manager -->
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-container">
+    <div class="menu-wrapper">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="header-logo">
+     <a href="index.html" class="logo">
+        <img src="logo.png" alt="Terapia Financiera" />
+        <span class="logo-text">
+        inicio<span class="orange-f"></span>
+        </span>
+      </a>
+    </div>
+  
+
+
+
+    <!-- Navegación -->
+    <nav class="header-nav">
+      <ul>
+        <li>
+          <a href="educacion.html" class="nav-item">
+            <span class="orange-f">Educación</span>
+          </a>
+        </li>
+    
+        <li class="simulador-dropdown">
+          <a href="#simulador" class="nav-item">
+            <span class="orange-f">Simulador</span>
+          </a>
+          <ul class="simulador-menu">
+            <li><a href="simulador.html" class="submenu-item">Créditos</a></li>
+            <li><a href="inversiones.html" class="submenu-item">Inversiones</a></li>
+          </ul>
+        </li>
+    
+        <li><a href="index.html#about" class="nav-item">Sobre Mí</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Botón de Agendar Reunión -->
+
+    <div class="header-agendar">
+      <a href="index.html#contacto" class="header-button desk-btn">CONTACTO</a>
+      <a href="index.html#contacto" class="header-button mobile-btn">CONTACTO</a>
+    </div>
+  
+  <!-- Menú desplegable en móvil -->
+  <div class="mobile-menu">
+    <ul>
+      <li>
+        <a href="educacion.html">
+          <span class="orange-f">Educación</span>
+        </a>
+      </li>
+  
+      <li class="simulador-dropdown">
+        <a>
+          <span class="orange-f">Simulador</span>
+        </a>
+        <ul class="simulador-menu">
+          <li><a href="simulador.html" class="submenu-item">Créditos</a></li>
+          <li><a href="inversiones.html" class="submenu-item">Inversiones</a></li>
+        </ul>
+      </li>
+  
+      <li><a href="index.html#about">Sobre Mí</a></li>
+   
+    </ul>
+  </div>
+</header>
+
+
+<!-- Contenedor de Tarjetas de Simulador 
+<section id="tarjetasSimulador" class="resource-grid" style="margin-top:100px; margin-bottom: 100px; padding: 60px 20px; text-align:center;">
+  <div class="resource-card" onclick="mostrarSimuladorCategoria('credito')">
+    <h3>Simulador de Crédito</h3>
+    <p>Simula créditos de Consumo, Hipotecario y Bullet.</p>
+  </div>
+  <a href="inversiones.html" style="text-decoration: none; color: inherit;">
+    <div class="resource-card">
+      <h3>Simulador de Inversiones</h3>
+      <p>Proyecta tus ahorros con interés compuesto.</p>
+    </div>
+  </a>
+ 
+ 
+</section>-->
+
+<!-- Contenedor para el Simulador de Crédito (inicialmente oculto) -->
+<div id="simuladorCredito" style="display: block;">
+
+
+<!-- Sección para seleccionar el tipo de crédito -->
+<section class="selector-credito">
+  <div class="form-group">
+    <label for="tipoCredito">Selecciona el tipo de crédito:</label>
+    <select id="tipoCredito" onchange="mostrarSimulador()">
+      <option value="consumo">Crédito de Consumo</option>
+      <option value="hipotecario">Crédito Hipotecario</option>
+      <option value="bullet">Crédito Bullet</option>
+    </select>
+  </div>
+</section>
+
+
+
+
+<!-- Simulador Crédito de Consumo (Activo por defecto) -->
+<div id="simuladorConsumo" class="simulador-container">
+  <!-- Columna Izquierda: Formulario -->
+  <div class="simulador-form">
+    <form id="simulador">
+      <!-- Grupo para la selección de moneda -->
+      <div class="form-group">
+        <label for="monedaSelect">Moneda para mostrar resultados:</label>
+        <select id="monedaSelect" name="monedaSelect">
+          <option value="peso" selected>Peso Chileno ($)</option>
+          <option value="uf">UF</option>
+        </select>
+      </div>
+
+      <!-- Grupo para el monto del crédito -->
+      <div class="form-group">
+        <label for="monto">Monto del crédito:</label>
+        <input type="text" id="monto" required>
+      </div>
+
+      <!-- Grupo para la tasa de interés -->
+      <div class="form-group">
+        <label for="tasa">Tasa de interés mensual (%):</label>
+        <input type="number" id="tasa" step="0.01" required>
+      </div>
+
+      <!-- Grupo para las cuotas de pago -->
+      <div class="form-group">
+        <label for="plazo">Cuotas de pago:</label>
+        <input type="number" id="plazo" required>
+      </div>
+
+      <!-- Grupo para los meses de gracia -->
+      <div class="form-group">
+        <label for="gracia">Meses de gracia:</label>
+        <input type="number" id="gracia" value="0" min="0">
+      </div>
+
+      <!-- Grupo para el checkbox del seguro -->
+      <div class="form-group">
+        <input type="checkbox" id="checkSeguro">
+        <label for="checkSeguro">Incluir seguro de desgravamen</label>
+      </div>
+
+      <!-- Grupo para los botones -->
+      <div class="form-group">
+        <!-- Aquí se llama a cconsumoamort() -->
+        <button type="button" onclick="cconsumoamort()">Calcular</button>
+        <button type="button" onclick="limpiarSimulacion()">Limpiar</button>
+      </div>
+    </form>
+  </div>
+  
+  <!-- Columna Derecha: Información del Crédito -->
+  <div class="simulador-info">
+    <div class="info-title">Información del Crédito</div>
+    <div id="infoCAE" class="info-item">
+      <span class="info-label">CAE:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoTotalCredito" class="info-item">
+      <span class="info-label">Costo total del crédito:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoTotalIntereses" class="info-item">
+      <span class="info-label">Total intereses:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoSeguro" class="info-item">
+      <span class="info-label">Costo seguro de desgravamen:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoTimbre" class="info-item">
+      <span class="info-label">Costo timbres y estampillas:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoCuota" class="info-item">
+      <span class="info-label">Valor de la cuota:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoPlazo" class="info-item">
+      <span class="info-label">Plazo total del crédito:</span>
+      <span class="info-value">--</span>
+    </div>
+  </div>
+</div>
+
+<!-- Simulador de Crédito Hipotecario -->
+<div id="simuladorHipotecario" class="simulador-container" style="display: none; flex-wrap: wrap; gap: 1rem;">
+  <!-- Columna Izquierda: Formulario -->
+  <div class="simulador-form">
+    <form id="formHipotecario">
+      <!-- Tasa anual -->
+      <div class="form-group">
+        <label for="tasaAnual">Tasa anual (%):</label>
+        <input type="number" id="tasaAnual" step="0.01" required>
+      </div>
+
+      <!-- Plazo (meses) -->
+      <div class="form-group">
+        <label for="plazoHipotecario">N° periodos (meses):</label>
+        <input type="number" id="plazoHipotecario" required>
+      </div>
+
+      <!-- Gracia -->
+      <div class="form-group">
+        <label for="graciaHipotecario">N° periodos de gracia (meses):</label>
+        <input type="number" id="graciaHipotecario" value="0" min="0">
+      </div>
+
+      <!-- Valor propiedad -->
+      <div class="form-group">
+        <label for="valorPropiedad">Valor de la propiedad (UF):</label>
+        <input type="text" id="valorPropiedad" required>
+      </div>
+
+      <!-- % financiamiento -->
+      <div class="form-group">
+        <label for="financiamiento">Porcentaje financiamiento (%):</label>
+        <input type="number" id="financiamiento" required>
+      </div>
+
+      <!-- Botones -->
+      <div class="form-group">
+        <!-- Aquí se llama a chipotecarioamort() -->
+        <button type="button" onclick="chipotecarioamort()">Calcular</button>
+        <button type="button" onclick="limpiarSimulacionHipotecario()">Limpiar</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Columna Derecha: Resultados -->
+  <div class="simulador-info">
+      <div class="info-title">Información del Crédito</div>
+      <div id="infoMontoFinanciar" class="info-item">
+        <span class="info-label">Monto a financiar:</span>
+        <span class="info-value">--</span>
+      </div>
+      <div id="infoCuotaNeta" class="info-item">
+        <span class="info-label">Cuota Neta:</span>
+        <span class="info-value">--</span>
+      </div>
+      <div id="infoSeguroDesgravamen" class="info-item">
+        <span class="info-label">Seguro desgravamen:</span>
+        <span class="info-value">--</span>
+      </div>
+      <div id="infoSeguroIncendio" class="info-item">
+        <span class="info-label">Seguro incendio:</span>
+        <span class="info-value">--</span>
+      </div>
+      <div id="infoCuotaTotal" class="info-item">
+        <span class="info-label">Cuota Total:</span>
+        <span class="info-value">--</span>
+      </div>
+          <div id="infoCHIPCAE" class="info-item">
+      <span class="info-label">CAE:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoCHIPTotalCredito" class="info-item">
+      <span class="info-label">Costo total del crédito:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoCHIPTotalIntereses" class="info-item">
+      <span class="info-label">Total intereses:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoCHIPPlazo" class="info-item">
+      <span class="info-label">Plazo total:</span>
+      <span class="info-value">--</span>
+    </div>
+    </div>
+  </div>
+
+<!-- Simulador de Crédito Bullet -->
+<div id="simuladorBullet" class="simulador-container" style="display: none;">
+  <!-- Formulario del simulador Bullet -->
+  <div class="simulador-form">
+    <form id="formBullet">
+      <!-- Selección de moneda -->
+      <div class="form-group">
+        <label for="monedaSelectBullet">Moneda:</label>
+        <select id="monedaSelectBullet" name="monedaSelectBullet">
+          <option value="peso" selected>Peso Chileno ($)</option>
+          <option value="uf">UF</option>
+        </select>
+      </div>
+      <!-- Tasa de interés -->
+      <div class="form-group">
+        <label for="tasaBullet">Tasa de interés (%):</label>
+        <input type="number" id="tasaBullet" step="0.01" required>
+      </div>
+      <!-- Monto del capital -->
+      <div class="form-group">
+        <label for="montoBullet">Monto del capital:</label>
+        <input type="text" id="montoBullet" required>
+      </div>
+      <!-- Plazo en días -->
+      <div class="form-group">
+        <label for="plazoDiasBullet">Plazo (días):</label>
+        <input type="number" id="plazoDiasBullet" required>
+      </div>
+      <!-- Seguro de desgravamen -->
+      <div class="form-group">
+        <input type="checkbox" id="checkSeguroBullet">
+        <label for="checkSeguroBullet">Incluir seguro de desgravamen</label>
+      </div>
+      <!-- Botones -->
+      <div class="form-group">
+        <button type="button" onclick="cbulletamort()">Calcular</button>
+        <button type="button" onclick="limpiarSimulacionBullet()">Limpiar</button>
+      </div>
+    </form>
+  </div>
+  
+  <!-- Panel de Información del Crédito Bullet -->
+  <div class="simulador-info">
+    <div class="info-title">Información del Crédito</div>
+    <div id="infoTotalCreditoBullet" class="info-item">
+      <span class="info-label">Costo total del crédito:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoTotalInteresesBullet" class="info-item">
+      <span class="info-label">Total intereses:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoSeguroDesgravamenBullet" class="info-item">
+      <span class="info-label">Costo seguro de desgravamen:</span>
+      <span class="info-value">--</span>
+    </div>
+    <div id="infoCAE_Bullet" class="info-item">
+      <span class="info-label">CAE:</span>
+      <span class="info-value">--</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- Cuadro de desarrollo de pagos (tabla) -->
+<div class="simulador-tabla" id="resultado"></div>
+
+</div>
+
+<!-- Contenedor para el Simulador de Inversiones (inicialmente oculto) -->
+
+
+
+
+  <footer id="contact">
+    <div class="footer-container">
+      <!-- Logo Footer -->
+      <div class="footer-logo">
+        <h2>nicolasmoroso.cl</h2>
+      </div>
+      
+  <!-- Sección de Contacto -->
+  <div class="footer-section">
+    <h3>Contacto:</h3>
+    <p>
+      <img src="mailto.png" alt="Correo" class="contact-icon mail-icon">
+      <a href="mailto:info@nicolasmoroso.cl">info@nicolasmoroso.cl</a>
+    </p>
+    <p>
+      <img src="wsblanco.png" alt="WhatsApp" class="contact-icon whatsapp-icon">
+      <a href="https://wa.me/56951793156" target="_blank">+56951793156</a>
+    </p>
+  </div>
+  
+      
+      <!-- Redes Sociales -->
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/nicolas-moroso-lillo/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/labanca.cl/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Botón de WhatsApp -->
+<a href="https://wa.me/56951793156" class="whatsapp-button" target="_blank">
+  <img src="ws.png" alt="WhatsApp">
+</a>
+
+  <!-- Elemento overlay -->
+  <div class="overlay"></div>
+
+<script src="simulador.js"></script>
+<script src="header.js"></script>
+</body>
+</html>
