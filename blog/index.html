@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="stylesheet" href="../desk.css">
+  <link rel="stylesheet" href="../mobile.css" media="screen and (max-width: 768px)">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="menu-wrapper">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="header-logo">
+        <a href="../index.html" class="logo">
+          <img src="../logo.png" alt="Terapia Financiera" />
+          <span class="logo-text">
+          inicio<span class="orange-f"></span>
+          </span>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li>
+            <a href="../educacion.html" class="nav-item">
+              <span class="orange-f">Educación</span>
+            </a>
+          </li>
+          <li class="simulador-dropdown">
+            <a href="#simulador" class="nav-item">
+              <span class="orange-f">Simulador</span>
+            </a>
+            <ul class="simulador-menu">
+              <li><a href="../simulador.html" class="submenu-item">Créditos</a></li>
+              <li><a href="../inversiones.html" class="submenu-item">Inversiones</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html" class="nav-item"><span class="orange-f">Blog</span></a></li>
+          <li><a href="../index.html#about" class="nav-item">Sobre Mí</a></li>
+        </ul>
+      </nav>
+      <div class="header-agendar">
+        <a href="../index.html#contacto" class="header-button desk-btn">CONTACTO</a>
+        <a href="../index.html#contacto" class="header-button mobile-btn">CONTACTO</a>
+      </div>
+      <div class="mobile-menu">
+        <ul>
+          <li><a href="../educacion.html"><span class="orange-f">Educación</span></a></li>
+          <li class="simulador-dropdown">
+            <a><span class="orange-f">Simulador</span></a>
+            <ul class="simulador-menu">
+              <li><a href="../simulador.html" class="submenu-item">Créditos</a></li>
+              <li><a href="../inversiones.html" class="submenu-item">Inversiones</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html"><span class="orange-f">Blog</span></a></li>
+          <li><a href="../index.html#about">Sobre Mí</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 120px 20px 60px 20px;">
+    <h1 style="text-align:center;">Blog</h1>
+    <div id="blog-posts"></div>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>nicolasmoroso.cl</h2>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto:</h3>
+        <p>
+          <img src="../mailto.png" alt="Correo" class="contact-icon mail-icon">
+          <a href="mailto:info@nicolasmoroso.cl">info@nicolasmoroso.cl</a>
+        </p>
+        <p>
+          <img src="../wsblanco.png" alt="WhatsApp" class="contact-icon whatsapp-icon">
+          <a href="https://wa.me/56951793156" target="_blank">+56951793156</a>
+        </p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/nicolas-moroso-lillo/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/labanca.cl/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/56951793156" class="whatsapp-button" target="_blank">
+    <img src="../ws.png" alt="WhatsApp">
+  </a>
+  <div class="overlay"></div>
+  <script src="../header.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="blog.js"></script>
+</body>
+</html>
