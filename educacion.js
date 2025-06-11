@@ -52,13 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setupAccordion() {
-    const titles = container.querySelectorAll('.accordion-title');
-    titles.forEach(t => {
-      const content = t.nextElementSibling;
+    const items = container.querySelectorAll('.accordion-item');
+    items.forEach(item => {
+      const title = item.querySelector('.accordion-title');
+      const content = item.querySelector('.accordion-content');
       content.style.display = 'none';
-      t.addEventListener('click', () => {
-        const visible = content.style.display === 'block';
-        content.style.display = visible ? 'none' : 'block';
+      title.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        item.classList.toggle('active');
+        content.style.display = isActive ? 'none' : 'block';
       });
     });
   }
