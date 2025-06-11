@@ -901,6 +901,16 @@ section {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.resource-card h3 {
+  color: #457B9D;
+}
+
+.resource-card p {
+  color: #2E4057;
 }
 
 .resource-card:hover {
@@ -1233,24 +1243,28 @@ section {
 
 .accordion-item {
   margin-bottom: 10px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  overflow: hidden;
 }
 
 
 .accordion-title {
   width: 100%;
   text-align: left;
-  background: #f2f2f2;
-  padding: 10px;
+  background: transparent;
+  padding: 15px;
   cursor: pointer;
   border: none;
-
-  border-radius: 4px;
+  border-bottom: 1px solid #f2f2f2;
+  color: #457B9D;
   font-weight: 600;
+  border-radius: 10px 10px 0 0;
 }
 
 .accordion-content {
-  padding: 10px;
-  border: 1px solid #f2f2f2;
-  border-radius: 0 0 4px 4px;
-
+  padding: 15px;
+  border-radius: 0 0 10px 10px;
+  color: #2E4057;
 }
