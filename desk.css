@@ -742,7 +742,7 @@ section {
 .simulador-form select,
 .simulador-form button {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.45rem, 1vw, 0.9rem);
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   font-weight: 400;
   color: #2E4057;
 }
@@ -1123,7 +1123,7 @@ section {
 .simulador-inversiones .form-group select,
 .simulador-inversiones .form-group label,
 .simulador-inversiones button {
-  font-size: clamp(0.45rem, 1vw, 0.9rem);
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
 }
 /* Botón de Limpiar para el simulador de inversiones */
 .inversion-clear-btn {
