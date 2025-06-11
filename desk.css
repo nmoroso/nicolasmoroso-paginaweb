@@ -1196,25 +1196,40 @@ section {
 }
 
 /* ===== Sección Educación ===== */
+.education-box {
+  max-width: 1080px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
 .education-tabs {
   display: flex;
   gap: 10px;
   justify-content: center;
   margin-bottom: 20px;
 }
+
 .education-tabs button {
-  padding: 10px 20px;
+  padding: 8px 16px;
   cursor: pointer;
-  background: #eee;
+  background: #457B9D;
+  color: #ffffff;
   border: none;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.45rem, 1vw, 0.9rem);
+  font-weight: 600;
 }
+
 .education-tabs button.active {
   background: #ff6b35;
   color: #fff;
 }
+
 .accordion-item {
   margin-bottom: 10px;
 }
+
 .accordion-title {
   width: 100%;
   text-align: left;
@@ -1222,8 +1237,12 @@ section {
   padding: 10px;
   cursor: pointer;
   border: none;
+  border-radius: 4px;
+  font-weight: 600;
 }
+
 .accordion-content {
   padding: 10px;
   border: 1px solid #f2f2f2;
+  border-radius: 0 0 4px 4px;
 }
