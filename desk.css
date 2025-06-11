@@ -447,7 +447,7 @@ section {
 
 /* FOOTER */
 .footer-container {
-  background-color: var(--azul-medianoche);
+  background-color: #19222e;
   color: var(--blanco);
   display: flex;
   justify-content: space-between;
