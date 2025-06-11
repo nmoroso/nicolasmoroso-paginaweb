@@ -1242,29 +1242,45 @@ section {
 
 
 .accordion-item {
-  margin-bottom: 10px;
-  background: #ffffff;
+  margin-bottom: 20px;
+  background: var(--blanco);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   overflow: hidden;
 }
 
-
 .accordion-title {
   width: 100%;
   text-align: left;
-  background: transparent;
+  background: var(--azul-profundo);
   padding: 15px;
   cursor: pointer;
   border: none;
-  border-bottom: 1px solid #f2f2f2;
-  color: #457B9D;
+  color: var(--blanco);
   font-weight: 600;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-title::after {
+  content: "+";
+  font-weight: bold;
+}
+
+.accordion-item.active .accordion-title::after {
+  content: "-";
 }
 
 .accordion-content {
   padding: 15px;
+  border-top: 1px solid #f2f2f2;
   border-radius: 0 0 10px 10px;
   color: #2E4057;
+  display: none;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
 }
