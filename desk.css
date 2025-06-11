@@ -1194,3 +1194,36 @@ section {
   opacity: 1;
   visibility: visible;
 }
+
+/* ===== Sección Educación ===== */
+.education-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.education-tabs button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #eee;
+  border: none;
+}
+.education-tabs button.active {
+  background: #ff6b35;
+  color: #fff;
+}
+.accordion-item {
+  margin-bottom: 10px;
+}
+.accordion-title {
+  width: 100%;
+  text-align: left;
+  background: #f2f2f2;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+}
+.accordion-content {
+  padding: 10px;
+  border: 1px solid #f2f2f2;
+}
