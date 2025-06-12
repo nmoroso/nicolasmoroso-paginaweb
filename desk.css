@@ -1241,18 +1241,7 @@ section {
 }
 
 /* Título de la sección Educación */
-.education-title {
-  display: inline-block;
-  padding: 8px 16px;
-  background: var(--azul-profundo);
-  color: #ffffff;
-  border-radius: 5px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
-  font-weight: 600;
-  text-align: center;
-  margin: 0 auto 20px auto;
-}
+
 
 
 .accordion-item {
@@ -1262,7 +1251,6 @@ section {
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   overflow: hidden;
   transition: transform 0.2s ease;
-  font-size: clamp(0.45rem, 1vw, 0.9rem)
 }
 
 .accordion-item:hover {
@@ -1276,9 +1264,12 @@ section {
   padding: 15px;
   cursor: pointer;
   border: none;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.38rem, 0.85vw, 0.77rem);
+  color: #ffffff;
+ 
+  font-size: clamp(2rem, 3vw, 3rem);
+/*/clamp(0.7rem, 0.9vw, 0.8rem);/*/
   border-radius: 4px;
+
   font-weight: 600;
   border-radius: 10px;
   display: flex;
@@ -1289,7 +1280,7 @@ section {
 .accordion-title::after {
   content: "+";
   font-weight: bold;
-  color: #ff6b35;
+  color: #ffffff;
   transition: transform 0.2s ease;
 }
 
