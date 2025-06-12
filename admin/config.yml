@@ -17,7 +17,8 @@ collections:
       - { label: "Contenido", name: "body", widget: "markdown" }
       - { label: "Video (YouTube o Vimeo)", name: "video", widget: "string", required: false }
       - { label: "Archivo PDF", name: "archivo", widget: "file", required: false }
-        - name: "bancos"
+
+  - name: "bancos"
     label: "Aprende de Bancos"
     folder: "educacion/bancos"
     create: true
