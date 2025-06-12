@@ -1263,6 +1263,8 @@ section {
   border: none;
   color: var(--blanco);
   font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.36rem, 0.8vw, 0.72rem);
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
