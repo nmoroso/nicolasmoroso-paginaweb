@@ -742,7 +742,7 @@ section {
 .simulador-form select,
 .simulador-form button {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.45rem, 1vw, 0.9rem);
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   font-weight: 400;
   color: #2E4057;
 }
@@ -901,6 +901,16 @@ section {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.resource-card h3 {
+  color: #457B9D;
+}
+
+.resource-card p {
+  color: #2E4057;
 }
 
 .resource-card:hover {
@@ -1113,7 +1123,7 @@ section {
 .simulador-inversiones .form-group select,
 .simulador-inversiones .form-group label,
 .simulador-inversiones button {
-  font-size: clamp(0.45rem, 1vw, 0.9rem);
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
 }
 /* Botón de Limpiar para el simulador de inversiones */
 .inversion-clear-btn {
@@ -1232,26 +1242,58 @@ section {
 
 
 .accordion-item {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  background: var(--blanco);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease;
 }
 
+.accordion-item:hover {
+  transform: translateY(-5px);
+}
 
 .accordion-title {
   width: 100%;
   text-align: left;
-  background: #f2f2f2;
-  padding: 10px;
+  background: var(--azul-profundo);
+  padding: 15px;
   cursor: pointer;
   border: none;
+
   font-size: clamp(0.45rem, 1vw, 0.9rem);
 
   border-radius: 4px;
+
   font-weight: 600;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-title::after {
+  content: "+";
+  font-weight: bold;
+  color: #ff6b35;
+  transition: transform 0.2s ease;
+}
+
+.accordion-item.active .accordion-title::after {
+  content: "-";
+  transform: rotate(180deg);
 }
 
 .accordion-content {
-  padding: 10px;
-  border: 1px solid #f2f2f2;
-  border-radius: 0 0 4px 4px;
+  padding: 15px;
+  border-top: 1px solid #f2f2f2;
+  border-radius: 0 0 10px 10px;
+  color: #2E4057;
+  line-height: 1.6;
+  display: none;
+}
 
+.accordion-item.active .accordion-content {
+  display: block;
 }
