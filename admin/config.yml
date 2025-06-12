@@ -17,3 +17,20 @@ collections:
       - { label: "Contenido", name: "body", widget: "markdown" }
       - { label: "Video (YouTube o Vimeo)", name: "video", widget: "string", required: false }
       - { label: "Archivo PDF", name: "archivo", widget: "file", required: false }
+        - name: "bancos"
+    label: "Aprende de Bancos"
+    folder: "educacion/bancos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "finanzas"
+    label: "Aprende de Finanzas"
+    folder: "educacion/finanzas"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
