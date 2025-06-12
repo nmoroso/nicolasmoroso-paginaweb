@@ -276,9 +276,23 @@
   color: #457B9D;
 }
 
-.resource-card p {
-  color: #2E4057;
-}
+  .resource-card p {
+    color: #2E4057;
+  }
+
+  /* Título de la sección Educación */
+  .education-title {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--azul-profundo);
+    color: #ffffff;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto 20px auto;
+  }
 
 
 
