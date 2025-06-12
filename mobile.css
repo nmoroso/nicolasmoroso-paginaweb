@@ -317,6 +317,8 @@
   cursor: pointer;
   border: none;
   color: var(--blanco);
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.38rem, 3vw, 0.77rem);
   font-weight: 600;
   border-radius: 10px;
   display: flex;
