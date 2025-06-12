@@ -1266,7 +1266,7 @@ section {
   border: none;
   color: #ffffff;
  
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
 /*/clamp(0.7rem, 0.9vw, 0.8rem);/*/
   border-radius: 4px;
 
