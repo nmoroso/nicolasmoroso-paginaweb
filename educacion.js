@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const loaders = {
     recursos: loadResources,
-    bancos: () => loadAccordion('bancos.json'),
-    finanzas: () => loadAccordion('finanzas.json')
+    bancos: () => loadAccordion('educacion/bancos.json'),
+    finanzas: () => loadAccordion('educacion/finanzas.json')
   };
 
   tabs.forEach(btn => {
