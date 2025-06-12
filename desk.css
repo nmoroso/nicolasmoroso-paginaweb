@@ -1276,7 +1276,8 @@ section {
   cursor: pointer;
   border: none;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.38rem, 0.85vw, 0.77rem);
+  font-size: clamp(0.5rem, 1vw, 1rem);
+  color: var(--blanco);
   border-radius: 4px;
   font-weight: 600;
   border-radius: 10px;
