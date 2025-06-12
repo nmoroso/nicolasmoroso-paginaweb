@@ -439,3 +439,15 @@
   padding: 4px 8px;
   font-weight: bold;
 }
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .header-container { padding: 5px; }
+  .menu-wrapper,
+  .header-agendar { width: 160px; }
+  .hero-banner { margin-top: 0; height: 100vh; }
+  .about-wrapper { height: auto; }
+  .about-image img { width: 60vw; margin-top: 5vh; }
+  .contacto-wrapper { margin: 20px auto; }
+}
+
