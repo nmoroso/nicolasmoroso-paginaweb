@@ -20,18 +20,28 @@ collections:
 
   - name: "bancos"
     label: "Aprende de Bancos"
-    folder: "educacion/bancos"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Contenido", name: "body", widget: "markdown" }
+    files:
+      - file: "educacion/bancos.json"
+        name: "bancos"
+        label: "Entradas"
+        fields:
+          - label: "Entradas"
+            name: "entries"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Contenido", name: "content", widget: "text" }
 
   - name: "finanzas"
     label: "Aprende de Finanzas"
-    folder: "educacion/finanzas"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Contenido", name: "body", widget: "markdown" }
+    files:
+      - file: "educacion/finanzas.json"
+        name: "finanzas"
+        label: "Entradas"
+        fields:
+          - label: "Entradas"
+            name: "entries"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Contenido", name: "content", widget: "text" }

@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function loadAccordion(file) {
     fetch(file)
       .then(res => res.json())
-      .then(items => {
+      .then(data => {
+        const items = data.entries;
         container.innerHTML = items.map((it, idx) => {
           return `\
             <div class="accordion-item">\
