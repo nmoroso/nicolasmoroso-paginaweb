@@ -288,6 +288,11 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.accordion-item:hover {
+  transform: translateY(-5px);
 }
 
 .accordion-title {
@@ -308,10 +313,13 @@
 .accordion-title::after {
   content: "+";
   font-weight: bold;
+  color: #ff6b35;
+  transition: transform 0.2s ease;
 }
 
 .accordion-item.active .accordion-title::after {
   content: "-";
+  transform: rotate(180deg);
 }
 
 .accordion-content {
@@ -319,6 +327,7 @@
   border-top: 1px solid #f2f2f2;
   border-radius: 0 0 10px 10px;
   color: #2E4057;
+  line-height: 1.6;
   display: none;
 }
 
