@@ -1,44 +1,26 @@
 
-let allEntries = [], allSections = [], allCategories = [];
+let allEntries = [];
 
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.education-tabs button');
   const container = document.getElementById('education-content');
 
+  const loaders = {
+    recursos: loadResources,
+    bancos: () => loadAccordion('educacion/bancos.json'),
+    finanzas: () => loadAccordion('educacion/finanzas.json')
+  };
 
   tabs.forEach(btn => {
     btn.addEventListener('click', () => {
       tabs.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const catBtn = document.querySelector('#category-selectors button.active');
-      const secBtn = document.querySelector('#section-selectors button.active');
-      if (catBtn && secBtn) {
-        loadPosts(catBtn.dataset.category, secBtn.dataset.section);
-      }
+      const key = btn.dataset.tab;
+      if (loaders[key]) loaders[key]();
     });
   });
 
-  loadCategories();
-
-  function loadCategories() {
-    fetch('educacion/categories.json')
-      .then(r => r.json())
-      .then(data => {
-        allCategories = data.categories;
-        const el = document.getElementById('category-selectors');
-        el.innerHTML = allCategories.map(c =>
-          `<button data-category="${c.id}">${c.name}</button>`
-        ).join('');
-        el.querySelectorAll('button').forEach(btn => {
-          btn.addEventListener('click', () => {
-            el.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            loadSections(btn.dataset.category);
-          });
-        });
-        if (el.firstChild) el.firstChild.click();
-      });
-  }
+  loadSections();
 
   function loadResources() {
     fetch('recursos.json')
@@ -58,9 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function loadAccordion(file) {
-    return fetch(file)
+    fetch(file)
       .then(res => res.json())
-      .then(data => { allEntries = data.entries; });
+      .then(data => {
+        allEntries = data.entries;
+        const active = document.querySelector('#section-selectors button.active');
+        if (active) {
+          filterBySection(active.dataset.section);
+        } else {
+          renderEntries(allEntries);
+        }
+      })
+      .catch(err => console.error(err));
   }
 
   function renderEntries(items) {
@@ -75,41 +66,27 @@ document.addEventListener('DOMContentLoaded', () => {
     setupAccordion();
   }
 
-  function filterAndRender(sectionId) {
-    const items = allEntries.filter(it => it.section === sectionId);
-    renderEntries(items);
+  function filterBySection(sectionId) {
+    renderEntries(allEntries.filter(it => it.section === sectionId));
   }
 
-  function loadSections(categoryId) {
+  function loadSections() {
     fetch('educacion/sections.json')
       .then(r => r.json())
       .then(data => {
-        allSections = data.sections.filter(s => s.categoryId === categoryId);
-        const el = document.getElementById('section-selectors');
-        el.innerHTML = allSections.map(s =>
+        const sel = document.getElementById('section-selectors');
+        sel.innerHTML = data.sections.map(s =>
           `<button data-section="${s.id}">${s.name}</button>`
         ).join('');
-        el.querySelectorAll('button').forEach(btn => {
+        sel.querySelectorAll('button').forEach(btn => {
           btn.addEventListener('click', () => {
-            el.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+            sel.querySelectorAll('button').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            loadPosts(categoryId, btn.dataset.section);
+            filterBySection(btn.dataset.section);
           });
         });
-        if (el.firstChild) el.firstChild.click();
+        if (sel.firstChild) sel.firstChild.click();
       });
-  }
-
-  function loadPosts(categoryId, sectionId) {
-    const loader = {
-      recursos: loadResources,
-      bancos: () => loadAccordion('educacion/bancos.json'),
-      finanzas: () => loadAccordion('educacion/finanzas.json')
-    };
-    const tab = document.querySelector('.education-tabs button.active').dataset.tab;
-    loader[tab]().then(() => {
-      filterAndRender(sectionId);
-    });
   }
 
   function setupAccordion() {

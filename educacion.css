@@ -28,14 +28,14 @@
   margin: 0 0 1em;
 }
 
-.section-tabs {
+.education-subtabs {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
   margin: 1.5rem 0;
 }
-.section-tabs button {
+.education-subtabs button {
   padding: 6px 14px;
   background: #f1f1f1;
   border: none;
@@ -44,7 +44,7 @@
   cursor: pointer;
   transition: background 0.2s;
 }
-.section-tabs button.active {
+.education-subtabs button.active {
   background: #457B9D;
   color: #fff;
 }
@@ -58,28 +58,5 @@
   font-size: 1.25rem;
   margin-bottom: 1rem;
   color: #333;
-}
-
-.category-tabs, .section-tabs {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin: 1rem 0;
-}
-.category-tabs button, .section-tabs button {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  background: #457B9D;
-  color: #fff;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-.category-tabs button:not(.active), .section-tabs button:not(.active) {
-  opacity: 0.6;
-}
-.category-tabs button.active, .section-tabs button.active {
-  opacity: 1;
-  background: #ff6b35;
 }
 
