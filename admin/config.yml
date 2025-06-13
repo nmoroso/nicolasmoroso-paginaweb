@@ -2,40 +2,46 @@ backend:
   name: git-gateway
   branch: main
 
-publish_mode: editorial_workflow
-
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "authors"
-    label: "Authors"
-    folder: "content/authors"
+  - name: "blog"
+    label: "Blog"
+    folder: "blog"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "ID", name: "id", widget: "string" }
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Avatar", name: "avatar", widget: "image" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+      - { label: "Video (YouTube o Vimeo)", name: "video", widget: "string", required: false }
+      - { label: "Archivo PDF", name: "archivo", widget: "file", required: false }
 
-  - name: "posts"
-    label: "Posts"
-    folder: "content/posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    preview_path: "blog/{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - label: "Author"
-        name: "author"
-        widget: "relation"
-        collection: "authors"
-        search_fields: ["name"]
-        value_field: "name"
-        display_fields: ["name"]
-      - { label: "Categories", name: "categories", widget: "list", allow_add: true }
-      - { label: "Tags", name: "tags", widget: "list", allow_add: true }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "bancos"
+    label: "Aprende de Bancos"
+    files:
+      - file: "educacion/bancos.json"
+        name: "bancos"
+        label: "Entradas"
+        fields:
+          - label: "Entradas"
+            name: "entries"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Contenido", name: "content", widget: "markdown" }
+
+  - name: "finanzas"
+    label: "Aprende de Finanzas"
+    files:
+      - file: "educacion/finanzas.json"
+        name: "finanzas"
+        label: "Entradas"
+        fields:
+          - label: "Entradas"
+            name: "entries"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Contenido", name: "content", widget: "markdown" }
