@@ -34,7 +34,10 @@ collections:
               - label: "Sección"
                 name: "section"
                 widget: "select"
-                options: ["Productos bancarios","Preguntas frecuentes","Procesos"]
+                options:
+                  - { label: "Productos Bancarios", value: "productos-bancarios" }
+                  - { label: "Preguntas Frecuentes", value: "preguntas-frecuentes" }
+                  - { label: "Procesos", value: "procesos" }
                 allow_add: true
 
   - name: "finanzas"
@@ -53,5 +56,23 @@ collections:
               - label: "Sección"
                 name: "section"
                 widget: "select"
-                options: ["Productos bancarios","Preguntas frecuentes","Procesos"]
+                options:
+                  - { label: "Productos Bancarios", value: "productos-bancarios" }
+                  - { label: "Preguntas Frecuentes", value: "preguntas-frecuentes" }
+                  - { label: "Procesos", value: "procesos" }
                 allow_add: true
+
+  - name: "secciones"
+    label: "Secciones Educación"
+    files:
+      - file: "educacion/sections.json"
+        name: "sections"
+        label: "Listado de secciones"
+        fields:
+          - label: "Secciones"
+            name: "sections"
+            widget: "list"
+            allow_add: true
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Nombre", name: "name", widget: "string" }

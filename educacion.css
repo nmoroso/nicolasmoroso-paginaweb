@@ -28,3 +28,35 @@
   margin: 0 0 1em;
 }
 
+.education-subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+.education-subtabs button {
+  padding: 6px 14px;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.education-subtabs button.active {
+  background: #457B9D;
+  color: #fff;
+}
+.section-block {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
