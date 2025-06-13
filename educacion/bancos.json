@@ -2,43 +2,35 @@
   "entries": [
     {
       "title": "🏦 Cuenta Corriente",
-      "content": "📌 Descripción:\nEs una cuenta bancaria tradicional que permite depósitos, giros, transferencias, uso de chequera y tarjetas de débito y crédito asociadas. Se asocia generalmente a clientes con ingresos estables.\n\n\n\n💡 ¿Para qué se usa?\nIdeal para administrar ingresos y gastos mensuales, pagar cuentas, acceder a líneas de crédito y domiciliar pagos recurrentes.\n\n\n\n🔍 Dato característico:\nPermite acceder a productos complementarios como la Línea de Crédito, lo que puede dar mayor flexibilidad, pero también conlleva el riesgo de sobreendeudamiento si no se usa bien.",
-      "section": "Productos bancarios"
+      "content": "📌 Descripción:\nEs una cuenta bancaria tradicional que permite depósitos, giros, transferencias, uso de chequera y tarjetas de débito y crédito asociadas. Se asocia generalmente a clientes con ingresos estables.\n\n💡 ¿Para qué se usa?\nIdeal para administrar ingresos y gastos mensuales, pagar cuentas, acceder a líneas de crédito y domiciliar pagos recurrentes.\n\n🔍 Dato característico:\nPermite acceder a productos complementarios como la Línea de Crédito, lo que puede dar mayor flexibilidad, pero también conlleva el riesgo de sobreendeudamiento si no se usa bien."
     },
     {
       "title": "💳 Tarjeta de Crédito",
-      "content": "📌 Descripción:\nEs un medio de pago que permite comprar ahora y pagar después, ya sea en una cuota (contado) o en varias (crédito). El banco paga por ti y tú le devuelves el dinero en la fecha de pago.\n\n\n\n💡 ¿Para qué se usa?\nPara compras nacionales o internacionales, pagos en cuotas, suscripciones digitales, emergencias o acumular puntos o cashback.\n\n\n\n🔍 Dato característico:\nMuchos bancos ofrecen beneficios exclusivos, como seguros, acumulación de millas o descuentos en comercios asociados.",
-      "section": "Productos bancarios"
+      "content": "📌 Descripción:\nEs un medio de pago que permite comprar ahora y pagar después, ya sea en una cuota (contado) o en varias (crédito). El banco paga por ti y tú le devuelves el dinero en la fecha de pago.\n\n💡 ¿Para qué se usa?\nPara compras nacionales o internacionales, pagos en cuotas, suscripciones digitales, emergencias o acumular puntos o cashback.\n\n🔍 Dato característico:\nMuchos bancos ofrecen beneficios exclusivos, como seguros, acumulación de millas o descuentos en comercios asociados."
     },
     {
       "title": "💰 Cuenta Vista",
-      "content": "📌 Descripción:\nCuenta bancaria que permite realizar depósitos y giros, sin chequera ni acceso a crédito. Generalmente no exige ingresos mínimos ni historial crediticio.\n\n\n\n💡 ¿Para qué se usa?\nPara recibir sueldos, subsidios, transferencias y hacer pagos electrónicos. Es una buena opción como cuenta secundaria o para quienes no califican para cuenta corriente.\n\n\n\n🔍 Dato característico:\nNo suele tener comisión de mantención si se usa activamente (según banco), y permite realizar transferencias inmediatas.",
-      "section": "Productos bancarios"
+      "content": "📌 Descripción:\nCuenta bancaria que permite realizar depósitos y giros, sin chequera ni acceso a crédito. Generalmente no exige ingresos mínimos ni historial crediticio.\n\n💡 ¿Para qué se usa?\nPara recibir sueldos, subsidios, transferencias y hacer pagos electrónicos. Es una buena opción como cuenta secundaria o para quienes no califican para cuenta corriente.\n\n🔍 Dato característico:\nNo suele tener comisión de mantención si se usa activamente (según banco), y permite realizar transferencias inmediatas."
     },
     {
       "title": "📈 Depósito a Plazo",
-      "content": "📌 Descripción:\nEs un producto de ahorro donde dejas tu dinero por un período determinado a cambio de una rentabilidad fija. No se puede retirar antes del plazo sin penalización.\n\n\n\n💡 ¿Para qué se usa?\nPara ahorrar de forma segura con una tasa fija. Es ideal si no necesitas el dinero a corto plazo y buscas bajo riesgo.\n\n\n\n🔍 Dato característico:\nEstá protegido por el seguro estatal del Fondo de Garantía de Depósitos, hasta UF 200 por persona y banco.",
-      "section": "Productos bancarios"
+      "content": "📌 Descripción:\nEs un producto de ahorro donde dejas tu dinero por un período determinado a cambio de una rentabilidad fija. No se puede retirar antes del plazo sin penalización.\n\n💡 ¿Para qué se usa?\nPara ahorrar de forma segura con una tasa fija. Es ideal si no necesitas el dinero a corto plazo y buscas bajo riesgo.\n\n🔍 Dato característico:\nEstá protegido por el seguro estatal del Fondo de Garantía de Depósitos, hasta UF 200 por persona y banco."
     },
     {
       "title": "🧾 Línea de Crédito",
-      "content": "📌 Descripción:\nEs un monto de dinero adicional que el banco pone a tu disposición asociado a tu cuenta corriente, el cual puedes usar si te quedas sin saldo.\n\n\n\n💡 ¿Para qué se usa?\nPara cubrir emergencias, pagos inesperados o evitar rechazos de pagos automáticos. Funciona como un respaldo inmediato.\n\n\n\n🔍 Dato característico:\nTiene una de las tasas de interés más altas del sistema financiero. Aunque no se cobra si no se usa, puede generar comisiones por uso parcial o renovación.",
-      "section": "Productos bancarios"
+      "content": "📌 Descripción:\nEs un monto de dinero adicional que el banco pone a tu disposición asociado a tu cuenta corriente, el cual puedes usar si te quedas sin saldo.\n\n💡 ¿Para qué se usa?\nPara cubrir emergencias, pagos inesperados o evitar rechazos de pagos automáticos. Funciona como un respaldo inmediato.\n\n🔍 Dato característico:\nTiene una de las tasas de interés más altas del sistema financiero. Aunque no se cobra si no se usa, puede generar comisiones por uso parcial o renovación."
     },
     {
       "title": "🏠 Crédito Hipotecario",
-      "content": "📌 Descripción:\nEs un préstamo de largo plazo otorgado para financiar la compra, construcción o ampliación de una vivienda. La propiedad queda en garantía (hipotecada) a favor del banco.\n\n\n\n💡 ¿Para qué se usa?\nPara acceder a la casa propia u obtener financiamiento para inversiones inmobiliarias.\n\n\n\n🔍 Dato característico:\nSe paga en cuotas mensuales por 15, 20 o hasta 30 años, y su tasa suele ser más baja que la de otros créditos debido a la garantía que entrega el inmueble.",
-      "section": "Productos bancarios"
+      "content": "📌 Descripción:\nEs un préstamo de largo plazo otorgado para financiar la compra, construcción o ampliación de una vivienda. La propiedad queda en garantía (hipotecada) a favor del banco.\n\n💡 ¿Para qué se usa?\nPara acceder a la casa propia u obtener financiamiento para inversiones inmobiliarias.\n\n🔍 Dato característico:\nSe paga en cuotas mensuales por 15, 20 o hasta 30 años, y su tasa suele ser más baja que la de otros créditos debido a la garantía que entrega el inmueble."
     },
     {
       "title": "🛍️ Crédito de Consumo",
-      "content": "📌 Descripción:\nEs un préstamo de libre disposición que puedes usar para cualquier fin personal: viajes, salud, consolidación de deudas, etc. No requiere garantía.\n\n\n\n💡 ¿Para qué se usa?\nPara financiar gastos importantes en el corto o mediano plazo. Puedes elegir el plazo, monto y cuotas según tu capacidad de pago.\n\n\n\n🔍 Dato característico:\nAlgunos bancos permiten pre-aprobaciones 100% online si ya eres cliente, con depósito inmediato en tu cuenta.",
-      "section": "Productos bancarios"
+      "content": "📌 Descripción:\nEs un préstamo de libre disposición que puedes usar para cualquier fin personal: viajes, salud, consolidación de deudas, etc. No requiere garantía.\n\n💡 ¿Para qué se usa?\nPara financiar gastos importantes en el corto o mediano plazo. Puedes elegir el plazo, monto y cuotas según tu capacidad de pago.\n\n🔍 Dato característico:\nAlgunos bancos permiten pre-aprobaciones 100% online si ya eres cliente, con depósito inmediato en tu cuenta."
     },
     {
       "title": "🧿 Seguros",
-      "content": "📌 Descripción:\nSon seguros ofrecidos por los bancos y corredoras de seguros, pero gestionados por compañías aseguradoras. Pueden ser voluntarios (como seguros de vida, salud, auto) u obligatorios* (como el de desgravamen en créditos). \n\n\n\n\\*El cliente puede solicitar al banco eliminar el seguro de desgravamen, pero requiere la aprobación de la institución.\n\n\n\n💡 ¿Para qué se usa?\nPara proteger tu patrimonio o tu salud, y en algunos casos, para asegurar el pago de una deuda en caso de fallecimiento o invalidez.\n\n\n\n🔍 Dato característico:\nMuchos seguros están asociados a productos bancarios, por lo que se descuentan automáticamente mes a mes de tu cuenta o crédito.",
-      "section": "Productos bancarios"
+      "content": "📌 Descripción:\nSon seguros ofrecidos por los bancos y corredoras de seguros, pero gestionados por compañías aseguradoras. Pueden ser voluntarios (como seguros de vida, salud, auto) u obligatorios* (como el de desgravamen en créditos). \n\n*El cliente puede solicitar al banco eliminar el seguro de desgravamen, pero requiere la aprobación de la institución.\n\n💡 ¿Para qué se usa?\nPara proteger tu patrimonio o tu salud, y en algunos casos, para asegurar el pago de una deuda en caso de fallecimiento o invalidez.\n\n🔍 Dato característico:\nMuchos seguros están asociados a productos bancarios, por lo que se descuentan automáticamente mes a mes de tu cuenta o crédito."
     }
   ]
 }

@@ -8,29 +8,9 @@ media_folder: "static/uploads"
 public_folder: "/uploads"
 
 collections:
-<<<<<<< HEAD
   - name: "authors"
     label: "Authors"
     folder: "content/authors"
-=======
-  - name: "categorias"
-    label: "Pestañas (Categorías)"
-    files:
-      - file: "educacion/categories.json"
-        name: "categorias"
-        label: "Listado de categorías"
-        fields:
-          - label: "Categorías"
-            name: "categories"
-            widget: "list"
-            allow_add: true
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Nombre", name: "name", widget: "string" }
-  - name: "blog"
-    label: "Blog"
-    folder: "blog"
->>>>>>> 7b37ef29f2dbbd9d4f92d3c6c940ab56d8b8d172
     create: true
     slug: "{{slug}}"
     fields:
@@ -38,7 +18,6 @@ collections:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Avatar", name: "avatar", widget: "image" }
 
-<<<<<<< HEAD
   - name: "posts"
     label: "Posts"
     folder: "content/posts"
@@ -60,86 +39,3 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", allow_add: true }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
-=======
-  - name: "bancos"
-    label: "Aprende de Bancos"
-    files:
-      - file: "educacion/bancos.json"
-        name: "bancos"
-        label: "Entradas"
-        fields:
-          - label: "Entradas"
-            name: "entries"
-            widget: "list"
-            fields:
-              - { label: "Título", name: "title", widget: "string" }
-              - { label: "Contenido", name: "content", widget: "markdown" }
-              - label: "Categoría"
-                name: "category"
-                widget: "relation"
-                collection: "categorias"
-                searchFields: ["name"]
-                valueField: "id"
-                displayFields: ["name"]
-                required: true
-              - label: "Sección"
-                name: "section"
-                widget: "relation"
-                collection: "secciones"
-                searchFields: ["name"]
-                valueField: "id"
-                displayFields: ["name"]
-                required: true
-
-  - name: "finanzas"
-    label: "Aprende de Finanzas"
-    files:
-      - file: "educacion/finanzas.json"
-        name: "finanzas"
-        label: "Entradas"
-        fields:
-          - label: "Entradas"
-            name: "entries"
-            widget: "list"
-            fields:
-              - { label: "Título", name: "title", widget: "string" }
-              - { label: "Contenido", name: "content", widget: "markdown" }
-              - label: "Categoría"
-                name: "category"
-                widget: "relation"
-                collection: "categorias"
-                searchFields: ["name"]
-                valueField: "id"
-                displayFields: ["name"]
-                required: true
-              - label: "Sección"
-                name: "section"
-                widget: "relation"
-                collection: "secciones"
-                searchFields: ["name"]
-                valueField: "id"
-                displayFields: ["name"]
-                required: true
-
-  - name: "secciones"
-    label: "Secciones Educación"
-    files:
-      - file: "educacion/sections.json"
-        name: "sections"
-        label: "Listado de secciones"
-        fields:
-          - label: "Secciones"
-            name: "sections"
-            widget: "list"
-            allow_add: true
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Nombre", name: "name", widget: "string" }
-              - label: "Categoría"
-                name: "categoryId"
-                widget: "select"
-                options: "{{categories}}"
-                valueField: "id"
-                labelField: "name"
-                required: true
->>>>>>> 7b37ef29f2dbbd9d4f92d3c6c940ab56d8b8d172
