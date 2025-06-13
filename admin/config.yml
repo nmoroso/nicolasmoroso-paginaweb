@@ -30,7 +30,7 @@ collections:
             widget: "list"
             fields:
               - { label: "Título", name: "title", widget: "string" }
-              - { label: "Contenido", name: "content", widget: "text" }
+              - { label: "Contenido", name: "content", widget: "markdown" }
 
   - name: "finanzas"
     label: "Aprende de Finanzas"
@@ -44,4 +44,4 @@ collections:
             widget: "list"
             fields:
               - { label: "Título", name: "title", widget: "string" }
-              - { label: "Contenido", name: "content", widget: "text" }
+              - { label: "Contenido", name: "content", widget: "markdown" }

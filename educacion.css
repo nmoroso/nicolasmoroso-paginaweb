@@ -24,3 +24,7 @@
   color: #ffffff;
 }
 
+.accordion-content p {
+  margin: 0 0 1em;
+}
+
