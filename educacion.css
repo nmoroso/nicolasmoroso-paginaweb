@@ -83,3 +83,31 @@
   background: #ff6b35;
 }
 
+.education-subtabs {
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+.education-subtabs button {
+  padding: 8px 16px;
+  background: #457B9D;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.45rem, 1vw, 0.9rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+  opacity: 0.8;
+}
+.education-subtabs button:hover {
+  opacity: 1;
+}
+.education-subtabs button.active {
+  background: #ff6b35;
+  opacity: 1;
+}
+
