@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const loaders = {
     recursos: loadResources,
-    bancos: () => loadAccordion('bancos.json'),
-    finanzas: () => loadAccordion('finanzas.json')
+    bancos: () => loadAccordion('educacion/bancos.json'),
+    finanzas: () => loadAccordion('educacion/finanzas.json')
   };
 
   tabs.forEach(btn => {
@@ -38,12 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function loadAccordion(file) {
     fetch(file)
       .then(res => res.json())
-      .then(items => {
+      .then(data => {
+        const items = data.entries;
         container.innerHTML = items.map((it, idx) => {
+          const htmlContent = marked.parse(it.content);
           return `\
             <div class="accordion-item">\
               <button class="accordion-title" data-index="${idx}">${it.title}</button>\
-              <div class="accordion-content">${it.content}</div>\
+              <div class="accordion-content">${htmlContent}</div>\
             </div>`;
         }).join('');
         setupAccordion();
