@@ -1216,21 +1216,21 @@ section {
 
 .education-tabs {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
   margin-bottom: 20px;
 }
 
 
 .education-tabs button {
-  padding: 8px 16px;
+  padding: 12px 24px;
   cursor: pointer;
   background: #457B9D;
   color: #ffffff;
   border: none;
   border-radius: 5px;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.45rem, 1vw, 0.9rem);
+  font-size: clamp(0.6rem, 1.2vw, 1rem);
   font-weight: 600;
 }
 
@@ -1300,4 +1300,20 @@ section {
 
 .accordion-item.active .accordion-content {
   display: block;
+}
+
+/* bloques de secciones en educacion */
+.sections-container {
+  width: 100%;
+}
+.section-block {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
