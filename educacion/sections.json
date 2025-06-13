@@ -2,15 +2,18 @@
   "sections": [
     {
       "id": "productos-bancarios",
-      "name": "Productos Bancarios"
+      "name": "Productos Bancarios",
+      "categoryId": "aprende-bancos"
     },
     {
       "id": "preguntas-frecuentes",
-      "name": "Preguntas Frecuentes"
+      "name": "Preguntas Frecuentes",
+      "categoryId": "aprende-finanzas"
     },
     {
       "id": "procesos",
-      "name": "Procesos"
+      "name": "Procesos",
+      "categoryId": "aprende-finanzas"
     }
   ]
 }
