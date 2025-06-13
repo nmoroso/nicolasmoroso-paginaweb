@@ -1,0 +1,7 @@
+{
+  "sections": [
+    { "id": "productos-bancarios",  "name": "Productos Bancarios" },
+    { "id": "preguntas-frecuentes", "name": "Preguntas Frecuentes" },
+    { "id": "procesos",             "name": "Procesos" }
+  ]
+}
