@@ -6,6 +6,20 @@ media_folder: "static/uploads"
 public_folder: "/uploads"
 
 collections:
+  - name: "categorias"
+    label: "Pestañas (Categorías)"
+    files:
+      - file: "educacion/categories.json"
+        name: "categorias"
+        label: "Listado de categorías"
+        fields:
+          - label: "Categorías"
+            name: "categories"
+            widget: "list"
+            allow_add: true
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Nombre", name: "name", widget: "string" }
   - name: "blog"
     label: "Blog"
     folder: "blog"
@@ -31,14 +45,22 @@ collections:
             fields:
               - { label: "Título", name: "title", widget: "string" }
               - { label: "Contenido", name: "content", widget: "markdown" }
+              - label: "Categoría"
+                name: "category"
+                widget: "relation"
+                collection: "categorias"
+                searchFields: ["name"]
+                valueField: "id"
+                displayFields: ["name"]
+                required: true
               - label: "Sección"
                 name: "section"
-                widget: "select"
-                options:
-                  - { label: "Productos Bancarios", value: "productos-bancarios" }
-                  - { label: "Preguntas Frecuentes", value: "preguntas-frecuentes" }
-                  - { label: "Procesos", value: "procesos" }
-                allow_add: true
+                widget: "relation"
+                collection: "secciones"
+                searchFields: ["name"]
+                valueField: "id"
+                displayFields: ["name"]
+                required: true
 
   - name: "finanzas"
     label: "Aprende de Finanzas"
@@ -53,14 +75,22 @@ collections:
             fields:
               - { label: "Título", name: "title", widget: "string" }
               - { label: "Contenido", name: "content", widget: "markdown" }
+              - label: "Categoría"
+                name: "category"
+                widget: "relation"
+                collection: "categorias"
+                searchFields: ["name"]
+                valueField: "id"
+                displayFields: ["name"]
+                required: true
               - label: "Sección"
                 name: "section"
-                widget: "select"
-                options:
-                  - { label: "Productos Bancarios", value: "productos-bancarios" }
-                  - { label: "Preguntas Frecuentes", value: "preguntas-frecuentes" }
-                  - { label: "Procesos", value: "procesos" }
-                allow_add: true
+                widget: "relation"
+                collection: "secciones"
+                searchFields: ["name"]
+                valueField: "id"
+                displayFields: ["name"]
+                required: true
 
   - name: "secciones"
     label: "Secciones Educación"
@@ -76,3 +106,10 @@ collections:
             fields:
               - { label: "ID", name: "id", widget: "string" }
               - { label: "Nombre", name: "name", widget: "string" }
+              - label: "Categoría"
+                name: "categoryId"
+                widget: "select"
+                options: "{{categories}}"
+                valueField: "id"
+                labelField: "name"
+                required: true
