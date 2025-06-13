@@ -40,12 +40,25 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(res => res.json())
       .then(data => {
         const items = data.entries;
-        container.innerHTML = items.map((it, idx) => {
-          const htmlContent = marked.parse(it.content);
+        const groups = items.reduce((acc, it) => {
+          acc[it.section] = acc[it.section] || [];
+          acc[it.section].push(it);
+          return acc;
+        }, {});
+        let idx = 0;
+        container.innerHTML = Object.entries(groups).map(([section, arr]) => {
+          const cards = arr.map(it => {
+            const htmlContent = marked.parse(it.content);
+            return `\
+              <div class="accordion-item">\
+                <button class="accordion-title" data-index="${idx++}">${it.title}</button>\
+                <div class="accordion-content">${htmlContent}</div>\
+              </div>`;
+          }).join('');
           return `\
-            <div class="accordion-item">\
-              <button class="accordion-title" data-index="${idx}">${it.title}</button>\
-              <div class="accordion-content">${htmlContent}</div>\
+            <div class="section-block">\
+              <h2 class="section-title">${section}</h2>\
+              <div class="accordion">${cards}</div>\
             </div>`;
         }).join('');
         setupAccordion();

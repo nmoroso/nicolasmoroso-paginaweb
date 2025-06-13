@@ -440,6 +440,22 @@
   font-weight: bold;
 }
 
+/* bloques de secciones en educacion */
+.sections-container {
+  width: 100%;
+}
+.section-block {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
 /* Ajustes para pantallas muy pequeñas */
 @media (max-width: 480px) {
   .header-container { padding: 5px; }

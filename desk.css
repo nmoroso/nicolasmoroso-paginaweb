@@ -1301,3 +1301,19 @@ section {
 .accordion-item.active .accordion-content {
   display: block;
 }
+
+/* bloques de secciones en educacion */
+.sections-container {
+  width: 100%;
+}
+.section-block {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+}

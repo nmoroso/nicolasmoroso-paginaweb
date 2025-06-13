@@ -2,11 +2,13 @@
   "entries": [
     {
       "title": "¿Qué es el interés compuesto?",
-      "content": "Breve explicación del interés compuesto y su importancia en el ahorro."
+      "content": "Breve explicación del interés compuesto y su importancia en el ahorro.",
+      "section": "Preguntas frecuentes"
     },
     {
       "title": "Cómo hacer un presupuesto",
-      "content": "Pasos sencillos para ordenar tus finanzas personales mes a mes."
+      "content": "Pasos sencillos para ordenar tus finanzas personales mes a mes.",
+      "section": "Procesos"
     }
   ]
 }
