@@ -41,10 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(data => {
         const items = data.entries;
         container.innerHTML = items.map((it, idx) => {
+          const htmlContent = marked.parse(it.content);
           return `\
             <div class="accordion-item">\
               <button class="accordion-title" data-index="${idx}">${it.title}</button>\
-              <div class="accordion-content">${it.content}</div>\
+              <div class="accordion-content">${htmlContent}</div>\
             </div>`;
         }).join('');
         setupAccordion();
