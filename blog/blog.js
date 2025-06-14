@@ -36,12 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       posts.forEach(({ meta, content }) => {
-        let imageUrl = '';
-        const imgMatch = content.match(/!\[[^\]]*\]\(([^)]+)\)/);
-        if (imgMatch) {
-          imageUrl = imgMatch[1];
-          content = content.replace(imgMatch[0], '');
-        }
+        let imageUrl = meta.image || '';
 
         const html = marked.parse(content);
 
