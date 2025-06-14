@@ -63,4 +63,4 @@ Y si entendemos este dilema, podemos empezar a construir desde ahí: sin culpa, 
 
 **En las próximas publicaciones exploraremos herramientas para tomar mejores decisiones, incluso cuando las emociones estén en el centro.**
 
-![](/uploads/chatgpt-image-13-jun-2025-19_36_59.png)
+![](/uploads/0ce4bb10-0786-4722-bd69-d34af1b47487.png)
