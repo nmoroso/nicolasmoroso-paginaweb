@@ -440,6 +440,62 @@
   font-weight: bold;
 }
 
+@media (max-width: 768px) {
+  /* ----- Simulador de Crédito ----- */
+  .simulador-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .simulador-form,
+  .simulador-info,
+  .simulador-tabla {
+    width: 100%;
+    max-width: none;
+  }
+
+  .simulador-form .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .simulador-form .form-group label {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+
+  .simulador-form .form-group input[type="text"],
+  .simulador-form .form-group input[type="number"],
+  .simulador-form .form-group select {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* ----- Simulador de Inversiones ----- */
+  .simulador-inversiones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .simulador-inversiones .formulario,
+  .simulador-inversiones .referencia {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .simulador-inversiones .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .simulador-inversiones .form-group label {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+}
+
 /* Ajustes para pantallas muy pequeñas */
 @media (max-width: 480px) {
   .header-container { padding: 5px; }
