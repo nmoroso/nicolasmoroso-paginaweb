@@ -3,6 +3,8 @@ title: ¿Por qué nos saboteamos a nosotros mismos? El dilema de la temporalidad
   de las emociones.
 date: 2025-06-13T22:42:57.091Z
 ---
+![](/uploads/0ce4bb10-0786-4722-bd69-d34af1b47487.png)
+
 Todos hemos experimentado alguna vez una particular dualidad: enfrentarnos a nuestro "yo" de diferentes tiempos.\
 ¿Cuántas veces hemos culpado al “yo” del pasado por la situación en la que estamos hoy?\
 ¿Y cuántas veces, con toda intención, le dejamos al “yo” del futuro las consecuencias de lo que no queremos resolver ahora?
@@ -62,5 +64,3 @@ Y si entendemos este dilema, podemos empezar a construir desde ahí: sin culpa, 
 - - -
 
 **En las próximas publicaciones exploraremos herramientas para tomar mejores decisiones, incluso cuando las emociones estén en el centro.**
-
-![](/uploads/0ce4bb10-0786-4722-bd69-d34af1b47487.png)
