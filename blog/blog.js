@@ -41,7 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (meta.image && typeof meta.image === 'object' && meta.image.src) {
           imageUrl = meta.image.src;
         } else if (typeof meta.image === 'string') {
-          imageUrl = meta.image;
+          // If the image value is just a file name, prepend the imgblog path
+          if (!meta.image.includes('/')) {
+            imageUrl = `/imgblog/${meta.image}`;
+          } else {
+            imageUrl = meta.image;
+          }
         }
         console.log('📸 URL de imagen detectada:', imageUrl);
 
