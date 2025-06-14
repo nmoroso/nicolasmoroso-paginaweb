@@ -37,6 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
       posts.forEach(({ meta, content }) => {
         const imageUrl = meta.image || '';
+        console.log('📸 URL de imagen detectada:', imageUrl);
+
+        let resolvedImageUrl = imageUrl;
+        if (imageUrl && imageUrl.startsWith('/')) {
+          resolvedImageUrl = window.location.origin + imageUrl;
+        }
 
         // Format date to DD/MM/YYYY if present
         let formattedDate = '';
@@ -58,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <h1 class="blog-title">${meta.title || ''}</h1>
             <p class="blog-date">${formattedDate}</p>
           </div>
-          ${imageUrl ? `<div class="blog-image-wrapper"><img src="${imageUrl}" alt="Imagen del post" class="blog-image"></div>` : ''}
+          ${imageUrl ? `<div class="blog-image-wrapper"><img src="${resolvedImageUrl}" alt="Imagen del post" class="blog-image" onerror="this.style.display='none'; console.warn('⚠️ No se pudo cargar la imagen:', this.src);"></div>` : ''}
           <div class="blog-content">${html}</div>
         `;
 
