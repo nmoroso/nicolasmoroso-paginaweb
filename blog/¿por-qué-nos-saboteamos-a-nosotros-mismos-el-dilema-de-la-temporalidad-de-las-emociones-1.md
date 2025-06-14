@@ -1,7 +1,7 @@
 ---
 title: ¿Por qué nos saboteamos a nosotros mismos? El dilema de la temporalidad
   de las emociones.
-date: 2025-06-14T00:44:04.565Z
+date: 2025-06-14T01:05:00.000Z
 ---
 ![](/uploads/0ce4bb10-0786-4722-bd69-d34af1b47487.png)
 
