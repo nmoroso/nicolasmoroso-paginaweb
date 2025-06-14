@@ -36,7 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       posts.forEach(({ meta, content }) => {
-        const imageUrl = meta.image || '';
+        // Netlify CMS can provide the image as an object or a string
+        let imageUrl = '';
+        if (meta.image && typeof meta.image === 'object' && meta.image.src) {
+          imageUrl = meta.image.src;
+        } else if (typeof meta.image === 'string') {
+          imageUrl = meta.image;
+        }
         console.log('📸 URL de imagen detectada:', imageUrl);
 
         let resolvedImageUrl = imageUrl;
