@@ -36,10 +36,26 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       posts.forEach(({ meta, content }) => {
-        const article = document.createElement('article');
+        let imageUrl = '';
+        const imgMatch = content.match(/!\[[^\]]*\]\(([^)]+)\)/);
+        if (imgMatch) {
+          imageUrl = imgMatch[1];
+          content = content.replace(imgMatch[0], '');
+        }
+
         const html = marked.parse(content);
-        article.innerHTML = `<h2>${meta.title || ''}</h2>\n<div class="date">${meta.date || ''}</div>\n${html}`;
-        container.appendChild(article);
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'blog-post-wrapper';
+
+        wrapper.innerHTML = `
+          <h1 class="blog-title">${meta.title || ''}</h1>
+          <p class="blog-date">${meta.date || ''}</p>
+          ${imageUrl ? `<div class="blog-image-wrapper"><img src="${imageUrl}" alt="Imagen del post" class="blog-image"></div>` : ''}
+          <div class="blog-content">${html}</div>
+        `;
+
+        container.appendChild(wrapper);
       });
     })
     .catch(err => console.error('Error cargando posts', err));
