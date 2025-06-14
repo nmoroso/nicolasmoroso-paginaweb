@@ -36,7 +36,17 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       posts.forEach(({ meta, content }) => {
-        let imageUrl = meta.image || '';
+        const imageUrl = meta.image || '';
+
+        // Format date to DD/MM/YYYY if present
+        let formattedDate = '';
+        if (meta.date) {
+          const dateObj = new Date(meta.date);
+          const day = String(dateObj.getDate()).padStart(2, '0');
+          const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+          const year = dateObj.getFullYear();
+          formattedDate = `${day}/${month}/${year}`;
+        }
 
         const html = marked.parse(content);
 
@@ -46,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         wrapper.innerHTML = `
           <div class="blog-header">
             <h1 class="blog-title">${meta.title || ''}</h1>
-            <p class="blog-date">${meta.date || ''}</p>
+            <p class="blog-date">${formattedDate}</p>
           </div>
           ${imageUrl ? `<div class="blog-image-wrapper"><img src="${imageUrl}" alt="Imagen del post" class="blog-image"></div>` : ''}
           <div class="blog-content">${html}</div>
