@@ -11,25 +11,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
   .blog-post-wrapper {
-    max-width: 100%;
-    padding: 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2rem 0;
+    margin: 0 auto;
+    width: 50%;
+    max-width: 900px;
+  }
+
+  .blog-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
   }
 
   .blog-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
     margin-bottom: 0.5rem;
   }
 
   .blog-date {
     font-size: 0.95rem;
     color: #666;
-    text-align: center;
-    margin-bottom: 1.5rem;
   }
 
   .blog-image-wrapper {
@@ -45,15 +49,13 @@
   }
 
   .blog-content {
-    width: 50%;
-    max-width: 900px;
     text-align: left;
     font-size: 1rem;
     line-height: 1.8;
   }
 
   @media (max-width: 1024px) {
-    .blog-content {
+    .blog-post-wrapper {
       width: 80%;
     }
     .blog-image-wrapper {
@@ -118,7 +120,6 @@
   </header>
 
   <main class="container" style="padding: 120px 20px 60px 20px;">
-    <h1 style="text-align:center;">Blog</h1>
     <div id="blog-posts"></div>
   </main>
 

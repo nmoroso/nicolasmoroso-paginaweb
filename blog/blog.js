@@ -49,8 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
         wrapper.className = 'blog-post-wrapper';
 
         wrapper.innerHTML = `
-          <h1 class="blog-title">${meta.title || ''}</h1>
-          <p class="blog-date">${meta.date || ''}</p>
+          <div class="blog-header">
+            <h1 class="blog-title">${meta.title || ''}</h1>
+            <p class="blog-date">${meta.date || ''}</p>
+          </div>
           ${imageUrl ? `<div class="blog-image-wrapper"><img src="${imageUrl}" alt="Imagen del post" class="blog-image"></div>` : ''}
           <div class="blog-content">${html}</div>
         `;
