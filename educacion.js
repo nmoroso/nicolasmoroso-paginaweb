@@ -20,9 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const sectionName = btn.dataset.tab === 'bancos' ? 'Aprende de Bancos' : 'Aprende de Finanzas';
       const filtered = allItems.filter(it => it.Sección === sectionName);
       const cats = [...new Set(filtered.map(it => it.Subcategoría))];
+      const catsInfo = cats.map(cat => {
+        const itemImg = filtered.find(it => it.Subcategoría === cat && it.Imagen);
+        return { cat, img: itemImg ? itemImg.Imagen : '' };
+      });
       const secEl = document.getElementById('section-selectors');
       secEl.style.display = 'flex';
-      secEl.innerHTML = cats.map(c => `<button data-cat="${c}">${c}</button>`).join('');
+      secEl.innerHTML = catsInfo.map(c => `
+        <button data-cat="${c.cat}" class="subcategory-card">
+          ${c.img ? `<img src="${c.img}" alt="${c.cat}">` : ''}
+          <span>${c.cat}</span>
+        </button>`).join('');
       secEl.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
         secEl.querySelectorAll('button').forEach(x => x.classList.remove('active'));
         b.classList.add('active');
