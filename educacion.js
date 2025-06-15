@@ -20,10 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const bancos = data.filter(entry => entry.Sección === "Aprende de Bancos");
 
       const mapped = bancos.map(it => ({
-        title: it.Name,
-        content: it.Contenido
+        Name: it.Name,
+        content: it.Contenido,
+        Imagen: it.Imagen,
+        Subcategoría: it.Subcategoría
       }));
-
 
       renderEntries(mapped);
     });
@@ -36,8 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const finanzas = data.filter(entry => entry.Sección === "Aprende de Finanzas");
 
       const mapped = finanzas.map(it => ({
-        title: it.Name,
-        content: it.Contenido
+        Name: it.Name,
+        content: it.Contenido,
+        Imagen: it.Imagen,
+        Subcategoría: it.Subcategoría
       }));
 
       renderEntries(mapped);
@@ -109,25 +112,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 function renderEntries(items) {
+  const container = document.getElementById('education-content');
   container.innerHTML = items.map((it, i) => {
-    const htmlContent = marked.parse(it.content || '');
-    const image = it.Imagen ? `<img src="${it.Imagen}" alt="${it.title}" class="accordion-img">` : '';
+    const html = marked.parse(it.content || '');
+    const img = it.Imagen ? `<img src="${it.Imagen}" alt="" class="accordion-img">` : '';
     const tag = it.Subcategoría ? `<div class="accordion-tag">${it.Subcategoría}</div>` : '';
-
     return `
       <div class="accordion-item">
         <button class="accordion-title" data-index="${i}">
           <div class="accordion-header">
-            ${image}
+            ${img}
             <div class="accordion-title-text">
-              <strong>${it.title}</strong>
+              <strong>${it.Name}</strong>
               ${tag}
             </div>
           </div>
         </button>
-        <div class="accordion-content">${htmlContent}</div>
-      </div>
-    `;
+        <div class="accordion-content">${html}</div>
+      </div>`;
   }).join('');
   setupAccordion();
 }
