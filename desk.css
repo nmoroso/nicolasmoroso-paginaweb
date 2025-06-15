@@ -1206,82 +1206,100 @@ section {
 }
 
 /* ===== Sección Educación ===== */
-
 .education-box {
   max-width: 1080px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
-
 .education-tabs {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
-
 
 .education-tabs button {
-  padding: 8px 16px;
+  padding: 10px 20px;
   cursor: pointer;
   background: #457B9D;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.45rem, 1vw, 0.9rem);
-  font-weight: 600;
-}
-
-
-.education-tabs button.active {
-  background: #ff6b35;
   color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.6rem, 1vw, 0.9rem);
+  font-weight: 600;
+  transition: background 0.2s;
 }
 
-/* Título de la sección Educación */
+.education-tabs button.active,
+.education-tabs button:hover {
+  background: #ff6b35;
+}
 
-
-
+/* ===== Acordeón estilo tarjeta ===== */
 .accordion-item {
-  margin-bottom: 20px;
-  background: var(--blanco);
+  margin-bottom: 24px;
+  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   overflow: hidden;
   transition: transform 0.2s ease;
 }
 
 .accordion-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 .accordion-title {
   width: 100%;
-  text-align: left;
   background: var(--azul-profundo);
-  padding: 15px;
-  cursor: pointer;
+  color: #fff;
   border: none;
-  color: #ffffff;
- 
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
-/*/clamp(0.7rem, 0.9vw, 0.8rem);/*/
-  border-radius: 4px;
+  padding: 0;
+  cursor: pointer;
+}
 
-  font-weight: 600;
-  border-radius: 10px;
+.accordion-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+}
+
+.accordion-img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.accordion-title-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.accordion-title-text strong {
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+}
+
+.accordion-tag {
+  align-self: start;
+  font-size: 0.65rem;
+  color: #fff;
+  background: #ff6b35;
+  padding: 3px 10px;
+  border-radius: 4px;
 }
 
 .accordion-title::after {
   content: "+";
   font-weight: bold;
-  color: #ffffff;
   transition: transform 0.2s ease;
+  margin-right: 18px;
 }
 
 .accordion-item.active .accordion-title::after {
@@ -1290,9 +1308,9 @@ section {
 }
 
 .accordion-content {
-  padding: 15px;
-  border-top: 1px solid #f2f2f2;
-  border-radius: 0 0 10px 10px;
+  padding: 16px 20px;
+  border-top: 1px solid #ececec;
+  background: #fafafa;
   color: #2E4057;
   line-height: 1.6;
   display: none;
