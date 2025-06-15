@@ -1237,6 +1237,29 @@ section {
   background: #ff6b35;
 }
 
+#section-selectors {
+  display: none;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+#section-selectors button {
+  padding: 8px 16px;
+  background: var(--azul-profundo);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#section-selectors button:hover,
+#section-selectors button.active {
+  background: #ff6b35;
+}
+
 /* ===== Acordeón estilo tarjeta ===== */
 .accordion-item {
   margin-bottom: 24px;
