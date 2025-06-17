@@ -120,27 +120,21 @@
 </header>
 
   <!-- 🔽 AQUÍ VA EL CONTENIDO EXCLUSIVO DE LA PÁGINA educación.html -->
- <main class="container" style="padding: 120px 20px 60px;">
-  <h1 style="text-align:center;">Repositorio de Educación Financiera</h1><br><br>
-  <p style="text-align:center; max-width:700px; margin:0 auto 40px;">
-    Aquí encontrarás recursos gratuitos y prácticos para mejorar tu relación con el dinero. 
-    Descarga, comparte y aprende a tu ritmo.
+ <main class="container" style="padding: 120px 20px 60px 20px;">
+  <h1 style="text-align:center;">Repositorio de Educación Financiera</h1>
+  <p style="text-align:center; max-width: 700px; margin: 0 auto 40px;">
+    <br><br>Aquí encontrarás recursos gratuitos y prácticos para mejorar tu relación con el dinero. Descarga, comparte y aprende a tu ritmo.
   </p>
 
-  <div class="education-box">
-    <!-- 1) Las tres pestañas -->
-    <div class="education-tabs">
-      <button data-tab="recursos">Recursos</button>
-      <button data-tab="bancos">Aprende de Bancos</button>
-      <button data-tab="finanzas">Aprende de Finanzas</button>
+    <div class="education-box">
+      <div class="education-tabs">
+        <button data-tab="recursos">Recursos</button>
+        <button data-tab="bancos">Aprende de Bancos</button>
+        <button data-tab="finanzas">Aprende de Finanzas</button>
+      </div>
+      <div id="section-selectors" style="display:none; margin:20px 0;"></div>
+      <div id="education-content"></div>
     </div>
-
-    <!-- 2) Aquí saltarán las sub-categorías (solo para Bancos/Finanzas) -->
-    <div id="section-selectors"></div>
-
-    <!-- 3) Aquí pinta tu JS (grid de recursos o acordeones) -->
-    <div id="education-content"></div>
-  </div>
 </main>
 
 

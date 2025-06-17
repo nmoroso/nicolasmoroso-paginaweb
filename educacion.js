@@ -1,139 +1,98 @@
-// educacion.js
+let allItems = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-  const tabs       = document.querySelectorAll('.education-tabs button');
-  const contentEl  = document.getElementById('education-content');
-  const sectionEl  = document.getElementById('section-selectors');
+  // cargar tabla de Notion completa
+  fetch('https://notion-api.splitbee.io/v1/table/21294b1ad37b8098b48dc788a148be7b')
+    .then(r => r.json())
+    .then(data => allItems = data);
 
-  // Variable para almacenar datos de Notion
-  let allEntries = [];
+  const tabs = document.querySelectorAll('.education-tabs button');
+  const container = document.getElementById('education-content');
 
-  // Oculta contenido y secciones
-  function hideAll() {
-    contentEl.innerHTML = '';
-    sectionEl.innerHTML = '';
-    sectionEl.style.display = 'none';
-  }
+  tabs.forEach(btn => btn.addEventListener('click', () => {
+    tabs.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-  // Carga el grid de recursos desde recursos.json
-  function loadResources() {
-    return fetch('recursos.json')
-      .then(res => res.json())
-      .then(items => {
-        contentEl.innerHTML = `
-          <div class="resource-grid">
-            ${items.map(it => `
-              <a href="${it.link}" class="resource-card">
-                <h3>${it.title}</h3>
-                <p>${it.description}</p>
-              </a>
-            `).join('')}
-          </div>`;
-      })
-      .catch(err => {
-        console.error('Error cargando recursos:', err);
-        contentEl.innerHTML = '<p>Error al cargar recursos.</p>';
+    if (btn.dataset.tab === 'recursos') {
+      loadResources();
+      document.getElementById('section-selectors').innerHTML = '';
+    } else {
+      const sectionName = btn.dataset.tab === 'bancos' ? 'Aprende de Bancos' : 'Aprende de Finanzas';
+      const filtered = allItems.filter(it => it.Sección === sectionName);
+      const cats = [...new Set(filtered.map(it => it.Subcategoría))];
+      const catsInfo = cats.map(cat => {
+        const itemImg = filtered.find(it => it.Subcategoría === cat && it.Imagen);
+        return { cat, img: itemImg ? itemImg.Imagen : '' };
       });
-  }
+      const secEl = document.getElementById('section-selectors');
+      secEl.style.display = 'flex';
+      secEl.innerHTML = catsInfo.map(c => `
+        <button data-cat="${c.cat}" class="subcategory-card">
+          ${c.img ? `<img src="${c.img}" alt="${c.cat}">` : ''}
+          <span>${c.cat}</span>
+        </button>`).join('');
+      secEl.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+        secEl.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        const itemsPorCat = filtered.filter(it => it.Subcategoría === b.dataset.cat);
+        renderEntries(itemsPorCat);
+      }));
+      if (secEl.firstChild) secEl.firstChild.click();
+    }
+  }));
 
-  // Descarga y filtra la tabla de Notion
-  function loadNotion(sectionName) {
-    return fetch('https://notion-api.splitbee.io/v1/table/21294b1ad37b8098b48dc788a148be7b')
-      .then(res => res.json())
-      .then(data => {
-        allEntries = data
-          .filter(e => e.Sección === sectionName)
-          .map(e => ({
-            name:    e.Name,
-            sub:     e.Subcategoría,
-            content: e.Contenido,
-            img:     Array.isArray(e.Imagen) && e.Imagen.length
-                      ? (e.Imagen[0].external?.url || e.Imagen[0].file?.url || '')
-                      : ''
-          }));
-      })
-      .catch(err => {
-        console.error('Error cargando Notion:', err);
-        allEntries = [];
-      });
-  }
-
-  // Genera los acordeones en #education-content
   function renderEntries(items) {
-    contentEl.innerHTML = items.map((it,i) => `
+    const container = document.getElementById('education-content');
+    container.innerHTML = items.map((it,i)=>`
       <div class="accordion-item">
         <button class="accordion-title" data-index="${i}">
           <div class="accordion-header">
-            ${ it.img ? `<img src="${it.img}" class="accordion-img" alt="${it.name}">` : '' }
+            ${it.Imagen?`<img src="${it.Imagen}" class="accordion-img">`:''}
             <div class="accordion-title-text">
-              <strong>${it.name}</strong>
-              <div class="accordion-tag">${it.sub}</div>
+              <strong>${it.Name}</strong>
+              ${it.Subcategoría?`<div class="accordion-tag">${it.Subcategoría}</div>`:''}
             </div>
           </div>
         </button>
-        <div class="accordion-content">${ marked.parse(it.content || '') }</div>
-      </div>
-    `).join('');
+        <div class="accordion-content">${marked.parse(it.Contenido||'')}</div>
+      </div>`).join('');
     setupAccordion();
   }
 
-  // Añade la lógica abrir/cerrar acordeón
+  function loadResources() {
+    fetch('recursos.json')
+      .then(res => res.json())
+      .then(items => {
+        container.innerHTML =
+          '<div class="resource-grid">' +
+          items.map(it => {
+            return `<a href="${it.link}" class="resource-card">` +
+                   `<h3>${it.title}</h3>` +
+                   `<p>${it.description}</p>` +
+                   `</a>`;
+          }).join('') +
+          '</div>';
+      })
+      .catch(err => console.error(err));
+  }
+
   function setupAccordion() {
-    const items = contentEl.querySelectorAll('.accordion-item');
+    const items = container.querySelectorAll('.accordion-item');
     items.forEach(item => {
-      const btn = item.querySelector('.accordion-title');
-      const cnt = item.querySelector('.accordion-content');
-      cnt.style.display = 'none';
-      btn.addEventListener('click', () => {
-        const open = item.classList.toggle('active');
-        cnt.style.display = open ? 'block' : 'none';
+      const title = item.querySelector('.accordion-title');
+      const content = item.querySelector('.accordion-content');
+      content.style.display = 'none';
+      title.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        item.classList.toggle('active');
+        content.style.display = isActive ? 'none' : 'block';
       });
     });
   }
 
-  // Construye y muestra las sub-categorías
-  function loadSections() {
-    const uniques = [...new Set(allEntries.map(e => e.sub))];
-    sectionEl.innerHTML = uniques.map(sub => `<button data-sub="${sub}">${sub}</button>`).join('');
-    sectionEl.style.display = 'flex';
-
-    sectionEl.querySelectorAll('button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        sectionEl.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filtered = allEntries.filter(e => e.sub === btn.dataset.sub);
-        renderEntries(filtered);
-      });
-    });
-
-    // Dispara la primera sub-categoría
-    if (uniques.length) {
-      sectionEl.querySelector('button').click();
-    }
+  const first = document.querySelector('.education-tabs button[data-tab="recursos"]');
+  if (first) {
+    first.classList.add('active');
+    loadResources();
   }
-
-  // Maneja el clic en cada pestaña
-  tabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabs.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      hideAll();
-
-      if (btn.dataset.tab === 'recursos') {
-        // Mostrar recursos
-        loadResources();
-        contentEl.style.display = 'block';
-      } else {
-        // Bancos o Finanzas
-        const sectionName = btn.dataset.tab === 'bancos'
-                             ? 'Aprende de Bancos'
-                             : 'Aprende de Finanzas';
-        loadNotion(sectionName)
-          .then(() => loadSections());
-      }
-    });
-  });
-
-  // Al cargar la página, ocultamos todo hasta el primer clic
-  hideAll();
 });
