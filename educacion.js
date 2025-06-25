@@ -1,146 +1,134 @@
 let allItems = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-  const tabs       = document.querySelectorAll('.education-tabs button');
-  const sectionEl  = document.getElementById('section-selectors');
-  const contentEl  = document.getElementById('education-content');
-
-  // 1) Cargo la tabla entera de Notion y la normalizo
+  // 1) Carga la tabla completa desde Notion
   fetch('https://notion-api.splitbee.io/v1/table/21294b1ad37b8098b48dc788a148be7b')
-    .then(r => r.json())
-    .then(data => {
-      allItems = data.map(e => ({
-        name:    e.Name,
-        section: e.Sección,
-        sub:     e.Categoría || e.Categoria || 'Sin categoría',
-        img:     e.Imagen,
-        content: e.Contenido
-      }));
-      initTabs();
-    })
-    .catch(err => {
-      console.error('Error cargando Notion:', err);
-      contentEl.innerHTML = '<p>Error al cargar los contenidos de Educación.</p>';
+    .then(res => res.json())
+    .then(data => { allItems = data; })
+    .catch(err => console.error('Error cargando Notion:', err));
+
+  const tabs   = document.querySelectorAll('.education-tabs button');
+  const secEl  = document.getElementById('section-selectors');
+  const contEl = document.getElementById('education-content');
+
+  // 2) Maneja el click en cada pestaña
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // a) Marca la pestaña activa
+      tabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // b) Limpia contenido y categorías
+      contEl.innerHTML = '';
+      secEl.innerHTML  = '';
+      secEl.style.display = 'none';
+
+      // c) Decide recurso vs bancos vs finanzas
+      if (btn.dataset.tab === 'recursos') {
+        loadResources();
+      } else {
+        const sectionName = btn.dataset.tab === 'bancos'
+          ? 'Aprende de Bancos'
+          : 'Aprende de Finanzas';
+
+        // Filtra solo los ítems de esa sección
+        const filtered = allItems.filter(it => it.Sección === sectionName);
+
+        // Extrae categorías únicas (y no vacías)
+        const subs = Array.from(new Set(filtered.map(it => it.Categoría).filter(s => s)));
+
+        if (!subs.length) return; // nada que mostrar
+
+        // d) Renderiza botones de categoría
+        secEl.style.display = 'flex';
+        secEl.innerHTML = subs.map(sub =>
+          `<button data-sub="${sub}">${sub}</button>`
+        ).join('');
+
+        // e) Al hacer click en una categoría, renderiza su contenido
+        secEl.querySelectorAll('button').forEach(sb => {
+          sb.addEventListener('click', () => {
+            secEl.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+            sb.classList.add('active');
+            const itemsPorCat = filtered.filter(it => it.Categoría === sb.dataset.sub);
+            renderEntries(itemsPorCat);
+          });
+        });
+
+        // ← ¡Elimina cualquier auto-click aquí! El usuario debe elegir.
+      }
     });
+  });
 
-  function initTabs() {
-    tabs.forEach(btn => btn.addEventListener('click', onTabClick));
-    // al entrar, simular click en “Recursos”
-    tabs[0].click();
-  }
-
-  function onTabClick(e) {
-    const tab = e.currentTarget;
-    const mode = tab.dataset.tab; // "recursos"|"bancos"|"finanzas"
-
-    // 1) pestaña activa
-    tabs.forEach(b => b.classList.remove('active'));
-    tab.classList.add('active');
-
-    // 2) limpio sub-secciones y contenido
-    sectionEl.innerHTML = '';
-    sectionEl.style.display = 'none';
-    contentEl.innerHTML = '';
-
-    if (mode === 'recursos') {
-      renderResources();
-    } else {
-      // 3) filtro items de la sección elegida
-      const sectionName = mode === 'bancos'
-        ? 'Aprende de Bancos'
-        : 'Aprende de Finanzas';
-
-      const itemsInSec = allItems.filter(i => i.section === sectionName);
-
-      // 4) obtengo subcategorías únicas
-      const subs = Array.from(new Set(itemsInSec.map(i => i.sub)));
-
-      // 5) muestro botones de subcategoría
-      sectionEl.style.display = 'flex';
-      sectionEl.innerHTML = subs.map(sub => `
-        <button data-sub="${sub}">${sub}</button>
-      `).join('');
-
-      // 6) listener a cada sub
-      sectionEl.querySelectorAll('button').forEach(b => {
-        b.addEventListener('click', onSubClick);
-      });
-
-      // 7) activo la primera sub
-      sectionEl.querySelector('button').click();
-    }
-  }
-
-  function onSubClick(e) {
-    const btn = e.currentTarget;
-    const sub = btn.dataset.sub;
-
-    // marca activa
-    sectionEl.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    // vuelvo a filtrar por sección + subcategoría
-    const activeTab = document.querySelector('.education-tabs button.active').dataset.tab;
-    const sectionName = activeTab === 'bancos'
-      ? 'Aprende de Bancos'
-      : 'Aprende de Finanzas';
-
-    const filtered = allItems.filter(i =>
-      i.section === sectionName && i.sub === sub
-    );
-
-    renderAccordion(filtered);
-  }
-
-  function renderResources() {
-    fetch('recursos.json')
-      .then(r => r.json())
-      .then(items => {
-        contentEl.innerHTML = `
-          <div class="resource-grid">
-            ${items.map(it => `
-              <a href="${it.link}" class="resource-card">
-                <h3>${it.title}</h3>
-                <p>${it.description}</p>
-              </a>
-            `).join('')}
-          </div>
-        `;
-      })
-      .catch(err => {
-        console.error('Error al cargar recursos:', err);
-        contentEl.innerHTML = '<p>Error al cargar recursos.</p>';
-      });
-  }
-
-  function renderAccordion(items) {
-    contentEl.innerHTML = items.map((it,i) => `
-      <div class="accordion-item">
-        <button class="accordion-title" data-index="${i}">
-          <div class="accordion-header">
-            ${it.img ? `<img src="${it.img}" class="accordion-img">` : ''}
-            <div class="accordion-title-text">
-              <strong>${it.name}</strong>
-              ${it.sub ? `<div class="accordion-tag">${it.sub}</div>` : ''}
-            </div>
-          </div>
-        </button>
-        <div class="accordion-content">${marked.parse(it.content || '')}</div>
-      </div>
-    `).join('');
-    setupAccordion();
-  }
-
-  function setupAccordion() {
-    const items = contentEl.querySelectorAll('.accordion-item');
-    items.forEach(item => {
-      const title   = item.querySelector('.accordion-title');
-      const content = item.querySelector('.accordion-content');
-      content.style.display = 'none';
-      title.addEventListener('click', () => {
-        const open = item.classList.toggle('active');
-        content.style.display = open ? 'block' : 'none';
-      });
-    });
+  // 3) Al iniciar, activa por defecto “Recursos”
+  const first = document.querySelector('.education-tabs button[data-tab="recursos"]');
+  if (first) {
+    first.classList.add('active');
+    loadResources();
   }
 });
+
+
+/**
+ * Carga y pinta el grid de recursos (simuladores).
+ */
+function loadResources() {
+  fetch('recursos.json')
+    .then(res => res.json())
+    .then(items => {
+      document.getElementById('education-content').innerHTML = `
+        <div class="resource-grid">
+          ${items.map(it => `
+            <a href="${it.link}" class="resource-card">
+              <h3>${it.title}</h3>
+              <p>${it.description}</p>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    })
+    .catch(err => {
+      console.error('Error cargando recursos:', err);
+      document.getElementById('education-content').innerHTML =
+        '<p>Error al cargar recursos.</p>';
+    });
+}
+
+
+/**
+ * Dibuja los acordeones para la lista de items dada.
+ */
+function renderEntries(items) {
+  document.getElementById('education-content').innerHTML = items.map((it,i) => `
+    <div class="accordion-item">
+      <button class="accordion-title" data-index="${i}">
+        <div class="accordion-header">
+          ${it.Imagen ? `<img src="${it.Imagen}" class="accordion-img" alt="">` : ''}
+          <div class="accordion-title-text">
+            <strong>${it.Name}</strong>
+            ${it.Categoría ? `<div class="accordion-tag">${it.Categoría}</div>` : ''}
+          </div>
+        </div>
+      </button>
+      <div class="accordion-content">${marked.parse(it.Contenido || '')}</div>
+    </div>
+  `).join('');
+  setupAccordion();
+}
+
+
+/**
+ * Activa el comportamiento de abrir/cerrar en cada acordeón.
+ */
+function setupAccordion() {
+  const container = document.getElementById('education-content');
+  container.querySelectorAll('.accordion-item').forEach(item => {
+    const title   = item.querySelector('.accordion-title');
+    const content = item.querySelector('.accordion-content');
+    content.style.display = 'none';
+    title.addEventListener('click', () => {
+      const open = item.classList.toggle('active');
+      content.style.display = open ? 'block' : 'none';
+    });
+  });
+}

@@ -1206,6 +1206,11 @@ section {
 }
 
 /* ===== Sección Educación ===== */
+/* ===== Sección Educación ===== */
+/* ===== Sección Educación ===== */
+/* ===== Sección Educación ===== */
+
+/* ===== Sección Educación ===== */
 .education-box {
   max-width: 1080px;
   margin: 40px auto;
@@ -1232,14 +1237,16 @@ section {
   transition: background 0.2s;
 }
 
-.education-tabs button.active,
-.education-tabs button:hover {
+.education-tabs button:hover,
+.education-tabs button.active {
   background: #ff6b35;
 }
 
+
+/* —— Contenedor de categorías —— */
 #section-selectors {
-  display: none;
-  gap: 12px;
+  display: none;                 /* sólo bancos/finanzas */
+  gap: 24px;                     /* más separación */
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
@@ -1247,7 +1254,7 @@ section {
 
 #section-selectors button {
   width: 150px;
-  height: 150px;
+  height: 75px;
   padding: 0;
   position: relative;
   background: var(--azul-profundo);
@@ -1255,8 +1262,17 @@ section {
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: background 0.2s, transform 0.2s;
   color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.6rem, 1vw, 0.9rem); /* igual que pestañas */
+  font-weight: 600;
+}
+
+#section-selectors button:hover,
+#section-selectors button.active {
+  background: #ff6b35;
+  transform: scale(1.05);
 }
 
 #section-selectors button img {
@@ -1281,12 +1297,13 @@ section {
 
 #section-selectors button:hover span,
 #section-selectors button.active span {
-  background: #ff6b35;
+  background: rgba(0,0,0,0);
 }
+
 
 /* ===== Acordeón estilo tarjeta ===== */
 .accordion-item {
-  margin-bottom: 24px;
+  margin-bottom: 16px;          /* menos espacio entre items */
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -1305,53 +1322,41 @@ section {
   border: none;
   padding: 0;
   cursor: pointer;
+  position: relative;           /* para poder posicionar el "+" */
 }
 
 .accordion-header {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 14px 18px;
+  padding: 10px 20px;           /* más delgado */
 }
 
-.accordion-img {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.accordion-title-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+/* ocultar imagen y etiqueta */
+.accordion-img,
+.accordion-tag {
+  display: none;
 }
 
 .accordion-title-text strong {
   font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-}
-
-.accordion-tag {
-  align-self: start;
-  font-size: 0.65rem;
   color: #fff;
-  background: #ff6b35;
-  padding: 3px 10px;
-  border-radius: 4px;
 }
 
+/* mover el “+” al extremo derecho */
 .accordion-title::after {
   content: "+";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   font-weight: bold;
   transition: transform 0.2s ease;
-  margin-right: 18px;
 }
 
 .accordion-item.active .accordion-title::after {
   content: "-";
-  transform: rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .accordion-content {
