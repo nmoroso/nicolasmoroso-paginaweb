@@ -228,6 +228,16 @@
     background-color: transparent;
   }
 
+  /* Ajustes para la sección Terapia Financiera en móviles */
+  #terapia-financiera .tf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #terapia-financiera .tf-sd,
+  #terapia-financiera .tf-ii {
+    display: none;
+  }
+
 
   .about-section {
     flex-direction: column;
