@@ -221,6 +221,12 @@
     margin-right: 3.5vw;
   }
 
+  #terapia-financiera {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: transparent;
+  }
+
 
   .about-section {
     flex-direction: column;
