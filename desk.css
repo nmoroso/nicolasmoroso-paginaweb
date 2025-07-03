@@ -1383,16 +1383,17 @@ section {
 }
 
 #terapia-financiera .tf-grid {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto;
+  column-gap: 2rem;
 }
 
 #terapia-financiera .tf-si,
 #terapia-financiera .tf-id {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 #terapia-financiera .tf-sd,
