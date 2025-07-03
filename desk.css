@@ -1379,7 +1379,7 @@ section {
   overflow: hidden;
   background-color: transparent;
   color: #333;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #terapia-financiera .tf-grid {
@@ -1402,13 +1402,13 @@ section {
 }
 
 #terapia-financiera .tf-sd {
-  background-color: #8fb0c4;
-  color: var(--azul-medianoche);
+  background-color: var(--azul-profundo);
+  color: var(--blanco);
 }
 
 #terapia-financiera .tf-ii {
-  background-color: #b5cad8;
-  color: var(--azul-medianoche);
+  background-color: var(--azul-medianoche);
+  color: var(--blanco);
 }
 #terapia-financiera .section-title {
   font-size: 2rem;
