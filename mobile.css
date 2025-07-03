@@ -63,12 +63,13 @@
 
 /* Menú móvil (inicialmente oculto a la izquierda) */
 .mobile-menu {
-  display:flex;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 0;
-  left: -40vw;            /* Fuera de la pantalla a la izquierda */
-  width: 40vw;
-  height: clamp(295px,32vh,350px);
+  left: -75vw;            /* Fuera de la pantalla a la izquierda */
+  width: 75vw;
+  height: 100vh;
   background-color: #1e293b;  /* O el color que prefieras */
   transition: left 0.3s ease;  /* Transición para el deslizamiento */
   z-index: 998;           /* Debe estar sobre el contenido, pero debajo del header si éste tiene z-index mayor */
@@ -142,9 +143,9 @@
 /******************* HERO *****************/
 
 .hero-banner {
-  margin-top: -100px;
+  margin-top: 0;
   padding-left: 0;
-  height: 103dvh;
+  height: 100vh;
 }
 
 .hero-banner .container {
@@ -155,7 +156,7 @@
   background: transparent; /* asegúrate que no tenga fondo */
   text-align: left;
   align-items: flex-start;
-  padding-top:130px;
+  padding-top: 100px;
   padding-bottom: 30px;
 }
 
@@ -234,14 +235,13 @@
     padding: 3.5vw;
   }
   .about-wrapper {
-    height: 105vh;
+    height: auto;
   }
 
   .about-image img {
-    MARGIN-TOP: 10vh;
-    width: 45vw;
+    margin-top: 10vh;
+    width: 55vw;
     margin-bottom: 20px;
-    margin-bottom: 20PX;
 
   }
   
@@ -498,8 +498,9 @@
   .menu-wrapper,
   .header-agendar { width: 160px; }
   .hero-banner { margin-top: 0; height: 100vh; }
+  .mobile-menu { left: -85vw; width: 85vw; }
   .about-wrapper { height: auto; }
-  .about-image img { width: 60vw; margin-top: 5vh; }
+  .about-image img { width: 70vw; margin-top: 5vh; }
   .contacto-wrapper { margin: 20px auto; }
 }
 
