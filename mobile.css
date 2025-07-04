@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: -15px;
   }
   /* Estilo para el ícono del menú */
   .menu-wrapper {
@@ -251,6 +252,7 @@
   }
   .about-wrapper {
     height: auto;
+    margin-top: clamp(50px,10vh,65px);
   }
 
   .about-image img {
