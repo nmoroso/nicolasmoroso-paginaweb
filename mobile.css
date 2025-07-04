@@ -514,3 +514,22 @@
   .contacto-wrapper { margin: 20px auto; }
 }
 
+
+/* Botón en el hero */
+.hero-button {
+  background-color: #ff6b35; /* Color de fondo del botón */
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 40px;
+  margin: 0 auto;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-size: clamp(0.9rem, 1vw, 1.2rem);
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+}
+
+.hero-button:hover {
+  background-color: #e05220;
+}

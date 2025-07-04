@@ -295,7 +295,7 @@ label {
 
 /* Botón en el hero */
 .hero-button {
-  background-color: #457B9D; /* Color de fondo del botón */
+  background-color: #ff6b35; /* Color de fondo del botón */
   color: #ffffff;            /* Texto en blanco */
   text-decoration: none;     /* Sin subrayado */
   padding: 8px 16px;        /* Espaciado interno */
@@ -308,10 +308,8 @@ label {
   text-align: center;
 }
 
-
-
 .hero-button:hover {
-  background-color: #2E4057;
+  background-color: #e05220;
 }
 
 
