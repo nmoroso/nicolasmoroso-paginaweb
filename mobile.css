@@ -247,7 +247,7 @@
   .about-section {
     flex-direction: column;
     gap: 20px;
-    padding: 3.5vw;
+    padding: 3.5vw 1.75vw;
   }
   .about-wrapper {
     height: auto;
@@ -513,7 +513,7 @@
   .header-container { padding: 5px; }
   .menu-wrapper,
   .header-agendar { width: 160px; }
-  .hero-banner { margin-top: 0; height: 100vh; }
+  .hero-banner { margin-top: -10px; height: 100vh; }
   .mobile-menu { left: -85vw; width: 85vw; }
   .about-wrapper { height: auto; }
   .about-image img { width: 70vw; margin-top: 5vh; }
