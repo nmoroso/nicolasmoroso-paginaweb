@@ -7,12 +7,11 @@
 
   /* Opcional: ajustar padding y altura para móviles */
   .header-container {
-    height: clamp(50px,10vh,65px);
+    height: clamp(60px,10vh,75px);
     padding: 5px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: -30px;
   }
   /* Estilo para el ícono del menú */
   .menu-wrapper {
