@@ -233,6 +233,11 @@
     grid-template-columns: 1fr;
   }
 
+  #terapia-financiera .tf-row1,
+  #terapia-financiera .tf-row2 {
+    grid-template-columns: 1fr;
+  }
+
   #terapia-financiera .tf-sd,
   #terapia-financiera .tf-ii {
     display: none;
