@@ -247,7 +247,8 @@
   .about-section {
     flex-direction: column;
     gap: 20px;
-    padding: 3.5vw 1.75vw;
+    padding: 7vw 3.5vw;
+    width: 90%;
   }
   .about-wrapper {
     height: auto;
