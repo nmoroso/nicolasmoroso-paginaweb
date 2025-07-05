@@ -1,6 +1,7 @@
  /* ====== Media Query para Móviles (max-width: 768px) ====== */
  @media (max-width: 768px) {
   /* Ocultamos la navegación */
+  
   .header-nav {
     display: none;
   }
@@ -12,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: -10px;
   }
   /* Estilo para el ícono del menú */
   .menu-wrapper {
