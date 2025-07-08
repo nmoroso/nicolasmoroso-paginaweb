@@ -603,7 +603,7 @@ section {
     display: inline-block;
   }
   
-  .texto-superior .subtitulo {
+.texto-superior .subtitulo {
     background: #fff;
     color: #2E4057;
     padding: 8px 18px;
@@ -611,6 +611,12 @@ section {
     font-size: 1.2rem;
     margin-top: 15px;
     display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .texto-superior .subtitulo:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
   }
   
   .contacto-formulario {
