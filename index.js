@@ -18,3 +18,22 @@ document.addEventListener('DOMContentLoaded', function () {
     smartBackspace: true
   });
 });
+
+// Observa la aparición de las secciones
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('.section');
+  const options = {
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target); // Solo ejecutar una vez por sección
+      }
+    });
+  }, options);
+
+  sections.forEach(section => observer.observe(section));
+});

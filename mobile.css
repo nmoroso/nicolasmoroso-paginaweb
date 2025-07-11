@@ -224,6 +224,18 @@
     margin-right: 3.5vw;
   }
 
+  /* Efecto de aparición suave para las secciones */
+  .section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   #terapia-financiera {
     margin-left: 0;
     margin-right: 0;
