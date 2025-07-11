@@ -560,6 +560,10 @@
   padding: 20px 15px;
 }
 
+.progress-text {
+  margin-bottom: 15px;
+}
+
 .nav-buttons {
   flex-direction: column;
   gap: 10px;
