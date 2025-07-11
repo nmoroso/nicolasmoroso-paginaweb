@@ -78,42 +78,51 @@
     </div>
   </header>
 
-  <main class="container">
+  <main class="container autodiagnostico-container">
     <h1>Autodiagnóstico Financiero</h1>
-    <form id="diagnostico-form">
-      <div class="pregunta">
+    <form id="diagnostico-form" class="diagnostico-form">
+      <div class="pregunta card">
         <p>1. ¿Tus ingresos mensuales te permiten cubrir todos tus gastos sin endeudarte?</p>
         <label><input type="radio" name="p1" value="2" required> Sí, sin problema.</label>
         <label><input type="radio" name="p1" value="1"> A veces me alcanza.</label>
         <label><input type="radio" name="p1" value="0"> No, uso crédito.</label>
       </div>
 
-      <div class="pregunta">
+      <div class="pregunta card">
         <p>2. ¿Tienes deudas activas?</p>
         <label><input type="radio" name="p2" value="2" required> No tengo deudas.</label>
         <label><input type="radio" name="p2" value="1"> Las tengo bajo control.</label>
         <label><input type="radio" name="p2" value="0"> Me cuesta pagarlas.</label>
       </div>
 
-      <div class="pregunta">
+      <div class="pregunta card">
         <p>3. ¿Tienes un fondo de emergencia?</p>
         <label><input type="radio" name="p3" value="2" required> Sí, al menos 3 meses.</label>
         <label><input type="radio" name="p3" value="1"> Tengo algo.</label>
         <label><input type="radio" name="p3" value="0"> No tengo.</label>
       </div>
 
-      <div class="pregunta">
+      <div class="pregunta card">
         <p>4. ¿Sueles planificar tus gastos con un presupuesto?</p>
         <label><input type="radio" name="p4" value="2" required> Sí, llevo control mensual.</label>
         <label><input type="radio" name="p4" value="1"> A veces lo hago.</label>
         <label><input type="radio" name="p4" value="0"> No planifico.</label>
       </div>
 
-      <div class="pregunta">
+      <div class="pregunta card">
         <p>5. ¿Tienes metas financieras definidas?</p>
         <label><input type="radio" name="p5" value="2" required> Sí, tengo un plan.</label>
         <label><input type="radio" name="p5" value="1"> Tengo ideas, sin estructura.</label>
         <label><input type="radio" name="p5" value="0"> No he pensado en eso.</label>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" id="btn-prev" class="btn-prev">Anterior</button>
+        <button type="button" id="btn-next" class="btn-next">Siguiente</button>
+      </div>
+
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
       </div>
     </form>
     <div id="resultado" class="resultado" style="display:none"></div>

@@ -1,29 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('diagnostico-form');
-  const preguntas = form.querySelectorAll('.pregunta');
+  const preguntas = Array.from(form.querySelectorAll('.pregunta'));
   const resultado = document.getElementById('resultado');
+  const prevBtn = document.getElementById('btn-prev');
+  const nextBtn = document.getElementById('btn-next');
+  const progressBar = document.getElementById('progress-bar');
 
-  // Oculta todas las preguntas excepto la primera
-  preguntas.forEach((p, i) => {
-    if (i !== 0) p.style.display = 'none';
-    p.querySelectorAll('input[type="radio"]').forEach(radio => {
-      radio.addEventListener('change', () => mostrarSiguiente(i));
-    });
+  let indice = 0;
+  mostrarPregunta(indice);
+
+  prevBtn.addEventListener('click', () => {
+    if (indice > 0) {
+      indice--;
+      mostrarPregunta(indice);
+    }
   });
 
-  function mostrarSiguiente(indice) {
+  nextBtn.addEventListener('click', () => {
+    const current = preguntas[indice];
+    const checked = current.querySelector('input[type="radio"]:checked');
+    if (!checked) {
+      alert('Selecciona una opción');
+      return;
+    }
+
     if (indice < preguntas.length - 1) {
-      preguntas[indice].style.display = 'none';
-      preguntas[indice + 1].style.display = 'block';
+      indice++;
+      mostrarPregunta(indice);
     } else {
       form.style.display = 'none';
       mostrarResultado();
     }
+  });
+
+  function mostrarPregunta(i) {
+    preguntas.forEach((p, idx) => {
+      p.style.display = idx === i ? 'block' : 'none';
+    });
+
+    prevBtn.style.display = i === 0 ? 'none' : 'inline-block';
+    nextBtn.textContent = i === preguntas.length - 1 ? 'Finalizar' : 'Siguiente';
+    progressBar.style.width = (i / preguntas.length) * 100 + '%';
   }
 
   function mostrarResultado() {
     let puntaje = 0;
-    preguntas.forEach((p, idx) => {
+    preguntas.forEach(p => {
       const r = p.querySelector('input[type="radio"]:checked');
       if (r) puntaje += parseInt(r.value);
     });
@@ -41,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       plan = 'Plan Transforma – Hacia la Proyección';
     }
 
+    progressBar.style.width = '100%';
     resultado.innerHTML =
       `<p>Tu estado financiero actual es <strong>${estado}</strong>. ` +
       `Te recomendamos el <strong>${plan}</strong>.</p>` +
@@ -48,6 +71,5 @@ document.addEventListener('DOMContentLoaded', () => {
     resultado.style.display = 'block';
   }
 
-  // Evita el envío del formulario por defecto
   form.addEventListener('submit', e => e.preventDefault());
 });
