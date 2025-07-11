@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autodiagnóstico Financiero</title>
+  <link rel="stylesheet" href="desk.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Autodiagnóstico Financiero</h1>
+    <form id="diagnostico-form">
+   <div>
+  <p>1. ¿Tus ingresos mensuales te permiten cubrir todos tus gastos sin endeudarte?</p>
+  <label><input type="radio" name="p1" value="2" required> Sí, sin problema.</label>
+  <label><input type="radio" name="p1" value="1"> A veces me alcanza.</label>
+  <label><input type="radio" name="p1" value="0"> No, uso crédito.</label>
+</div>
+
+<div>
+  <p>2. ¿Tienes deudas activas?</p>
+  <label><input type="radio" name="p2" value="2" required> No tengo deudas.</label>
+  <label><input type="radio" name="p2" value="1"> Las tengo bajo control.</label>
+  <label><input type="radio" name="p2" value="0"> Me cuesta pagarlas.</label>
+</div>
+
+<div>
+  <p>3. ¿Tienes un fondo de emergencia?</p>
+  <label><input type="radio" name="p3" value="2" required> Sí, al menos 3 meses.</label>
+  <label><input type="radio" name="p3" value="1"> Tengo algo.</label>
+  <label><input type="radio" name="p3" value="0"> No tengo.</label>
+</div>
+
+<div>
+  <p>4. ¿Sueles planificar tus gastos con un presupuesto?</p>
+  <label><input type="radio" name="p4" value="2" required> Sí, llevo control mensual.</label>
+  <label><input type="radio" name="p4" value="1"> A veces lo hago.</label>
+  <label><input type="radio" name="p4" value="0"> No planifico.</label>
+</div>
+
+<div>
+  <p>5. ¿Tienes metas financieras definidas?</p>
+  <label><input type="radio" name="p5" value="2" required> Sí, tengo un plan.</label>
+  <label><input type="radio" name="p5" value="1"> Tengo ideas, sin estructura.</label>
+  <label><input type="radio" name="p5" value="0"> No he pensado en eso.</label>
+</div>
+
+<button type="submit">Ver resultado</button>
+
+    </form>
+    <div id="resultado" class="resultado"></div>
+  </main>
+  <script src="autodiagnostico.js"></script>
+</body>
+</html>
