@@ -554,3 +554,17 @@
 .hero-button:hover {
   background-color: #e05220;
 }
+
+/*==================== AUTODIAGNÓSTICO ====================*/
+.autodiagnostico-container {
+  padding: 20px 15px;
+}
+
+.nav-buttons {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-buttons button {
+  width: 100%;
+}
