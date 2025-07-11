@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.getElementById('btn-prev');
   const nextBtn = document.getElementById('btn-next');
   const progressBar = document.getElementById('progress-bar');
+  const progressText = document.getElementById('progress-text');
 
   let indice = 0;
   mostrarPregunta(indice);
@@ -35,12 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function mostrarPregunta(i) {
     preguntas.forEach((p, idx) => {
-      p.style.display = idx === i ? 'block' : 'none';
+      p.classList.toggle('active', idx === i);
     });
 
     prevBtn.style.display = i === 0 ? 'none' : 'inline-block';
     nextBtn.textContent = i === preguntas.length - 1 ? 'Finalizar' : 'Siguiente';
     progressBar.style.width = (i / preguntas.length) * 100 + '%';
+    progressText.textContent = `Pregunta ${i + 1} de ${preguntas.length}`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function mostrarResultado() {
@@ -64,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     progressBar.style.width = '100%';
+    progressText.textContent = 'Autodiagnóstico completado';
     resultado.innerHTML =
       `<p>Tu estado financiero actual es <strong>${estado}</strong>. ` +
       `Te recomendamos el <strong>${plan}</strong>.</p>` +
