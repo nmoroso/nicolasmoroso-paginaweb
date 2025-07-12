@@ -1494,39 +1494,11 @@ section {
   box-shadow: 0 2px 5px rgba(0,0,0,0.06);
   padding: 20px;
   margin-bottom: 15px;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.diagnostico-form .card.active {
-  display: block;
-  opacity: 1;
 }
 
 .diagnostico-form label {
   display: block;
   margin-bottom: 8px;
-  padding: 10px;
-  border: 1px solid #E0E6ED;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.diagnostico-form label input[type="radio"] {
-  display: none;
-}
-
-.diagnostico-form label span {
-  display: inline-block;
-  width: 100%;
-}
-
-.diagnostico-form label input[type="radio"]:checked + span {
-  background-color: var(--azul-profundo);
-  color: var(--blanco);
-  font-weight: bold;
 }
 
 .nav-buttons {
@@ -1564,21 +1536,4 @@ section {
   width: 0;
   background-color: var(--azul-profundo);
   transition: width 0.3s ease;
-}
-
-.progress-text {
-  text-align: center;
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: var(--azul-medianoche);
-}
-
-#resultado {
-  background-color: #ffffff;
-  border: 1px solid #E0E6ED;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
-  padding: 20px;
-  margin-top: 20px;
-  text-align: center;
 }
