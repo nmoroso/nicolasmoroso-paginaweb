@@ -1332,13 +1332,14 @@ section {
 }
 
 .accordion-title {
-  width: 100%;
-  background: var(--azul-profundo);
-  color: #fff;
+  width: auto;
+  background: transparent;
+  color: inherit;
   border: none;
   padding: 0;
   cursor: pointer;
   position: relative;           /* para poder posicionar el "+" */
+  font-size: 1.3em;             /* viñetas más grandes */
 }
 
 .accordion-header {
