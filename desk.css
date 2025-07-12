@@ -1475,15 +1475,16 @@ section {
 }
 
 /*==================== AUTODIAGNÓSTICO ====================*/
+
 .autodiagnostico-container {
   max-width: 600px;
-  margin: 20px auto;
+  margin: 40px auto;
   padding: 20px;
 }
 
 .autodiagnostico-container h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: var(--azul-medianoche);
 }
 
@@ -1493,12 +1494,16 @@ section {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.06);
   padding: 20px;
+  margin-bottom: 25px;
+}
+
+.diagnostico-form .card p {
   margin-bottom: 15px;
 }
 
 .diagnostico-form label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .nav-buttons {
