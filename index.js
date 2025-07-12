@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Acordeones para estados financieros
 document.addEventListener('DOMContentLoaded', function () {
-  const items = document.querySelectorAll('.tf-sd .accordion-item');
+  const items = document.querySelectorAll('.tf-sd .accordion-item, .tf-ii .accordion-item');
   items.forEach(item => {
     const title = item.querySelector('.accordion-title');
     const content = item.querySelector('.accordion-content');
