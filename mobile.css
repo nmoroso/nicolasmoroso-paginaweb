@@ -558,6 +558,23 @@
 /*==================== AUTODIAGNÓSTICO ====================*/
 .autodiagnostico-container {
   padding: 20px 15px;
+  margin-top: 30px;
+}
+
+.autodiagnostico-container h1 {
+  margin-bottom: 30px;
+}
+
+.diagnostico-form .card {
+  margin-bottom: 25px;
+}
+
+.diagnostico-form .card p {
+  margin-bottom: 15px;
+}
+
+.diagnostico-form label {
+  margin-bottom: 12px;
 }
 
 .nav-buttons {
