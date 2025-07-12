@@ -1542,3 +1542,26 @@ section {
   background-color: var(--azul-profundo);
   transition: width 0.3s ease;
 }
+
+/* Resultado del autodiagnóstico */
+.resultado {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--azul-medianoche);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.resultado h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.resultado p {
+  margin-bottom: 1rem;
+}
+
+.resultado .hero-button {
+  display: block;
+  margin: 2rem auto 0;
+}
