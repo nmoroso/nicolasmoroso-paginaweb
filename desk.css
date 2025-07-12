@@ -1320,9 +1320,9 @@ section {
 /* ===== Acordeón estilo tarjeta ===== */
 .accordion-item {
   margin-bottom: 16px;          /* menos espacio entre items */
-  background: #fff;
+  background: transparent;      /* fondo transparente */
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: none;
   overflow: hidden;
   transition: transform 0.2s ease;
 }
@@ -1336,10 +1336,13 @@ section {
   background: transparent;
   color: inherit;
   border: none;
-  padding: 0;
+  padding: 10px 20px;
   cursor: pointer;
   position: relative;           /* para poder posicionar el "+" */
-  font-size: 1.3em;             /* viñetas más grandes */
+  font-size: 1rem;              /* mismo tamaño que el texto */
+  display: flex;
+  align-items: center;          /* texto al centro de la viñeta */
+  gap: 0.5rem;                  /* espacio entre el círculo y el texto */
 }
 
 .accordion-header {
