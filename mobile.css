@@ -393,15 +393,15 @@
 }
 
 .accordion-title {
-  width: 100%;
+  width: auto;
   text-align: left;
-  background: var(--azul-profundo);
+  background: transparent;
   padding: 15px;
   cursor: pointer;
   border: none;
-  color: var(--blanco);
+  color: inherit;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.38rem, 3vw, 0.77rem);
+  font-size: clamp(0.5rem, 3.9vw, 1rem);
   font-weight: 600;
   border-radius: 10px;
   display: flex;
