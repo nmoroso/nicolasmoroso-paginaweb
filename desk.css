@@ -1332,11 +1332,12 @@ section {
 }
 
 .accordion-title {
-  width: auto;
+  width: 100%;
   background: transparent;
   color: inherit;
   border: none;
   padding: 10px 20px;
+  padding-right: 40px;
   cursor: pointer;
   position: relative;           /* para poder posicionar el "+" */
   font-size: 1rem;              /* mismo tamaño que el texto */
@@ -1421,7 +1422,7 @@ section {
 }
 
 #terapia-financiera .tf-row2 {
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 1fr;
 }
 
 #terapia-financiera .tf-si,
@@ -1429,8 +1430,7 @@ section {
   padding: 1rem;
 }
 
-#terapia-financiera .tf-sd,
-#terapia-financiera .tf-ii {
+#terapia-financiera .tf-sd {
   padding: 0;
 }
 
@@ -1439,10 +1439,6 @@ section {
   color: var(--blanco);
 }
 
-#terapia-financiera .tf-ii {
-  background-color: var(--azul-medianoche);
-  color: var(--blanco);
-}
 #terapia-financiera .section-title {
   font-size: 2rem;
   font-weight: 600;
