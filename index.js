@@ -41,14 +41,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Acordeones para estados financieros
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.tf-sd .accordion-item, .tf-ii .accordion-item').forEach(item => {
+  const items = document.querySelectorAll('.tf-sd .accordion-item, .tf-ii .accordion-item');
+  items.forEach(item => {
     const title = item.querySelector('.accordion-title');
     const content = item.querySelector('.accordion-content');
     if (!title || !content) return;
     content.style.display = 'none';
     title.addEventListener('click', function () {
-      const open = item.classList.toggle('active');
-      content.style.display = open ? 'block' : 'none';
+      const isOpen = item.classList.contains('active');
+
+      // Cerrar todos los items
+      items.forEach(other => {
+        if (other !== item) {
+          other.classList.remove('active');
+          const otherContent = other.querySelector('.accordion-content');
+          if (otherContent) {
+            otherContent.style.display = 'none';
+          }
+        }
+      });
+
+      // Alternar el actual
+      item.classList.toggle('active');
+      content.style.display = isOpen ? 'none' : 'block';
     });
   });
 });
