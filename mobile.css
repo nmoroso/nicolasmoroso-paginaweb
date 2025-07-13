@@ -257,6 +257,13 @@
     display: none;
   }
 
+  #terapia-financiera .sd-title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+
 
   .about-section {
     flex-direction: column;
