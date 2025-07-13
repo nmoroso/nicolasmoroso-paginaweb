@@ -264,6 +264,10 @@
     margin: 1rem 0;
   }
 
+  #terapia-financiera h3 {
+    text-align: center;
+  }
+
 
   .about-section {
     flex-direction: column;
