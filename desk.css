@@ -1319,7 +1319,7 @@ section {
 
 /* ===== Acordeón estilo tarjeta ===== */
 .accordion-item {
-  margin-bottom: 16px;          /* menos espacio entre items */
+  margin-bottom: 8px;          /* menos espacio entre items */
   background: transparent;      /* fondo transparente */
   border-radius: 10px;
   box-shadow: none;
@@ -1381,7 +1381,7 @@ section {
 }
 
 .accordion-content {
-  padding: 16px 20px;
+  padding: 8px 20px;
   border-top: 1px solid #ececec;
   background: #fafafa;
   color: #2E4057;
@@ -1438,6 +1438,8 @@ section {
 #terapia-financiera .tf-sd {
   background-color: var(--azul-profundo);
   color: var(--blanco);
+  height: 370px;
+  overflow-y: auto;
 }
 
 #terapia-financiera .sd-title {
@@ -1445,6 +1447,7 @@ section {
   font-size: 1.6rem;
   font-weight: 700;
   margin: 1rem 0;
+  color: var(--blanco);
 }
 
 #terapia-financiera .tf-ii {
