@@ -1438,7 +1438,7 @@ section {
 #terapia-financiera .tf-sd {
   background-color: var(--azul-profundo);
   color: var(--blanco);
-  height: 600px; /* espacio suficiente para mostrar todas las viñetas */
+  height: 525px; /* espacio suficiente para mostrar todas las viñetas */
   overflow-y: auto;
 }
 
