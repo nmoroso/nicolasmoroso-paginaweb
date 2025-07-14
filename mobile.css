@@ -57,8 +57,12 @@
    padding: 4px 8px;
   }
 .desk-btn { display: none; }
-.mobile-btn { 
-  display: block; 
+.mobile-btn {
+  display: block;
+}
+.mobile-diagnostico {
+  display: block;
+  margin: 2rem auto;
 }
 
 
@@ -100,6 +104,9 @@
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: bold;
+}
+.mobile-menu ul li a.diagnostico-link {
+  color: #ff6b35;
 }
 
 .submenu-item {

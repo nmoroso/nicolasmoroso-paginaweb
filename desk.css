@@ -570,6 +570,7 @@ section {
 
 .desk-btn { display: inline-block; }
 .mobile-btn { display: none; }
+.mobile-diagnostico { display: none; }
 
 /* =========================
    FORMULARIO DE CONTACTO PERSONALIZADO
