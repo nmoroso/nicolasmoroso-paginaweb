@@ -1453,6 +1453,18 @@ section {
 #terapia-financiera .tf-ii {
   background-color: var(--azul-medianoche);
   color: var(--blanco);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#terapia-financiera .tf-ii-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--blanco);
 }
 #terapia-financiera .section-title {
   font-size: 2rem;
