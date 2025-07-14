@@ -1432,6 +1432,14 @@ section {
   padding: 1rem;
 }
 
+
+/* Centrar el botón "AGENDAR" que se encuentra al final del
+   programa dentro de la sección de Terapia Financiera. */
+#terapia-financiera .tf-id .hero-button {
+  display: block;
+  margin: 0.75rem auto;
+}
+
 #terapia-financiera .tf-sd,
 #terapia-financiera .tf-ii {
   padding: 0;
