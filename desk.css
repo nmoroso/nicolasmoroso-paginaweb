@@ -143,7 +143,7 @@ label {
 
 /* BOTÓN AGENDAR REUNIÓN (Derecha) */
 .header-button {
-  background-color: #457B9D; /* Color de fondo del botón */
+  background-color: #ff6b35; /* Color de fondo del botón */
   color: #ffffff;            /* Texto en blanco */
   text-decoration: none;     /* Sin subrayado */
   padding: 8px 16px;        /* Espaciado interno */
@@ -158,7 +158,7 @@ label {
 }
 
 .header-button:hover {
-  background-color: #2E4057; /* Color al pasar el mouse */
+  background-color: #e05220; /* Color al pasar el mouse */
 }
 
 .simulador-dropdown {
