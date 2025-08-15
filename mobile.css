@@ -475,6 +475,77 @@
   visibility: visible;
 }
 
+/* Ajustes para el simulador de créditos en móvil */
+.simulador-container {
+  flex-direction: column;
+}
+
+.simulador-info {
+  margin-top: 20px;
+}
+
+/* Botón para mostrar la tabla de desarrollo */
+.tabla-btn {
+  display: block;
+  background-color: #ff6b35;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  margin: 20px auto;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Panel y overlay del cuadro de desarrollo */
+#tablaPanel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+#tablaPanel.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+#closeTabla {
+  display: block;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.tabla-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.tabla-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
 
 }
 

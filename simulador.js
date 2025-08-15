@@ -570,3 +570,23 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
   });
 });
 
+// Mostrar/ocultar la tabla de desarrollo en versión móvil
+const btnTabla = document.getElementById('toggleTabla');
+const panelTabla = document.getElementById('tablaPanel');
+const overlayTabla = document.getElementById('tablaOverlay');
+const btnCerrarTabla = document.getElementById('closeTabla');
+
+if (btnTabla && panelTabla && overlayTabla && btnCerrarTabla) {
+  const abrirTabla = () => {
+    panelTabla.classList.add('active');
+    overlayTabla.classList.add('active');
+  };
+  const cerrarTabla = () => {
+    panelTabla.classList.remove('active');
+    overlayTabla.classList.remove('active');
+  };
+  btnTabla.addEventListener('click', abrirTabla);
+  btnCerrarTabla.addEventListener('click', cerrarTabla);
+  overlayTabla.addEventListener('click', cerrarTabla);
+}
+
