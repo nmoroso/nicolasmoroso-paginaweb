@@ -730,25 +730,35 @@ section {
 }
 
 /* Form Group (label + input/select) */
+
 .simulador-form .form-group {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 15px;
+}
+
+/* Layout horizontal para checkboxes y botones */
+.simulador-form .form-group.checkbox-group,
+.simulador-form .form-group.button-group {
+  flex-direction: row;
+  align-items: center;
 }
 
 /* Select en el form-group */
 .simulador-form .form-group select {
-  width: 29%;
-  margin-left: auto;
+  width: 100%;
+  margin-left: 0;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-/* Label: ancho fijo de 300px */
+/* Label: ocupa todo el ancho y separada del campo */
 .simulador-form .form-group label {
-  flex: 0 0 300px;
-  margin-right: 10px;
+  flex: none;
+  margin-right: 0;
+  margin-bottom: 5px;
   color: #2E4057;
   font-weight: 600;
 }
@@ -763,6 +773,16 @@ section {
   font-weight: 400;
   color: #2E4057;
 }
+.selector-credito .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.selector-credito .form-group label {
+  margin-bottom: 5px;
+}
+
 .selector-credito select {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
@@ -774,14 +794,15 @@ section {
   background-color: white;
   appearance: none;
   margin-top: 15px;
-  margin-left: 20px
+  margin-left: 0;
+  width: 100%;
 }
 
 /* Input y Number: 29% ancho */
 .simulador-form .form-group input[type="text"],
 .simulador-form .form-group input[type="number"] {
-  width: 29%;
-  margin-left: auto;
+  width: 100%;
+  margin-left: 0;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
