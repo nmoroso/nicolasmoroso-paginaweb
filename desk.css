@@ -1222,6 +1222,13 @@ section {
   visibility: visible;
 }
 
+/* Elementos de la tabla de desarrollo (ocultos en escritorio) */
+.tabla-btn,
+#closeTabla,
+.tabla-overlay {
+  display: none;
+}
+
 /* ===== Sección Educación ===== */
 /* ===== Sección Educación ===== */
 /* ===== Sección Educación ===== */
