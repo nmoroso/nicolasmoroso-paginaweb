@@ -279,13 +279,16 @@
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
+    const submitButton = this.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+
     emailjs.sendForm('service_y83brs4', 'template_lfl253t', this)
       .then(function() {
-        document.getElementById('respuesta').innerText = "✅ ¡Mensaje enviado con éxito!";
-        document.getElementById('contact-form').reset();
+        window.location.href = "confirmacion.html";
       }, function(error) {
         document.getElementById('respuesta').innerText = "❌ Ocurrió un error. Intenta más tarde.";
         console.error("EmailJS error:", error);
+        submitButton.disabled = false;
       });
   });
 </script>
