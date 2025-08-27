@@ -281,8 +281,7 @@
 
     emailjs.sendForm('service_y83brs4', 'template_lfl253t', this)
       .then(function() {
-        document.getElementById('respuesta').innerText = "✅ ¡Mensaje enviado con éxito!";
-        document.getElementById('contact-form').reset();
+        window.location.href = "confirmacion.html";
       }, function(error) {
         document.getElementById('respuesta').innerText = "❌ Ocurrió un error. Intenta más tarde.";
         console.error("EmailJS error:", error);
