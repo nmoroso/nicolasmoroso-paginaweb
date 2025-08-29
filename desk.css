@@ -1542,6 +1542,38 @@ section {
   margin-bottom: 0.75rem;
 }
 
+#faq {
+  padding: 4rem 0;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: transparent;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#faq .faq-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#faq .section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+#faq .accordion-title {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+#faq .accordion-item {
+  margin-bottom: 16px;
+}
+
 /*==================== AUTODIAGNÓSTICO ====================*/
 
 .autodiagnostico-container {
