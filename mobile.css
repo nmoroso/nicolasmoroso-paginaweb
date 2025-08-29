@@ -428,7 +428,7 @@
   width: auto;
   text-align: left;
   background: transparent;
-  padding: 15px;
+  padding: 15px 40px 15px 15px;
   cursor: pointer;
   border: none;
   color: inherit;
@@ -437,20 +437,24 @@
   font-weight: 600;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .accordion-title::after {
   content: "+";
   font-weight: bold;
   color: #ff6b35;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   transition: transform 0.2s ease;
 }
 
 .accordion-item.active .accordion-title::after {
   content: "-";
-  transform: rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .accordion-content {

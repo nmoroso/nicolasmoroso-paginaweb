@@ -1565,6 +1565,17 @@ section {
   color: #111;
 }
 
+
+#faq .accordion-title {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+#faq .accordion-item {
+  margin-bottom: 16px;
+}
+
+
 /*==================== AUTODIAGNÓSTICO ====================*/
 
 .autodiagnostico-container {
