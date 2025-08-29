@@ -470,6 +470,15 @@
   display: block;
 }
 
+/* Estilo específico para la página Educación */
+#education-content .accordion-title {
+  color: var(--azul-profundo);
+}
+
+#education-content .accordion-title-text strong {
+  color: var(--azul-profundo);
+}
+
 
 
 /* Overlay: inicialmente oculto */
