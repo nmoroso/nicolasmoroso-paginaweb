@@ -276,7 +276,20 @@
     text-align: center;
   }
 
+  #faq {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: transparent;
+  }
 
+  #faq .section-title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+
+  
   .about-section {
     flex-direction: column;
     gap: 20px;
