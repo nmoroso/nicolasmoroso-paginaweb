@@ -1393,7 +1393,6 @@ section {
 
 .accordion-title-text strong {
   font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-  color: #fff;
 }
 
 /* mover el “+” al extremo derecho */
@@ -1423,6 +1422,25 @@ section {
 
 .accordion-item.active .accordion-content {
   display: block;
+}
+
+/* ===== Estilo específico para los acordeones de la página Educación ===== */
+#education-content .accordion-item {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+#education-content .accordion-title {
+  color: var(--azul-profundo);
+}
+
+#education-content .accordion-title-text strong {
+  color: var(--azul-profundo);
+}
+
+#education-content .accordion-title::after {
+  color: #ff6b35;
 }
 #terapia-financiera {
   padding: 4rem 0;
