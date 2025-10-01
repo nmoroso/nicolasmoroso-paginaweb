@@ -185,6 +185,19 @@
 
 }
 
+/* RPR: ajustar CTAs hero en móvil */
+.hero-ctas {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.hero-ctas .hero-button,
+.hero-ctas .hero-secondary {
+  text-align: center;
+  width: 100%;
+}
+
 
 
 
@@ -193,6 +206,37 @@
   text-align: left;
   min-width: 250px;  /* o un valor en rem: e.g., 15rem */
   min-height: 4em; /* o el valor que funcione en ambos casos */
+}
+
+/* RPR: servicios y testimonios en una columna */
+.services-grid,
+.testimonials-grid {
+  grid-template-columns: 1fr;
+}
+
+.service-card,
+.testimonial-card {
+  padding: 1.5rem;
+}
+
+/* RPR: footer y TODOs en móvil */
+.footer-container {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.footer-cta {
+  align-items: center;
+}
+
+.footer-button,
+.footer-mail,
+.footer-whatsapp {
+  width: 100%;
+}
+
+.todos-container {
+  padding: 1.5rem;
 }
 
 

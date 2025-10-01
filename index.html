@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
 
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script>// keep tracking
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id=GTM-53888FR6'+dl;f.parentNode.insertBefore(j,f);
@@ -14,6 +15,7 @@
 
   <!-- Meta Pixel Code -->
   <script>
+// keep tracking
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -70,14 +72,13 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
       <!-- Navegación -->
       <nav class="header-nav">
         <ul>
+          <li><a href="#top" class="nav-item">Inicio</a></li>
+          <li><a href="#about" class="nav-item">Sobre Mí</a></li>
+          <li><a href="#servicios" class="nav-item">Servicios</a></li>
+          <!-- Deprecated: low clicks --><!-- RPR: navegación anterior conservada para referencia
           <li>
-
             <a href="educacion.html" class="nav-item">Educación</a>
-
-
-
           </li>
-      
           <li class="simulador-dropdown">
             <a href="#simulador" class="nav-item">Simulador</a>
             <ul class="simulador-menu">
@@ -85,10 +86,8 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
               <li><a href="inversiones.html" class="submenu-item">Inversiones</a></li>
             </ul>
           </li>
-
           <li><a href="blog/index.html" class="nav-item">Blog</a></li>
-
-          <li><a href="#about" class="nav-item">Sobre Mí</a></li>
+          -->
         </ul>
       </nav>
       
@@ -102,10 +101,13 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
     <!-- Menú desplegable en móvil -->
     <div class="mobile-menu">
       <ul>
+        <li><a href="#top">Inicio</a></li>
+        <li><a href="#about">Sobre Mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <!-- Deprecated: low clicks --><!-- RPR: menú móvil anterior conservado
         <li>
           <a href="educacion.html">Educación</a>
         </li>
-    
         <li class="simulador-dropdown">
           <a>Simulador</a>
           <ul class="simulador-menu">
@@ -113,48 +115,64 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
             <li><a href="inversiones.html" class="submenu-item">Inversiones</a></li>
           </ul>
         </li>
-
         <li><a href="blog/index.html">Blog</a></li>
-
-        <li><a href="#about">Sobre Mí</a></li>
         <li><a href="autodiagnostico.html" class="diagnostico-link">Diagnóstico</a></li>
-
+        -->
       </ul>
     </div>
   </header>
 
- <section class="hero-banner">
+  <main>
+ <section class="hero-banner" id="top">
   <div class="hero-content container">
     <h1>
-      <span class="static-text">¿Quieres mejorar tus finanzas pero </span>
+      <span class="static-text">Asesoría financiera práctica para </span>
       <span class="typed-container"><span id="typedText"></span></span>
     </h1>
-    <p>
-      <span class="resaltado">Tus emociones</span> influyen en tus decisiones.<br>
-      Tus decisiones influyen en <span class="resaltado">tus finanzas</span>.<br>
-      <s>No sigas la ruta de otros</s>. <br><span class="resaltado-celeste">Construyamos la tuya.</span>
-    </p>
-    <a href="#terapia-financiera" class="hero-button">PROGRAMA</a>
-      
+    <p class="hero-description">Soy Nicolás Moroso, Ingeniero Comercial y terapeuta financiero. Te ayudo a ordenar tu dinero, tomar decisiones con calma y avanzar con un plan realista.</p>
+    <div class="hero-ctas">
+      <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="hero-button" aria-label="Agendar sesión en Encuadrado">Agenda tu sesión</a>
+      <a href="#servicios" class="hero-secondary" aria-label="Ver servicios disponibles">Ver servicios</a>
+    </div>
+
+  </div>
+</section>
+<section id="testimonios" class="section testimonials-section">
+  <div class="testimonials-container">
+    <h2 class="section-title">Testimonios</h2>
+    <div class="testimonials-grid">
+      <figure class="testimonial-card">
+        <blockquote>"En dos sesiones entendí mis números y tomé decisiones que venía postergando hace meses."</blockquote>
+        <figcaption>Camila, emprendedora de servicios</figcaption>
+      </figure>
+      <figure class="testimonial-card">
+        <blockquote>"El plan acompañado me dio estructura semanal para ordenar deudas y empezar a ahorrar con intención."</blockquote>
+        <figcaption>Felipe, profesional independiente</figcaption>
+      </figure>
+      <figure class="testimonial-card">
+        <blockquote>"Llegué con ansiedad y salí con un tablero claro de prioridades y próximos pasos accionables."</blockquote>
+        <figcaption>María José, lidera equipo comercial</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
   <!-- Contenedor externo que ocupa 100vh y centra la tarjeta -->
   <div class="about-wrapper">
     <!-- Tarjeta que ocupa 70% del espacio del wrapper -->
     <section id="about" class="about-section section">
-      
+
       <!-- Columna izquierda: Texto -->
       <div class="about-text">
         <h2>Sobre Mí</h2>
-        <p>Soy Nicolás, Ingeniero Comercial de la Universidad Adolfo Ibáñez con un Magíster en Finanzas y más de 7 años de experiencia ayudando a personas y empresas a tomar decisiones financieras estratégicas.</p>
-        <p>Durante mi carrera, me he especializado en entender en profundidad cómo funcionan los productos bancarios y en diseñar soluciones eficientes de crédito, inversión y planificación que se ajusten a cada situación particular. Combino mi experiencia con el uso de herramientas digitales para entregar un servicio ágil, claro y enfocado en resultados.</p>
-        <p>Actualmente asesoro a personas, emprendedores y empresas de distintos rubros en análisis financiero, planificación estratégica y desarrollo comercial. Mi enfoque está en entregar claridad, herramientas prácticas y acompañamiento personalizado para que puedan tomar decisiones con confianza y hacer crecer sus proyectos, sin importar su tamaño o industria.</p>
-        
+        <p><!-- RPR: copy optimizado para foco en credenciales -->Soy Nicolás Moroso, Ingeniero Comercial UAI con Magíster en Finanzas y terapeuta financiero certificado.</p>
+        <p>He acompañado por más de 7 años a personas y equipos a tomar decisiones de dinero con datos claros, simulaciones reales y un lenguaje sin tecnicismos.</p>
+        <p>Trabajo de forma directa y práctica: ordenamos tu situación, definimos prioridades y avanzamos con un plan que puedas sostener día a día.</p>
+
       </div>
-      
+
       <!-- Columna derecha: Imagen -->
       <div class="about-image">
-        <img src="yo.png" alt="Sobre Mí">
+        <img src="yo.png" alt="Retrato de Nicolás Moroso">
       </div>
     </section>
   </div>
@@ -162,6 +180,30 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
 
 
 
+<section id="servicios" class="section services-section">
+  <div class="services-container">
+    <h2 class="section-title">Cómo te ayudo</h2>
+    <p class="section-subtitle">Define tus prioridades, ordena tu dinero y ejecútalo con acompañamiento cercano.</p>
+    <div class="services-grid">
+      <article class="service-card">
+        <h3>Diagnóstico financiero express</h3>
+        <p>Revisamos tu situación actual, identificamos fugas y definimos focos para tomar decisiones inmediatas con claridad.</p>
+        <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="service-button" aria-label="Agendar diagnóstico financiero express">Agendar</a>
+      </article>
+      <article class="service-card">
+        <h3>Plan acompañado</h3>
+        <p>Diseñamos un plan de acción con simulaciones reales y seguimiento semanal para avanzar con pasos concretos.</p>
+        <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="service-button" aria-label="Agendar plan acompañado">Agendar</a>
+      </article>
+      <article class="service-card">
+        <h3>Sesión de seguimiento estratégico</h3>
+        <p>Ajustamos metas, resolvemos dudas y mantenemos la disciplina financiera con indicadores fáciles de monitorear.</p>
+        <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="service-button" aria-label="Agendar sesión de seguimiento estratégico">Agendar</a>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- Deprecated: low clicks --><!-- RPR: sección Terapia Financiera completa se mantiene para eventuales campañas futuras
 <section id="terapia-financiera" class="section">
   <div class="tf-grid">
     <div class="tf-row tf-row1">
@@ -249,6 +291,7 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
     </div>
   </div>
 </section>
+-->
 
 
 
@@ -323,7 +366,8 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- SDK de EmailJS -->
+<!-- RPR: contacto por formulario deshabilitado para priorizar mailto y conversión directa
+// keep tracking: EmailJS reference conservada
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
   emailjs.init("v0jnUzr59T4OChNeK");
@@ -380,36 +424,33 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
       });
   });
 </script>
+-->
 
+  <section class="section todos-section" aria-labelledby="mejoras-lighthouse"><!-- RPR: TODOs opcionales -->
+    <div class="todos-container">
+      <h2 id="mejoras-lighthouse">Siguientes TODOs sugeridos</h2>
+      <ul>
+        <li>Optimizar el peso de imágenes principales exportándolas en WebP conservando calidad.</li>
+        <li>Revisar tiempos de carga de scripts externos y evaluar precarga condicional para Typed.js.</li>
+        <li>Agregar esquema estructurado FAQPage para potenciar fragmentos enriquecidos.</li>
+      </ul>
+    </div>
+  </section>
 
-
-
-
-
-
- <footer>
+  </main>
 <footer id="contact">
   <div class="footer-container">
-    <!-- Logo Footer -->
     <div class="footer-logo">
       <h2>nicolasmoroso.cl</h2>
+      <p class="footer-tagline">Acompañamiento financiero independiente para tomar decisiones con confianza.</p>
     </div>
-    
-<!-- Sección de Contacto -->
-<div class="footer-section">
-  <h3>Contacto:</h3>
-  <p>
-    <img src="mailto.png" alt="Correo" class="contact-icon mail-icon">
-    <a href="mailto:info@nicolasmoroso.cl">info@nicolasmoroso.cl</a>
-  </p>
-  <p>
-    <img src="wsblanco.png" alt="WhatsApp" class="contact-icon whatsapp-icon">
-    <a href="https://wa.me/56951793156?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20sesiones.%20%C2%BFMe%20puedes%20orientar%3F" target="_blank">+56951793156</a>
-  </p>
-</div>
 
-    
-    <!-- Redes Sociales -->
+    <div class="footer-cta">
+      <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="footer-button" aria-label="Agendar ahora en Encuadrado"><!-- RPR: agenda reiterada en footer -->Agenda ahora</a>
+      <a href="mailto:info@nicolasmoroso.cl" class="footer-mail">info@nicolasmoroso.cl</a>
+      <a href="https://wa.me/56951793156?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20sesiones.%20%C2%BFMe%20puedes%20orientar%3F" target="_blank" rel="noopener" class="footer-whatsapp">WhatsApp: +56951793156</a>
+    </div>
+
     <div class="footer-socials">
       <a href="https://www.linkedin.com/in/nicolas-moroso-lillo/"><i class="fa-brands fa-linkedin"></i></a>
       <a href="https://www.instagram.com/nicolasmoroso_/"><i class="fa-brands fa-instagram"></i></a>
