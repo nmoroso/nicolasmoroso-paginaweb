@@ -3,10 +3,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   new Typed('#typedText', {
     strings: [
-      "ordenar tus decisiones de dinero",
-      "darle dirección a tu flujo de caja",
-      "planificar inversiones sin improvisar",
-      "bajar la ansiedad financiera diaria"
+      "no sabes por dónde empezar?",
+      "no tienes tiempo para organizarte?",
+      "todo te suena demasiado técnico?",
+      "te da miedo cometer errores?",
+      "sientes que nunca es buen momento?",
+      "ya lo has intentado sin éxito?"
     ],
     typeSpeed: 45,
     backSpeed: 30,
