@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informe Financiero Automático</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="desk.css" />
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)" />
+  <link rel="stylesheet" href="balance.css" />
+  <script src="https://cdn.plot.ly/plotly-2.31.1.min.js" defer></script>
+  <script src="balance.js" defer></script>
+</head>
+<body class="balance-body">
+  <header class="balance-header">
+    <div class="balance-header__inner">
+      <a href="index.html" class="balance-header__brand">
+        <img src="logo.png" alt="Terapia Financiera" />
+        <span>Informe Financiero</span>
+      </a>
+      <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="balance-header__cta" target="_blank" rel="noopener">
+        Agendar</a>
+    </div>
+  </header>
+
+  <main class="balance-main">
+    <section class="input-card">
+      <h1>Analizador de Estados Financieros</h1>
+      <p class="input-card__subtitle">
+        Pega los datos del balance y estado de resultados en formato de doble columna. El sistema generará indicadores, gráficos y un informe ejecutivo automáticamente.
+      </p>
+      <div class="input-card__grid">
+        <label for="balance-input" class="input-card__label">Balance y EERR (copiar/pegar)</label>
+        <textarea id="balance-input" rows="14" placeholder="Ejemplo:
+Activo Corriente	1.250.000.000	1.100.000.000
+Pasivo Corriente	830.000.000	720.000.000
+Inventarios	210.000.000	185.000.000
+..."></textarea>
+        <div class="input-actions">
+          <button id="process-btn" class="primary-btn">Generar informe</button>
+          <button id="clear-btn" class="secondary-btn">Limpiar</button>
+        </div>
+        <div class="input-hints">
+          <ul>
+            <li>Se toma el primer valor numérico de cada fila como el dato vigente.</li>
+            <li>Se reconocen sinónimos frecuentes (p. ej. «Resultado Operacional» = EBIT).</li>
+            <li>Soporta separadores de miles con punto y decimales con coma o punto.</li>
+          </ul>
+        </div>
+        <div id="input-error" class="input-error" role="alert" aria-live="assertive"></div>
+      </div>
+    </section>
+
+    <section id="report" class="report hidden" aria-live="polite">
+      <div id="warnings" class="report__warnings"></div>
+
+      <section class="report-section">
+        <h2>Resumen Ejecutivo</h2>
+        <ul id="executive-summary" class="summary-list"></ul>
+      </section>
+
+      <section class="report-section" id="liquidity-section">
+        <div class="section-header">
+          <h2>Liquidez</h2>
+          <p id="liquidity-text" class="section-description"></p>
+        </div>
+        <div class="section-content">
+          <div class="chart-card large">
+            <h3>Fondo de Maniobra → Tesorería Neta</h3>
+            <div id="waterfall-chart" class="chart"></div>
+          </div>
+          <div class="chart-grid">
+            <div class="chart-card">
+              <h3>Razón Corriente</h3>
+              <div id="gauge-rc" class="chart gauge"></div>
+            </div>
+            <div class="chart-card">
+              <h3>Prueba Ácida</h3>
+              <div id="gauge-pa" class="chart gauge"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="report-section" id="debt-section">
+        <div class="section-header">
+          <h2>Endeudamiento</h2>
+          <p id="debt-text" class="section-description"></p>
+        </div>
+        <div class="section-content two-column">
+          <div class="kpi-block">
+            <h3>Indicadores Clave</h3>
+            <table class="kpi-table">
+              <thead>
+                <tr>
+                  <th>Indicador</th>
+                  <th>Valor</th>
+                  <th>Nivel</th>
+                </tr>
+              </thead>
+              <tbody id="kpi-table-body"></tbody>
+            </table>
+          </div>
+          <div class="chart-card">
+            <h3>Composición de Financiamiento</h3>
+            <div id="doughnut-chart" class="chart"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="report-section" id="profitability-section">
+        <div class="section-header">
+          <h2>Rentabilidad</h2>
+          <p id="profitability-text" class="section-description"></p>
+        </div>
+        <div class="chart-card large">
+          <h3>Márgenes (Bruto, Operacional, Neto)</h3>
+          <div id="margin-chart" class="chart"></div>
+        </div>
+      </section>
+
+      <section class="report-section" id="risk-section">
+        <div class="section-header">
+          <h2>Riesgo Fiscal y Laboral</h2>
+          <p id="risk-text" class="section-description"></p>
+        </div>
+      </section>
+
+      <section class="report-section" id="conclusion-section">
+        <div class="section-header">
+          <h2>Conclusión General</h2>
+          <p class="section-description">Acciones prioritarias recomendadas para los próximos 90 días.</p>
+        </div>
+        <ol id="action-list" class="action-list"></ol>
+      </section>
+
+      <section class="report-section" id="observations-section">
+        <div class="section-header">
+          <h2>Observaciones y datos faltantes</h2>
+        </div>
+        <ul id="notes-list" class="notes-list"></ul>
+      </section>
+
+      <footer class="report-footer">
+        M$ = miles de pesos chilenos. Cifras aproximadas según balance entregado.
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
