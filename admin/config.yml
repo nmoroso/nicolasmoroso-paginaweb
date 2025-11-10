@@ -23,7 +23,7 @@ collections:
     folder: "content/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    preview_path: "blog/{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "nodisp/blog/{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
