@@ -2,11 +2,11 @@
   {
     "title": "Simulador de Crédito",
     "description": "Simula créditos de consumo, hipotecario y bullet.",
-    "link": "simulador.html"
+    "link": "nodisp/simulador.html"
   },
   {
     "title": "Simulador de Inversiones",
     "description": "Proyecta tus ahorros con interés compuesto.",
-    "link": "inversiones.html"
+    "link": "nodisp/inversiones.html"
   }
 ]
