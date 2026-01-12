@@ -19,7 +19,7 @@ function parseFrontMatter(md) {
 document.addEventListener('DOMContentLoaded', function() {
   const repo = 'nmoroso/nicolasmoroso-paginaweb';
   const branch = 'main';
-  const apiUrl = `https://api.github.com/repos/${repo}/contents/nodisp/blog?ref=${branch}`;
+  const apiUrl = `https://api.github.com/repos/${repo}/contents/blog?ref=${branch}`;
 
   fetch(apiUrl)
     .then(r => r.json())
