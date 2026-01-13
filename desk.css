@@ -55,6 +55,12 @@ label {
   box-sizing: border-box;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .menu-wrapper {
   display: none;
   
@@ -159,6 +165,33 @@ label {
 
 .header-button:hover {
   background-color: #e05220; /* Color al pasar el mouse */
+}
+
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: clamp(0.55rem, 0.9vw, 0.85rem);
+}
+
+.language-toggle-button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+
+.language-toggle-button.active {
+  color: #ff6b35;
+}
+
+.language-toggle-button:focus-visible {
+  outline: 2px solid #ff6b35;
+  outline-offset: 2px;
 }
 
 .simulador-dropdown {

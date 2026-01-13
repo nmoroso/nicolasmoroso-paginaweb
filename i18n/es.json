@@ -1,0 +1,153 @@
+{
+  "meta": {
+    "title": "Inicio",
+    "description": "Programa de Terapia Financiera para ordenar tus finanzas, definir prioridades y avanzar con claridad."
+  },
+  "nav": {
+    "home": "Inicio<span class=\"orange-f\"></span>",
+    "education": "Educación",
+    "simulator": "Simulador",
+    "simulatorCredits": "Créditos",
+    "simulatorInvestments": "Inversiones",
+    "blog": "Blog",
+    "about": "Sobre Mí",
+    "schedule": "Agendar",
+    "diagnosis": "Diagnóstico"
+  },
+  "hero": {
+    "title": "¿Quieres mejorar tus finanzas pero ",
+    "subtitle": "<span class=\"resaltado\">Tus emociones</span> influyen en tus decisiones.<br>Tus decisiones influyen en <span class=\"resaltado\">tus finanzas</span>.<br><s>No sigas la ruta de otros</s>.<br><span class=\"resaltado-celeste\">Construyamos la tuya.</span>",
+    "ctaProgram": "Programa",
+    "typed": [
+      "no sabes por dónde empezar?",
+      "no tienes tiempo para organizarte?",
+      "todo te suena demasiado técnico?",
+      "te da miedo cometer errores?",
+      "sientes que nunca es buen momento?",
+      "ya lo has intentado sin éxito?"
+    ]
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "paragraph1": "Soy Nicolás, Ingeniero Comercial de la Universidad Adolfo Ibáñez con un Magíster en Finanzas y más de 7 años de experiencia ayudando a personas y empresas a tomar decisiones financieras estratégicas.",
+    "paragraph2": "Durante mi carrera, me he especializado en entender en profundidad cómo funcionan los productos bancarios y en diseñar soluciones eficientes de crédito, inversión y planificación que se ajusten a cada situación particular. Combino mi experiencia con el uso de herramientas digitales para entregar un servicio ágil, claro y enfocado en resultados.",
+    "paragraph3": "Actualmente asesoro a personas, emprendedores y empresas de distintos rubros en análisis financiero, planificación estratégica y desarrollo comercial. Mi enfoque está en entregar claridad, herramientas prácticas y acompañamiento personalizado para que puedan tomar decisiones con confianza y hacer crecer sus proyectos, sin importar su tamaño o industria."
+  },
+  "program": {
+    "title": "Programa: Terapia Financiera",
+    "subtitle": "<strong>Define</strong> tus prioridades. <strong>Ordena</strong> tu dinero. <strong>Avanza</strong> con claridad.",
+    "intro": "Terapia Financiera es un programa 1 a 1 donde trabajamos en conjunto para que puedas tomar decisiones financieras con sentido, basadas en tus prioridades personales. El objetivo es simple: reconocer tu <strong>estado de bienestar financiero</strong> actual, <strong>establecer objetivos</strong> realistas y <strong>construir un plan</strong> que te permita avanzar sin depender de fórmulas genéricas ni recomendaciones externas desconectadas de tu realidad.",
+    "dimensionsIntro": "El enfoque combina dos dimensiones:",
+    "dimensionsTechnical": "<strong>Lo técnico:</strong> para que puedas entender conceptos como ahorro, deuda, productos financieros e inversión sin confundirte ni depender de terceros.",
+    "dimensionsPersonal": "<strong>Lo personal:</strong> para que tus decisiones estén alineadas con tus metas y no con expectativas ajenas o impulsos del momento.",
+    "outro": "Este espacio está pensado para personas que no buscan \"hacerse expertos\" en finanzas, sino tomar el control de lo esencial: cuánto entra, cuánto sale, qué decisiones tienen más impacto y cómo avanzar con estrategia y realismo.",
+    "statesTitle": "Conoce los estados de bienestar financiero",
+    "states": {
+      "survival": {
+        "title": "<strong>😰 Supervivencia Financiera</strong>",
+        "body": "Estás al día con lo justo. Los ingresos apenas alcanzan para cubrir lo básico y cualquier imprevisto puede desestabilizarte. Hay dependencia del crédito o ayudas externas, y el estrés financiero es constante."
+      },
+      "stability": {
+        "title": "<strong>🙂 Estabilidad Financiera</strong>",
+        "body": "Logras cubrir tus gastos mensuales y evitar deudas problemáticas. Hay algo de ahorro, pero sin una estrategia clara. Estás fuera de peligro, pero aún no construyes un verdadero colchón financiero."
+      },
+      "calm": {
+        "title": "<strong>🧘‍♂️ Tranquilidad Financiera</strong>",
+        "body": "Tienes control total de tus finanzas: ahorras, planificas y no dependes del crédito. Puedes enfrentar imprevistos sin desestabilizarte. Tu enfoque empieza a moverse del presente hacia el futuro."
+      },
+      "projection": {
+        "title": "<strong>🧑‍💻 Proyección Financiera</strong>",
+        "body": "Estás construyendo patrimonio con intención. Inviertes, diversificas y piensas en metas de mediano y largo plazo. Tu dinero comienza a trabajar para ti, y ya proyectas un estilo de vida más libre y sostenible."
+      },
+      "freedom": {
+        "title": "<strong>🤩 Libertad Financiera</strong>",
+        "body": "Tu situación económica te permite decidir sin que el dinero sea un obstáculo. Ingresos pasivos o inversiones cubren tus necesidades. Ya no solo gestionas tu dinero: lo usas como herramienta para vivir en tus propios términos."
+      }
+    },
+    "diagnosisTitle": "¡Haz el diagnóstico y descubre tu estado actual!",
+    "diagnosisCta": "Diagnóstico",
+    "audienceTitle": "Está dirigido a quienes:",
+    "audience": {
+      "list1": "Quieren ordenar sus finanzas pero no saben por dónde empezar.",
+      "list2": "Necesitan claridad para establecer prioridades y dejar de postergar decisiones importantes.",
+      "list3": "Buscan entender mejor conceptos financieros sin tecnicismos innecesarios.",
+      "list4": "Desean definir metas y trabajar con un plan concreto para alcanzarlas.",
+      "list5": "Valoran tener una estructura clara y aplicable a su vida diaria."
+    },
+    "outcomesTitle": "¿Qué se espera lograr?",
+    "outcomes": {
+      "list1": "Tener una visión clara y ordenada de tu situación financiera actual.",
+      "list2": "Establecer metas financieras alineadas con tus prioridades reales.",
+      "list3": "Diseñar un plan de acción con estrategias de ahorro, inversión y uso de productos financieros.",
+      "list4": "Tomar decisiones con mayor seguridad y menor improvisación.",
+      "list5": "Sentir control sobre tu avance, sin depender de recomendaciones externas o modas financieras."
+    },
+    "scheduleCta": "Agendar"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes (FAQ)",
+    "items": {
+      "q1": {
+        "title": "<strong>¿Qué es la Terapia Financiera?</strong>",
+        "body": "Es un proceso práctico de educación y acompañamiento que busca ordenar tus finanzas personales, reducir el estrés financiero y ayudarte a tomar decisiones claras. No se trata de austeridad, sino de usar el dinero como una herramienta para lograr tus objetivos de vida."
+      },
+      "q2": {
+        "title": "<strong>¿En qué se diferencia de una asesoría financiera tradicional?</strong>",
+        "body": "Aquí no vendemos un producto asociado a la problemática. El enfoque es independiente y educativo: entrego claridad con herramientas, simuladores y un plan aplicable a tu realidad, sin conflictos de interés."
+      },
+      "q3": {
+        "title": "<strong>¿Qué puedo esperar de una sesión 1:1?</strong>",
+        "body": "En cada sesión revisamos tu situación financiera actual, definimos tus objetivos y trabajamos con simuladores o ejercicios prácticos (créditos, inversiones, presupuestos). Te llevas pasos concretos para avanzar y materiales de apoyo."
+      },
+      "q4": {
+        "title": "<strong>¿Necesito conocimientos previos de finanzas?</strong>",
+        "body": "No. La idea es justamente partir desde cero si es necesario. Los conceptos se explican de manera sencilla y aplicados a tu vida diaria."
+      },
+      "q5": {
+        "title": "<strong>¿Cuánto duran las sesiones y cómo se realizan?</strong>",
+        "body": "Cada sesión dura alrededor de 45 minutos y se realiza de forma online, para que puedas conectarte desde cualquier lugar."
+      },
+      "q6": {
+        "title": "<strong>¿Los simuladores reemplazan la asesoría?</strong>",
+        "body": "No. Los simuladores son herramientas de apoyo para visualizar escenarios. La asesoría agrega interpretación, estrategia y un plan personalizado para ti."
+      },
+      "q7": {
+        "title": "<strong>¿Qué pasa si ya tengo deudas?</strong>",
+        "body": "Podemos trabajar en un plan de orden y pago, evaluando alternativas para reducir costos financieros y evitar que el ciclo de endeudamiento siga creciendo."
+      },
+      "q8": {
+        "title": "<strong>¿La asesoría incluye inversiones?</strong>",
+        "body": "Sí, revisamos opciones de inversión según tu perfil y objetivos, siempre de forma general y educativa. No entrego recomendaciones específicas de compra o venta, sino que te enseño a comparar y decidir con criterio."
+      },
+      "q9": {
+        "title": "<strong>¿Cómo agendo una sesión?</strong>",
+        "body": "Puedes hacerlo directamente desde la sección Agendar en esta página. Allí eliges día y la hora."
+      },
+      "q10": {
+        "title": "<strong>¿Quién puede tomar estas asesorías?</strong>",
+        "body": "Cualquier persona que quiera mejorar su relación con el dinero, aprender a manejar créditos, ordenar sus finanzas personales o comenzar a invertir de forma informada."
+      }
+    }
+  },
+  "contact": {
+    "highlight": "¡Revisa los planes disponibles!",
+    "highlightLink": "Haz clic aquí para agendar",
+    "title": "¿Tienes dudas? ¡Escríbeme!",
+    "form": {
+      "nameLabel": "Nombre:",
+      "namePlaceholder": "Ingresa tu nombre",
+      "phoneLabel": "Teléfono:",
+      "phonePlaceholder": "Ingresa tu teléfono",
+      "emailLabel": "Correo Electrónico:",
+      "emailPlaceholder": "Ingresa tu correo electrónico",
+      "orgLabel": "Organización:",
+      "orgPlaceholder": "Nombre empresa",
+      "submit": "Enviar",
+      "error": "❌ Ocurrió un error. Intenta más tarde."
+    }
+  },
+  "footer": {
+    "site": "nicolasmoroso.cl",
+    "contactTitle": "Contacto:"
+  }
+}

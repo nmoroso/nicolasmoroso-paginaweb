@@ -32,7 +32,8 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
 
   <meta name="google-site-verification" content="6CyGdduy_6elptw7WOq3KNZLswDURqGI__AuQbK5Fl8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio</title>
+  <title data-i18n="meta.title">Inicio</title>
+  <meta name="description" content="Programa de Terapia Financiera para ordenar tus finanzas, definir prioridades y avanzar con claridad." data-i18n-content="meta.description">
 
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="desk.css">
@@ -58,7 +59,7 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
       <div class="header-logo">
        <a href="#top" class="logo">
           <img src="logo.png" alt="Terapia Financiera" />
-          <span class="logo-text">
+          <span class="logo-text" data-i18n-html="nav.home">
           inicio<span class="orange-f"></span>
           </span>
         </a>
@@ -72,52 +73,60 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
         <ul>
           <li>
 
-            <a href="educacion.html" class="nav-item">Educación</a>
+            <a href="educacion.html" class="nav-item" data-i18n="nav.education">Educación</a>
 
 
 
           </li>
       
           <li class="simulador-dropdown">
-            <a href="#simulador" class="nav-item">Simulador</a>
+            <a href="#simulador" class="nav-item" data-i18n="nav.simulator">Simulador</a>
             <ul class="simulador-menu">
-              <li><a href="simulador.html" class="submenu-item">Créditos</a></li>
-              <li><a href="inversiones.html" class="submenu-item">Inversiones</a></li>
+              <li><a href="simulador.html" class="submenu-item" data-i18n="nav.simulatorCredits">Créditos</a></li>
+              <li><a href="inversiones.html" class="submenu-item" data-i18n="nav.simulatorInvestments">Inversiones</a></li>
             </ul>
           </li>
 
-          <li><a href="blog/index.html" class="nav-item">Blog</a></li>
+          <li><a href="blog/index.html" class="nav-item" data-i18n="nav.blog">Blog</a></li>
 
-          <li><a href="#about" class="nav-item">Sobre Mí</a></li>
+          <li><a href="#about" class="nav-item" data-i18n="nav.about">Sobre Mí</a></li>
         </ul>
       </nav>
       
       <!-- Botón de Agendar Reunión -->
   
-      <div class="header-agendar">
-        <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button desk-btn">AGENDAR</a>
-        <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button mobile-btn">AGENDAR</a>
+      <div class="header-actions">
+        <div class="header-agendar">
+          <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button desk-btn" data-i18n="nav.schedule">AGENDAR</a>
+          <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button mobile-btn" data-i18n="nav.schedule">AGENDAR</a>
+        </div>
+
+        <div class="language-toggle" aria-label="Selector de idioma">
+          <button type="button" class="language-toggle-button" data-lang="es">ES</button>
+          <span class="language-toggle-separator">|</span>
+          <button type="button" class="language-toggle-button" data-lang="en">EN</button>
+        </div>
       </div>
     
     <!-- Menú desplegable en móvil -->
     <div class="mobile-menu">
       <ul>
         <li>
-          <a href="educacion.html">Educación</a>
+          <a href="educacion.html" data-i18n="nav.education">Educación</a>
         </li>
     
         <li class="simulador-dropdown">
-          <a>Simulador</a>
+          <a data-i18n="nav.simulator">Simulador</a>
           <ul class="simulador-menu">
-            <li><a href="simulador.html" class="submenu-item">Créditos</a></li>
-            <li><a href="inversiones.html" class="submenu-item">Inversiones</a></li>
+            <li><a href="simulador.html" class="submenu-item" data-i18n="nav.simulatorCredits">Créditos</a></li>
+            <li><a href="inversiones.html" class="submenu-item" data-i18n="nav.simulatorInvestments">Inversiones</a></li>
           </ul>
         </li>
 
-        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="blog/index.html" data-i18n="nav.blog">Blog</a></li>
 
-        <li><a href="#about">Sobre Mí</a></li>
-        <li><a href="autodiagnostico.html" class="diagnostico-link">Diagnóstico</a></li>
+        <li><a href="#about" data-i18n="nav.about">Sobre Mí</a></li>
+        <li><a href="autodiagnostico.html" class="diagnostico-link" data-i18n="nav.diagnosis">Diagnóstico</a></li>
 
       </ul>
     </div>
@@ -126,15 +135,15 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
  <section class="hero-banner">
   <div class="hero-content container">
     <h1>
-      <span class="static-text">¿Quieres mejorar tus finanzas pero </span>
+      <span class="static-text" data-i18n="hero.title">¿Quieres mejorar tus finanzas pero </span>
       <span class="typed-container"><span id="typedText"></span></span>
     </h1>
-    <p>
+    <p data-i18n-html="hero.subtitle">
       <span class="resaltado">Tus emociones</span> influyen en tus decisiones.<br>
       Tus decisiones influyen en <span class="resaltado">tus finanzas</span>.<br>
       <s>No sigas la ruta de otros</s>. <br><span class="resaltado-celeste">Construyamos la tuya.</span>
     </p>
-    <a href="#terapia-financiera" class="hero-button">PROGRAMA</a>
+    <a href="#terapia-financiera" class="hero-button" data-i18n="hero.ctaProgram">PROGRAMA</a>
       
   </div>
 </section>
@@ -145,10 +154,10 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
       
       <!-- Columna izquierda: Texto -->
       <div class="about-text">
-        <h2>Sobre Mí</h2>
-        <p>Soy Nicolás, Ingeniero Comercial de la Universidad Adolfo Ibáñez con un Magíster en Finanzas y más de 7 años de experiencia ayudando a personas y empresas a tomar decisiones financieras estratégicas.</p>
-        <p>Durante mi carrera, me he especializado en entender en profundidad cómo funcionan los productos bancarios y en diseñar soluciones eficientes de crédito, inversión y planificación que se ajusten a cada situación particular. Combino mi experiencia con el uso de herramientas digitales para entregar un servicio ágil, claro y enfocado en resultados.</p>
-        <p>Actualmente asesoro a personas, emprendedores y empresas de distintos rubros en análisis financiero, planificación estratégica y desarrollo comercial. Mi enfoque está en entregar claridad, herramientas prácticas y acompañamiento personalizado para que puedan tomar decisiones con confianza y hacer crecer sus proyectos, sin importar su tamaño o industria.</p>
+        <h2 data-i18n="about.title">Sobre Mí</h2>
+        <p data-i18n="about.paragraph1">Soy Nicolás, Ingeniero Comercial de la Universidad Adolfo Ibáñez con un Magíster en Finanzas y más de 7 años de experiencia ayudando a personas y empresas a tomar decisiones financieras estratégicas.</p>
+        <p data-i18n="about.paragraph2">Durante mi carrera, me he especializado en entender en profundidad cómo funcionan los productos bancarios y en diseñar soluciones eficientes de crédito, inversión y planificación que se ajusten a cada situación particular. Combino mi experiencia con el uso de herramientas digitales para entregar un servicio ágil, claro y enfocado en resultados.</p>
+        <p data-i18n="about.paragraph3">Actualmente asesoro a personas, emprendedores y empresas de distintos rubros en análisis financiero, planificación estratégica y desarrollo comercial. Mi enfoque está en entregar claridad, herramientas prácticas y acompañamiento personalizado para que puedan tomar decisiones con confianza y hacer crecer sus proyectos, sin importar su tamaño o industria.</p>
         
       </div>
       
@@ -166,55 +175,55 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
   <div class="tf-grid">
     <div class="tf-row tf-row1">
       <div class="tf-si">
-      <h2 class="section-title">Programa: Terapia Financiera</h2>
-      <p class="section-subtitle"><strong>Define</strong> tus prioridades. <strong>Ordena</strong> tu dinero. <strong>Avanza</strong> con claridad.</p>
+      <h2 class="section-title" data-i18n="program.title">Programa: Terapia Financiera</h2>
+      <p class="section-subtitle" data-i18n-html="program.subtitle"><strong>Define</strong> tus prioridades. <strong>Ordena</strong> tu dinero. <strong>Avanza</strong> con claridad.</p>
 
-      <p>
+      <p data-i18n-html="program.intro">
         Terapia Financiera es un programa 1 a 1 donde trabajamos en conjunto para que puedas tomar decisiones financieras con sentido, basadas en tus prioridades personales.
         El objetivo es simple: reconocer tu <strong>estado de bienestar financiero</strong> actual, <strong>establecer objetivos</strong> realistas y <strong>construir un plan</strong> que te permita avanzar sin depender de
         fórmulas genéricas ni recomendaciones externas desconectadas de tu realidad.
       </p>
 
-      <p>El enfoque combina dos dimensiones:</p>
+      <p data-i18n="program.dimensionsIntro">El enfoque combina dos dimensiones:</p>
       <ul>
-        <li><strong>Lo técnico:</strong> para que puedas entender conceptos como ahorro, deuda, productos financieros e inversión sin confundirte ni depender de terceros.</li>
-        <li><strong>Lo personal:</strong> para que tus decisiones estén alineadas con tus metas y no con expectativas ajenas o impulsos del momento.</li>
+        <li data-i18n-html="program.dimensionsTechnical"><strong>Lo técnico:</strong> para que puedas entender conceptos como ahorro, deuda, productos financieros e inversión sin confundirte ni depender de terceros.</li>
+        <li data-i18n-html="program.dimensionsPersonal"><strong>Lo personal:</strong> para que tus decisiones estén alineadas con tus metas y no con expectativas ajenas o impulsos del momento.</li>
       </ul>
 
-      <p>
+      <p data-i18n="program.outro">
         Este espacio está pensado para personas que no buscan “hacerse expertos” en finanzas, sino tomar el control de lo esencial: cuánto entra,
         cuánto sale, qué decisiones tienen más impacto y cómo avanzar con estrategia y realismo.
       </p>
       </div>
       <div class="tf-sd">
-        <h3 class="sd-title">Conoce los estados de bienestar financiero</h3>
+        <h3 class="sd-title" data-i18n="program.statesTitle">Conoce los estados de bienestar financiero</h3>
         <div class="accordion-item">
-          <button class="accordion-title"><strong>😰 Supervivencia Financiera</strong></button>
-          <div class="accordion-content">
+          <button class="accordion-title" data-i18n-html="program.states.survival.title"><strong>😰 Supervivencia Financiera</strong></button>
+          <div class="accordion-content" data-i18n="program.states.survival.body">
             Estás al día con lo justo. Los ingresos apenas alcanzan para cubrir lo básico y cualquier imprevisto puede desestabilizarte. Hay dependencia del crédito o ayudas externas, y el estrés financiero es constante.
           </div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-title"><strong>🙂 Estabilidad Financiera</strong></button>
-          <div class="accordion-content">
+          <button class="accordion-title" data-i18n-html="program.states.stability.title"><strong>🙂 Estabilidad Financiera</strong></button>
+          <div class="accordion-content" data-i18n="program.states.stability.body">
             Logras cubrir tus gastos mensuales y evitar deudas problemáticas. Hay algo de ahorro, pero sin una estrategia clara. Estás fuera de peligro, pero aún no construyes un verdadero colchón financiero.
           </div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-title"><strong>🧘‍♂️ Tranquilidad Financiera</strong></button>
-          <div class="accordion-content">
+          <button class="accordion-title" data-i18n-html="program.states.calm.title"><strong>🧘‍♂️ Tranquilidad Financiera</strong></button>
+          <div class="accordion-content" data-i18n="program.states.calm.body">
             Tienes control total de tus finanzas: ahorras, planificas y no dependes del crédito. Puedes enfrentar imprevistos sin desestabilizarte. Tu enfoque empieza a moverse del presente hacia el futuro.
           </div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-title"><strong>🧑‍💻 Proyección Financiera</strong></button>
-          <div class="accordion-content">
+          <button class="accordion-title" data-i18n-html="program.states.projection.title"><strong>🧑‍💻 Proyección Financiera</strong></button>
+          <div class="accordion-content" data-i18n="program.states.projection.body">
             Estás construyendo patrimonio con intención. Inviertes, diversificas y piensas en metas de mediano y largo plazo. Tu dinero comienza a trabajar para ti, y ya proyectas un estilo de vida más libre y sostenible.
           </div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-title"><strong>🤩 Libertad Financiera</strong></button>
-          <div class="accordion-content">
+          <button class="accordion-title" data-i18n-html="program.states.freedom.title"><strong>🤩 Libertad Financiera</strong></button>
+          <div class="accordion-content" data-i18n="program.states.freedom.body">
             Tu situación económica te permite decidir sin que el dinero sea un obstáculo. Ingresos pasivos o inversiones cubren tus necesidades. Ya no solo gestionas tu dinero: lo usas como herramienta para vivir en tus propios términos.
           </div>
         </div>
@@ -222,29 +231,29 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
     </div>
     <div class="tf-row tf-row2">
       <div class="tf-ii">
-        <h2 class="tf-ii-title">¡Haz el diagnóstico y descubre tu estado actual!</h2>
-        <a href="autodiagnostico.html" class="hero-button">DIAGNÓSTICO</a>
-        <a href="autodiagnostico.html" class="hero-button mobile-diagnostico">DIAGNÓSTICO</a>
+        <h2 class="tf-ii-title" data-i18n="program.diagnosisTitle">¡Haz el diagnóstico y descubre tu estado actual!</h2>
+        <a href="autodiagnostico.html" class="hero-button" data-i18n="program.diagnosisCta">DIAGNÓSTICO</a>
+        <a href="autodiagnostico.html" class="hero-button mobile-diagnostico" data-i18n="program.diagnosisCta">DIAGNÓSTICO</a>
       </div>
       <div class="tf-id">
-      <h3>Está dirigido a quienes:</h3>
+      <h3 data-i18n="program.audienceTitle">Está dirigido a quienes:</h3>
       <ul>
-        <li>Quieren ordenar sus finanzas pero no saben por dónde empezar.</li>
-        <li>Necesitan claridad para establecer prioridades y dejar de postergar decisiones importantes.</li>
-        <li>Buscan entender mejor conceptos financieros sin tecnicismos innecesarios.</li>
-        <li>Desean definir metas y trabajar con un plan concreto para alcanzarlas.</li>
-        <li>Valoran tener una estructura clara y aplicable a su vida diaria.</li>
+        <li data-i18n="program.audience.list1">Quieren ordenar sus finanzas pero no saben por dónde empezar.</li>
+        <li data-i18n="program.audience.list2">Necesitan claridad para establecer prioridades y dejar de postergar decisiones importantes.</li>
+        <li data-i18n="program.audience.list3">Buscan entender mejor conceptos financieros sin tecnicismos innecesarios.</li>
+        <li data-i18n="program.audience.list4">Desean definir metas y trabajar con un plan concreto para alcanzarlas.</li>
+        <li data-i18n="program.audience.list5">Valoran tener una estructura clara y aplicable a su vida diaria.</li>
       </ul>
 
-      <h3>¿Qué se espera lograr?</h3>
+      <h3 data-i18n="program.outcomesTitle">¿Qué se espera lograr?</h3>
       <ul>
-        <li>Tener una visión clara y ordenada de tu situación financiera actual.</li>
-        <li>Establecer metas financieras alineadas con tus prioridades reales.</li>
-        <li>Diseñar un plan de acción con estrategias de ahorro, inversión y uso de productos financieros.</li>
-        <li>Tomar decisiones con mayor seguridad y menor improvisación.</li>
-        <li>Sentir control sobre tu avance, sin depender de recomendaciones externas o modas financieras.</li>
+        <li data-i18n="program.outcomes.list1">Tener una visión clara y ordenada de tu situación financiera actual.</li>
+        <li data-i18n="program.outcomes.list2">Establecer metas financieras alineadas con tus prioridades reales.</li>
+        <li data-i18n="program.outcomes.list3">Diseñar un plan de acción con estrategias de ahorro, inversión y uso de productos financieros.</li>
+        <li data-i18n="program.outcomes.list4">Tomar decisiones con mayor seguridad y menor improvisación.</li>
+        <li data-i18n="program.outcomes.list5">Sentir control sobre tu avance, sin depender de recomendaciones externas o modas financieras.</li>
       </ul>
-      <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="hero-button">AGENDAR</a>
+      <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="hero-button" data-i18n="program.scheduleCta">AGENDAR</a>
       </div>
     </div>
   </div>
@@ -255,67 +264,67 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
 
 <section id="faq" class="section">
   <div class="faq-grid">
-    <h2 class="section-title">Preguntas Frecuentes (FAQ)</h2>
+    <h2 class="section-title" data-i18n="faq.title">Preguntas Frecuentes (FAQ)</h2>
     <div class="faq">
       <div class="accordion-item">
-        <button class="accordion-title"><strong>¿Qué es la Terapia Financiera?</strong></button>
-        <div class="accordion-content">
+        <button class="accordion-title" data-i18n-html="faq.items.q1.title"><strong>¿Qué es la Terapia Financiera?</strong></button>
+        <div class="accordion-content" data-i18n="faq.items.q1.body">
           Es un proceso práctico de educación y acompañamiento que busca ordenar tus finanzas personales, reducir el estrés financiero y ayudarte a tomar decisiones claras. No se trata de austeridad, sino de usar el dinero como una herramienta para lograr tus objetivos de vida.
         </div>
       </div>
       <div class="accordion-item">
-        <button class="accordion-title"><strong>¿En qué se diferencia de una asesoría financiera tradicional?</strong></button>
-        <div class="accordion-content">
+        <button class="accordion-title" data-i18n-html="faq.items.q2.title"><strong>¿En qué se diferencia de una asesoría financiera tradicional?</strong></button>
+        <div class="accordion-content" data-i18n="faq.items.q2.body">
 
           Aquí no vendemos un producto asociado a la problemática. El enfoque es independiente y educativo: entrego claridad con herramientas, simuladores y un plan aplicable a tu realidad, sin conflictos de interés.
 
         </div>
       </div>
       <div class="accordion-item">
-        <button class="accordion-title"><strong>¿Qué puedo esperar de una sesión 1:1?</strong></button>
-        <div class="accordion-content">
+        <button class="accordion-title" data-i18n-html="faq.items.q3.title"><strong>¿Qué puedo esperar de una sesión 1:1?</strong></button>
+        <div class="accordion-content" data-i18n="faq.items.q3.body">
           En cada sesión revisamos tu situación financiera actual, definimos tus objetivos y trabajamos con simuladores o ejercicios prácticos (créditos, inversiones, presupuestos). Te llevas pasos concretos para avanzar y materiales de apoyo.
         </div>
       </div>
       <div class="accordion-item">
-        <button class="accordion-title"><strong>¿Necesito conocimientos previos de finanzas?</strong></button>
-        <div class="accordion-content">
+        <button class="accordion-title" data-i18n-html="faq.items.q4.title"><strong>¿Necesito conocimientos previos de finanzas?</strong></button>
+        <div class="accordion-content" data-i18n="faq.items.q4.body">
           No. La idea es justamente partir desde cero si es necesario. Los conceptos se explican de manera sencilla y aplicados a tu vida diaria.
         </div>
       </div>
       <div class="accordion-item">
-        <button class="accordion-title"><strong>¿Cuánto duran las sesiones y cómo se realizan?</strong></button>
-        <div class="accordion-content">
+        <button class="accordion-title" data-i18n-html="faq.items.q5.title"><strong>¿Cuánto duran las sesiones y cómo se realizan?</strong></button>
+        <div class="accordion-content" data-i18n="faq.items.q5.body">
           Cada sesión dura alrededor de 45 minutos y se realiza de forma online, para que puedas conectarte desde cualquier lugar.
         </div>
       </div>
       <div class="accordion-item">
-        <button class="accordion-title"><strong>¿Los simuladores reemplazan la asesoría?</strong></button>
-        <div class="accordion-content">
+        <button class="accordion-title" data-i18n-html="faq.items.q6.title"><strong>¿Los simuladores reemplazan la asesoría?</strong></button>
+        <div class="accordion-content" data-i18n="faq.items.q6.body">
           No. Los simuladores son herramientas de apoyo para visualizar escenarios. La asesoría agrega interpretación, estrategia y un plan personalizado para ti.
         </div>
       </div>
       <div class="accordion-item">
-        <button class="accordion-title"><strong>¿Qué pasa si ya tengo deudas?</strong></button>
-        <div class="accordion-content">
+        <button class="accordion-title" data-i18n-html="faq.items.q7.title"><strong>¿Qué pasa si ya tengo deudas?</strong></button>
+        <div class="accordion-content" data-i18n="faq.items.q7.body">
           Podemos trabajar en un plan de orden y pago, evaluando alternativas para reducir costos financieros y evitar que el ciclo de endeudamiento siga creciendo.
         </div>
       </div>
       <div class="accordion-item">
-        <button class="accordion-title"><strong>¿La asesoría incluye inversiones?</strong></button>
-        <div class="accordion-content">
+        <button class="accordion-title" data-i18n-html="faq.items.q8.title"><strong>¿La asesoría incluye inversiones?</strong></button>
+        <div class="accordion-content" data-i18n="faq.items.q8.body">
           Sí, revisamos opciones de inversión según tu perfil y objetivos, siempre de forma general y educativa. No entrego recomendaciones específicas de compra o venta, sino que te enseño a comparar y decidir con criterio.
         </div>
       </div>
       <div class="accordion-item">
-        <button class="accordion-title"><strong>¿Cómo agendo una sesión?</strong></button>
-        <div class="accordion-content">
+        <button class="accordion-title" data-i18n-html="faq.items.q9.title"><strong>¿Cómo agendo una sesión?</strong></button>
+        <div class="accordion-content" data-i18n="faq.items.q9.body">
           Puedes hacerlo directamente desde la sección Agendar en esta página. Allí eliges día y la hora.
         </div>
       </div>
       <div class="accordion-item">
-        <button class="accordion-title"><strong>¿Quién puede tomar estas asesorías?</strong></button>
-        <div class="accordion-content">
+        <button class="accordion-title" data-i18n-html="faq.items.q10.title"><strong>¿Quién puede tomar estas asesorías?</strong></button>
+        <div class="accordion-content" data-i18n="faq.items.q10.body">
           Cualquier persona que quiera mejorar su relación con el dinero, aprender a manejar créditos, ordenar sus finanzas personales o comenzar a invertir de forma informada.
         </div>
       </div>
@@ -333,28 +342,28 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
 
   <div class="contacto-imagen">
     <div class="texto-superior">
-      <div class="destacado">¡Revisa los planes disponibles!</div><br>
-        <a class="subtitulo" href="https://encuadrado.com/p/nicolas-moroso-1/" target="_blank">Haz clic aquí para agendar</a>
+      <div class="destacado" data-i18n="contact.highlight">¡Revisa los planes disponibles!</div><br>
+        <a class="subtitulo" href="https://encuadrado.com/p/nicolas-moroso-1/" target="_blank" data-i18n="contact.highlightLink">Haz clic aquí para agendar</a>
 
     </div>
   </div>
 
   <div class="contacto-formulario">
-    <h2>¿Tienes dudas? ¡Escríbeme!</h2>
+    <h2 data-i18n="contact.title">¿Tienes dudas? ¡Escríbeme!</h2>
     <form id="contact-form">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+      <label for="nombre" data-i18n="contact.form.nameLabel">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" data-i18n-placeholder="contact.form.namePlaceholder" required>
 
-      <label for="telefono">Teléfono:</label>
-      <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" required>
+      <label for="telefono" data-i18n="contact.form.phoneLabel">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" data-i18n-placeholder="contact.form.phonePlaceholder" required>
 
-      <label for="email">Correo Electrónico:</label>
-      <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+      <label for="email" data-i18n="contact.form.emailLabel">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" data-i18n-placeholder="contact.form.emailPlaceholder" required>
 
-      <label for="organizacion">Organización:</label>
-      <input type="text" id="organizacion" name="organizacion" placeholder="Nombre empresa">
+      <label for="organizacion" data-i18n="contact.form.orgLabel">Organización:</label>
+      <input type="text" id="organizacion" name="organizacion" placeholder="Nombre empresa" data-i18n-placeholder="contact.form.orgPlaceholder">
 
-      <button type="submit">ENVIAR</button>
+      <button type="submit" data-i18n="contact.form.submit">ENVIAR</button>
     </form>
 
     <p id="respuesta" style="margin-top: 10px;"></p>
@@ -374,7 +383,9 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
       .then(function() {
         window.location.href = "confirmacion.html";
       }, function(error) {
-        document.getElementById('respuesta').innerText = "❌ Ocurrió un error. Intenta más tarde.";
+        const fallbackMessage = "❌ Ocurrió un error. Intenta más tarde.";
+        const message = window.t ? window.t('contact.form.error') : fallbackMessage;
+        document.getElementById('respuesta').innerText = message || fallbackMessage;
         console.error("EmailJS error:", error);
         submitButton.disabled = false;
       });
@@ -392,12 +403,12 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
   <div class="footer-container">
     <!-- Logo Footer -->
     <div class="footer-logo">
-      <h2>nicolasmoroso.cl</h2>
+      <h2 data-i18n="footer.site">nicolasmoroso.cl</h2>
     </div>
     
 <!-- Sección de Contacto -->
 <div class="footer-section">
-  <h3>Contacto:</h3>
+  <h3 data-i18n="footer.contactTitle">Contacto:</h3>
   <p>
     <img src="mailto.png" alt="Correo" class="contact-icon mail-icon">
     <a href="mailto:info@nicolasmoroso.cl">info@nicolasmoroso.cl</a>
@@ -431,6 +442,7 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
 <!-- Carga de la librería Typed.js -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
+<script src="js/i18n.js"></script>
 <script src="index.js"></script>
 <script src="header.js"></script>
 </body>
