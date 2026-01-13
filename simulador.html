@@ -32,7 +32,7 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
 
   <meta name="google-site-verification" content="6CyGdduy_6elptw7WOq3KNZLswDURqGI__AuQbK5Fl8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio</title>
+  <title data-i18n="simulator.meta.title">Simulador</title>
 
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="desk.css">
@@ -57,7 +57,7 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
     <div class="header-logo">
      <a href="index.html" class="logo">
         <img src="logo.png" alt="Terapia Financiera" />
-        <span class="logo-text">
+        <span class="logo-text" data-i18n-html="nav.home">
         inicio<span class="orange-f"></span>
         </span>
       </a>
@@ -70,48 +70,56 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
     <nav class="header-nav">
       <ul>
         <li>
-          <a href="educacion.html" class="nav-item">Educación</a>
+          <a href="educacion.html" class="nav-item" data-i18n="nav.education">Educación</a>
         </li>
     
         <li class="simulador-dropdown">
-          <a href="#simulador" class="nav-item"><span class="orange-f">Simulador</span></a>
+          <a href="#simulador" class="nav-item"><span class="orange-f" data-i18n="nav.simulator">Simulador</span></a>
           <ul class="simulador-menu">
-            <li><a href="simulador.html" class="submenu-item">Créditos</a></li>
-            <li><a href="inversiones.html" class="submenu-item">Inversiones</a></li>
+            <li><a href="simulador.html" class="submenu-item" data-i18n="nav.simulatorCredits">Créditos</a></li>
+            <li><a href="inversiones.html" class="submenu-item" data-i18n="nav.simulatorInvestments">Inversiones</a></li>
           </ul>
         </li>
 
-        <li><a href="blog/index.html" class="nav-item">Blog</a></li>
+        <li><a href="blog/index.html" class="nav-item" data-i18n="nav.blog">Blog</a></li>
 
-        <li><a href="index.html#about" class="nav-item">Sobre Mí</a></li>
+        <li><a href="index.html#about" class="nav-item" data-i18n="nav.about">Sobre Mí</a></li>
       </ul>
     </nav>
     
     <!-- Botón de Agendar Reunión -->
 
-    <div class="header-agendar">
-      <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button desk-btn">AGENDAR</a>
-      <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button mobile-btn">AGENDAR</a>
+    <div class="header-actions">
+      <div class="header-agendar">
+        <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button desk-btn" data-i18n="nav.schedule">AGENDAR</a>
+        <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button mobile-btn" data-i18n="nav.schedule">AGENDAR</a>
+      </div>
+
+      <div class="language-toggle" aria-label="Selector de idioma">
+        <button type="button" class="language-toggle-button" data-lang="es">ES</button>
+        <span class="language-toggle-separator">|</span>
+        <button type="button" class="language-toggle-button" data-lang="en">EN</button>
+      </div>
     </div>
   
   <!-- Menú desplegable en móvil -->
   <div class="mobile-menu">
     <ul>
       <li>
-        <a href="educacion.html">Educación</a>
+        <a href="educacion.html" data-i18n="nav.education">Educación</a>
       </li>
   
       <li class="simulador-dropdown">
-        <a><span class="orange-f">Simulador</span></a>
+        <a><span class="orange-f" data-i18n="nav.simulator">Simulador</span></a>
         <ul class="simulador-menu">
-          <li><a href="simulador.html" class="submenu-item">Créditos</a></li>
-          <li><a href="inversiones.html" class="submenu-item">Inversiones</a></li>
+          <li><a href="simulador.html" class="submenu-item" data-i18n="nav.simulatorCredits">Créditos</a></li>
+          <li><a href="inversiones.html" class="submenu-item" data-i18n="nav.simulatorInvestments">Inversiones</a></li>
         </ul>
       </li>
 
-      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="blog/index.html" data-i18n="nav.blog">Blog</a></li>
 
-      <li><a href="index.html#about">Sobre Mí</a></li>
+      <li><a href="index.html#about" data-i18n="nav.about">Sobre Mí</a></li>
 
     </ul>
   </div>
@@ -141,11 +149,11 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
 <!-- Sección para seleccionar el tipo de crédito -->
 <section class="selector-credito">
   <div class="form-group">
-    <label for="tipoCredito">Selecciona el tipo de crédito:</label>
+    <label for="tipoCredito" data-i18n="simulator.selector.label">Selecciona el tipo de crédito:</label>
     <select id="tipoCredito" onchange="mostrarSimulador()">
-      <option value="consumo">Crédito de Consumo</option>
-      <option value="hipotecario">Crédito Hipotecario</option>
-      <option value="bullet">Crédito Bullet</option>
+      <option value="consumo" data-i18n="simulator.selector.options.consumption">Crédito de Consumo</option>
+      <option value="hipotecario" data-i18n="simulator.selector.options.mortgage">Crédito Hipotecario</option>
+      <option value="bullet" data-i18n="simulator.selector.options.bullet">Crédito Bullet</option>
     </select>
   </div>
 </section>
@@ -160,81 +168,81 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
     <form id="simulador">
       <!-- Grupo para la selección de moneda -->
       <div class="form-group">
-        <label for="monedaSelect">Moneda para mostrar resultados:</label>
+        <label for="monedaSelect" data-i18n="simulator.consumption.currencyLabel">Moneda para mostrar resultados:</label>
         <select id="monedaSelect" name="monedaSelect">
-          <option value="peso" selected>Peso Chileno ($)</option>
-          <option value="uf">UF</option>
+          <option value="peso" selected data-i18n="simulator.consumption.currencyPeso">Peso Chileno ($)</option>
+          <option value="uf" data-i18n="simulator.consumption.currencyUf">UF</option>
         </select>
       </div>
 
       <!-- Grupo para el monto del crédito -->
       <div class="form-group">
-        <label for="monto">Monto del crédito:</label>
+        <label for="monto" data-i18n="simulator.consumption.loanAmountLabel">Monto del crédito:</label>
         <input type="text" id="monto" required>
       </div>
 
       <!-- Grupo para la tasa de interés -->
       <div class="form-group">
-        <label for="tasa">Tasa de interés mensual (%):</label>
+        <label for="tasa" data-i18n="simulator.consumption.rateLabel">Tasa de interés mensual (%):</label>
         <input type="number" id="tasa" step="0.01" required>
       </div>
 
       <!-- Grupo para las cuotas de pago -->
       <div class="form-group">
-        <label for="plazo">Cuotas de pago:</label>
+        <label for="plazo" data-i18n="simulator.consumption.installmentsLabel">Cuotas de pago:</label>
         <input type="number" id="plazo" required>
       </div>
 
       <!-- Grupo para los meses de gracia -->
       <div class="form-group">
-        <label for="gracia">Meses de gracia:</label>
+        <label for="gracia" data-i18n="simulator.consumption.graceLabel">Meses de gracia:</label>
         <input type="number" id="gracia" value="0" min="0">
       </div>
 
       <!-- Grupo para el checkbox del seguro -->
       <div class="form-group checkbox-group">
         <input type="checkbox" id="checkSeguro">
-        <label for="checkSeguro">Incluir seguro de desgravamen</label>
+        <label for="checkSeguro" data-i18n="simulator.consumption.insuranceLabel">Incluir seguro de desgravamen</label>
       </div>
 
       <!-- Grupo para los botones -->
       <div class="form-group button-group">
         <!-- Aquí se llama a cconsumoamort() -->
-        <button type="button" onclick="cconsumoamort()">Calcular</button>
-        <button type="button" onclick="limpiarSimulacion()">Limpiar</button>
+        <button type="button" onclick="cconsumoamort()" data-i18n="simulator.consumption.calculate">Calcular</button>
+        <button type="button" onclick="limpiarSimulacion()" data-i18n="simulator.consumption.clear">Limpiar</button>
       </div>
     </form>
   </div>
   
   <!-- Columna Derecha: Información del Crédito -->
   <div class="simulador-info">
-    <div class="info-title">Información del Crédito</div>
+    <div class="info-title" data-i18n="simulator.consumption.infoTitle">Información del Crédito</div>
     <div id="infoCAE" class="info-item">
-      <span class="info-label">CAE:</span>
+      <span class="info-label" data-i18n="simulator.consumption.info.cae">CAE:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoTotalCredito" class="info-item">
-      <span class="info-label">Costo total del crédito:</span>
+      <span class="info-label" data-i18n="simulator.consumption.info.totalCredit">Costo total del crédito:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoTotalIntereses" class="info-item">
-      <span class="info-label">Total intereses:</span>
+      <span class="info-label" data-i18n="simulator.consumption.info.totalInterest">Total intereses:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoSeguro" class="info-item">
-      <span class="info-label">Costo seguro de desgravamen:</span>
+      <span class="info-label" data-i18n="simulator.consumption.info.insurance">Costo seguro de desgravamen:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoTimbre" class="info-item">
-      <span class="info-label">Costo timbres y estampillas:</span>
+      <span class="info-label" data-i18n="simulator.consumption.info.taxes">Costo timbres y estampillas:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoCuota" class="info-item">
-      <span class="info-label">Valor de la cuota:</span>
+      <span class="info-label" data-i18n="simulator.consumption.info.installment">Valor de la cuota:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoPlazo" class="info-item">
-      <span class="info-label">Plazo total del crédito:</span>
+      <span class="info-label" data-i18n="simulator.consumption.info.term">Plazo total del crédito:</span>
       <span class="info-value">--</span>
     </div>
   </div>
@@ -247,80 +255,80 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
     <form id="formHipotecario">
       <!-- Tasa anual -->
       <div class="form-group">
-        <label for="tasaAnual">Tasa anual (%):</label>
+        <label for="tasaAnual" data-i18n="simulator.mortgage.rateLabel">Tasa anual (%):</label>
         <input type="number" id="tasaAnual" step="0.01" required>
       </div>
 
       <!-- Plazo (meses) -->
       <div class="form-group">
-        <label for="plazoHipotecario">N° periodos (meses):</label>
+        <label for="plazoHipotecario" data-i18n="simulator.mortgage.termLabel">N° periodos (meses):</label>
         <input type="number" id="plazoHipotecario" required>
       </div>
 
       <!-- Gracia -->
       <div class="form-group">
-        <label for="graciaHipotecario">N° periodos de gracia (meses):</label>
+        <label for="graciaHipotecario" data-i18n="simulator.mortgage.graceLabel">N° periodos de gracia (meses):</label>
         <input type="number" id="graciaHipotecario" value="0" min="0">
       </div>
 
       <!-- Valor propiedad -->
       <div class="form-group">
-        <label for="valorPropiedad">Valor de la propiedad (UF):</label>
+        <label for="valorPropiedad" data-i18n="simulator.mortgage.propertyValueLabel">Valor de la propiedad (UF):</label>
         <input type="text" id="valorPropiedad" required>
       </div>
 
       <!-- % financiamiento -->
       <div class="form-group">
-        <label for="financiamiento">Porcentaje financiamiento (%):</label>
+        <label for="financiamiento" data-i18n="simulator.mortgage.financingLabel">Porcentaje financiamiento (%):</label>
         <input type="number" id="financiamiento" required>
       </div>
 
       <!-- Botones -->
       <div class="form-group button-group">
         <!-- Aquí se llama a chipotecarioamort() -->
-        <button type="button" onclick="chipotecarioamort()">Calcular</button>
-        <button type="button" onclick="limpiarSimulacionHipotecario()">Limpiar</button>
+        <button type="button" onclick="chipotecarioamort()" data-i18n="simulator.mortgage.calculate">Calcular</button>
+        <button type="button" onclick="limpiarSimulacionHipotecario()" data-i18n="simulator.mortgage.clear">Limpiar</button>
       </div>
     </form>
   </div>
 
   <!-- Columna Derecha: Resultados -->
   <div class="simulador-info">
-      <div class="info-title">Información del Crédito</div>
+      <div class="info-title" data-i18n="simulator.mortgage.infoTitle">Información del Crédito</div>
       <div id="infoMontoFinanciar" class="info-item">
-        <span class="info-label">Monto a financiar:</span>
+        <span class="info-label" data-i18n="simulator.mortgage.info.amount">Monto a financiar:</span>
         <span class="info-value">--</span>
       </div>
       <div id="infoCuotaNeta" class="info-item">
-        <span class="info-label">Cuota Neta:</span>
+        <span class="info-label" data-i18n="simulator.mortgage.info.netInstallment">Cuota Neta:</span>
         <span class="info-value">--</span>
       </div>
       <div id="infoSeguroDesgravamen" class="info-item">
-        <span class="info-label">Seguro desgravamen:</span>
+        <span class="info-label" data-i18n="simulator.mortgage.info.insuranceLife">Seguro desgravamen:</span>
         <span class="info-value">--</span>
       </div>
       <div id="infoSeguroIncendio" class="info-item">
-        <span class="info-label">Seguro incendio:</span>
+        <span class="info-label" data-i18n="simulator.mortgage.info.insuranceFire">Seguro incendio:</span>
         <span class="info-value">--</span>
       </div>
       <div id="infoCuotaTotal" class="info-item">
-        <span class="info-label">Cuota Total:</span>
+        <span class="info-label" data-i18n="simulator.mortgage.info.totalInstallment">Cuota Total:</span>
         <span class="info-value">--</span>
       </div>
           <div id="infoCHIPCAE" class="info-item">
-      <span class="info-label">CAE:</span>
+      <span class="info-label" data-i18n="simulator.mortgage.info.cae">CAE:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoCHIPTotalCredito" class="info-item">
-      <span class="info-label">Costo total del crédito:</span>
+      <span class="info-label" data-i18n="simulator.mortgage.info.totalCredit">Costo total del crédito:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoCHIPTotalIntereses" class="info-item">
-      <span class="info-label">Total intereses:</span>
+      <span class="info-label" data-i18n="simulator.mortgage.info.totalInterest">Total intereses:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoCHIPPlazo" class="info-item">
-      <span class="info-label">Plazo total:</span>
+      <span class="info-label" data-i18n="simulator.mortgage.info.term">Plazo total:</span>
       <span class="info-value">--</span>
     </div>
     </div>
@@ -333,57 +341,57 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
     <form id="formBullet">
       <!-- Selección de moneda -->
       <div class="form-group">
-        <label for="monedaSelectBullet">Moneda:</label>
+        <label for="monedaSelectBullet" data-i18n="simulator.bullet.currencyLabel">Moneda:</label>
         <select id="monedaSelectBullet" name="monedaSelectBullet">
-          <option value="peso" selected>Peso Chileno ($)</option>
-          <option value="uf">UF</option>
+          <option value="peso" selected data-i18n="simulator.bullet.currencyPeso">Peso Chileno ($)</option>
+          <option value="uf" data-i18n="simulator.bullet.currencyUf">UF</option>
         </select>
       </div>
       <!-- Tasa de interés -->
       <div class="form-group">
-        <label for="tasaBullet">Tasa de interés (%):</label>
+        <label for="tasaBullet" data-i18n="simulator.bullet.rateLabel">Tasa de interés (%):</label>
         <input type="number" id="tasaBullet" step="0.01" required>
       </div>
       <!-- Monto del capital -->
       <div class="form-group">
-        <label for="montoBullet">Monto del capital:</label>
+        <label for="montoBullet" data-i18n="simulator.bullet.amountLabel">Monto del capital:</label>
         <input type="text" id="montoBullet" required>
       </div>
       <!-- Plazo en días -->
       <div class="form-group">
-        <label for="plazoDiasBullet">Plazo (días):</label>
+        <label for="plazoDiasBullet" data-i18n="simulator.bullet.termLabel">Plazo (días):</label>
         <input type="number" id="plazoDiasBullet" required>
       </div>
       <!-- Seguro de desgravamen -->
       <div class="form-group checkbox-group">
         <input type="checkbox" id="checkSeguroBullet">
-        <label for="checkSeguroBullet">Incluir seguro de desgravamen</label>
+        <label for="checkSeguroBullet" data-i18n="simulator.bullet.insuranceLabel">Incluir seguro de desgravamen</label>
       </div>
       <!-- Botones -->
       <div class="form-group button-group">
-        <button type="button" onclick="cbulletamort()">Calcular</button>
-        <button type="button" onclick="limpiarSimulacionBullet()">Limpiar</button>
+        <button type="button" onclick="cbulletamort()" data-i18n="simulator.bullet.calculate">Calcular</button>
+        <button type="button" onclick="limpiarSimulacionBullet()" data-i18n="simulator.bullet.clear">Limpiar</button>
       </div>
     </form>
   </div>
   
   <!-- Panel de Información del Crédito Bullet -->
   <div class="simulador-info">
-    <div class="info-title">Información del Crédito</div>
+    <div class="info-title" data-i18n="simulator.bullet.infoTitle">Información del Crédito</div>
     <div id="infoTotalCreditoBullet" class="info-item">
-      <span class="info-label">Costo total del crédito:</span>
+      <span class="info-label" data-i18n="simulator.bullet.info.totalCredit">Costo total del crédito:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoTotalInteresesBullet" class="info-item">
-      <span class="info-label">Total intereses:</span>
+      <span class="info-label" data-i18n="simulator.bullet.info.totalInterest">Total intereses:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoSeguroDesgravamenBullet" class="info-item">
-      <span class="info-label">Costo seguro de desgravamen:</span>
+      <span class="info-label" data-i18n="simulator.bullet.info.insurance">Costo seguro de desgravamen:</span>
       <span class="info-value">--</span>
     </div>
     <div id="infoCAE_Bullet" class="info-item">
-      <span class="info-label">CAE:</span>
+      <span class="info-label" data-i18n="simulator.bullet.info.cae">CAE:</span>
       <span class="info-value">--</span>
     </div>
   </div>
@@ -391,11 +399,11 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
 
 
 <!-- Botón para desplegar el cuadro de desarrollo -->
-<button id="toggleTabla" class="tabla-btn">Ver desarrollo del crédito</button>
+<button id="toggleTabla" class="tabla-btn" data-i18n="simulator.table.view">Ver desarrollo del crédito</button>
 
 <!-- Cuadro de desarrollo de pagos (tabla) -->
 <div id="tablaPanel">
-  <button id="closeTabla" class="tabla-close-btn">✕ Cerrar</button>
+  <button id="closeTabla" class="tabla-close-btn" data-i18n="simulator.table.close">✕ Cerrar</button>
   <div class="simulador-tabla" id="resultado"></div>
 </div>
 <div id="tablaOverlay" class="tabla-overlay"></div>
@@ -411,12 +419,12 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
     <div class="footer-container">
       <!-- Logo Footer -->
       <div class="footer-logo">
-        <h2>nicolasmoroso.cl</h2>
+        <h2 data-i18n="footer.site">nicolasmoroso.cl</h2>
       </div>
       
   <!-- Sección de Contacto -->
   <div class="footer-section">
-    <h3>Contacto:</h3>
+    <h3 data-i18n="footer.contactTitle">Contacto:</h3>
     <p>
       <img src="mailto.png" alt="Correo" class="contact-icon mail-icon">
       <a href="mailto:info@nicolasmoroso.cl">info@nicolasmoroso.cl</a>
@@ -445,6 +453,7 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
   <!-- Elemento overlay -->
   <div class="overlay"></div>
 
+<script src="js/i18n.js"></script>
 <script src="simulador.js"></script>
 <script src="header.js"></script>
 </body>

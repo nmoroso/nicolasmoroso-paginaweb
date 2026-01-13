@@ -146,6 +146,170 @@
       "error": "❌ Ocurrió un error. Intenta más tarde."
     }
   },
+  "education": {
+    "meta": {
+      "title": "Educación"
+    },
+    "title": "Repositorio de Educación Financiera",
+    "subtitle": "<br><br>Aquí encontrarás recursos gratuitos y prácticos para mejorar tu relación con el dinero. Descarga, comparte y aprende a tu ritmo.",
+    "tabs": {
+      "resources": "Recursos",
+      "banks": "Aprende de Bancos",
+      "finance": "Aprende de Finanzas"
+    },
+    "errors": {
+      "resources": "Error al cargar recursos."
+    }
+  },
+  "simulator": {
+    "meta": {
+      "title": "Simulador"
+    },
+    "selector": {
+      "label": "Selecciona el tipo de crédito:",
+      "options": {
+        "consumption": "Crédito de Consumo",
+        "mortgage": "Crédito Hipotecario",
+        "bullet": "Crédito Bullet"
+      }
+    },
+    "consumption": {
+      "currencyLabel": "Moneda para mostrar resultados:",
+      "currencyPeso": "Peso Chileno ($)",
+      "currencyUf": "UF",
+      "loanAmountLabel": "Monto del crédito:",
+      "rateLabel": "Tasa de interés mensual (%):",
+      "installmentsLabel": "Cuotas de pago:",
+      "graceLabel": "Meses de gracia:",
+      "insuranceLabel": "Incluir seguro de desgravamen",
+      "calculate": "Calcular",
+      "clear": "Limpiar",
+      "infoTitle": "Información del Crédito",
+      "info": {
+        "cae": "CAE:",
+        "totalCredit": "Costo total del crédito:",
+        "totalInterest": "Total intereses:",
+        "insurance": "Costo seguro de desgravamen:",
+        "taxes": "Costo timbres y estampillas:",
+        "installment": "Valor de la cuota:",
+        "term": "Plazo total del crédito:"
+      }
+    },
+    "mortgage": {
+      "rateLabel": "Tasa anual (%):",
+      "termLabel": "N° periodos (meses):",
+      "graceLabel": "N° periodos de gracia (meses):",
+      "propertyValueLabel": "Valor de la propiedad (UF):",
+      "financingLabel": "Porcentaje financiamiento (%):",
+      "calculate": "Calcular",
+      "clear": "Limpiar",
+      "infoTitle": "Información del Crédito",
+      "info": {
+        "amount": "Monto a financiar:",
+        "netInstallment": "Cuota Neta:",
+        "insuranceLife": "Seguro desgravamen:",
+        "insuranceFire": "Seguro incendio:",
+        "totalInstallment": "Cuota Total:",
+        "cae": "CAE:",
+        "totalCredit": "Costo total del crédito:",
+        "totalInterest": "Total intereses:",
+        "term": "Plazo total:"
+      }
+    },
+    "bullet": {
+      "currencyLabel": "Moneda:",
+      "currencyPeso": "Peso Chileno ($)",
+      "currencyUf": "UF",
+      "rateLabel": "Tasa de interés (%):",
+      "amountLabel": "Monto del capital:",
+      "termLabel": "Plazo (días):",
+      "insuranceLabel": "Incluir seguro de desgravamen",
+      "calculate": "Calcular",
+      "clear": "Limpiar",
+      "infoTitle": "Información del Crédito",
+      "info": {
+        "totalCredit": "Costo total del crédito:",
+        "totalInterest": "Total intereses:",
+        "insurance": "Costo seguro de desgravamen:",
+        "cae": "CAE:"
+      }
+    },
+    "table": {
+      "view": "Ver desarrollo del crédito",
+      "close": "✕ Cerrar"
+    },
+    "alerts": {
+      "invalidGrace": "Revisa los valores de plazo y gracia.",
+      "invalidGraceMortgage": "Revisa los valores de plazo y/o gracia.",
+      "invalidAmount": "Ingrese un monto válido.",
+      "invalidTerm": "Ingrese un plazo en días válido.",
+      "invalidRate": "Ingrese una tasa de interés válida."
+    },
+    "months": "meses"
+  },
+  "investments": {
+    "meta": {
+      "title": "Inversiones"
+    },
+    "title": "Simulador de Inversión",
+    "frequencyLabel": "Unidad de Tiempo",
+    "frequencyMonthly": "Mensual",
+    "frequencyAnnual": "Anual",
+    "termLabel": "Plazo",
+    "termPlaceholder": "Ej: 30",
+    "rateLabel": "Tasa (%)",
+    "ratePlaceholder": "Ej: 1%",
+    "initialAmountLabel": "Monto inicial de ahorro",
+    "initialAmountPlaceholder": "Ej: $1.000.000",
+    "monthlyAmountLabel": "Monto de ahorro mensual",
+    "monthlyAmountPlaceholder": "Ej: $200.000",
+    "calculate": "Calcular",
+    "clear": "Limpiar",
+    "referenceToggle": "Tasas Referenciales",
+    "referenceClose": "✕ Cerrar",
+    "referenceTitle": "Tabla referencial de tasas (<span class=\"orange-f\">Mensual</span>/Anual)",
+    "table": {
+      "term": "Plazo",
+      "conservative": "Conservador",
+      "moderate": "Moderado",
+      "aggressive": "Arriesgado",
+      "shortTerm": "Corto<br>(0-1 año)",
+      "mediumTerm": "Mediano<br>(1-3 años)",
+      "longTerm": "Largo<br>(3+ años)",
+      "shortConservative": "Depósito a plazo o fondo de liquidez (MoneyMarket)",
+      "shortModerate": "Fondo mixto simple (renta fija + variable)",
+      "shortAggressive": "ETF sectorial volátil o acciones de corto plazo",
+      "mediumConservative": "Fondo de renta fija nacional o depósito renovable",
+      "mediumModerate": "Fondo balanceado con acciones y bonos",
+      "mediumAggressive": "ETF de mercados emergentes",
+      "longConservative": "Bonos del gobierno o fondo internacional de renta fija",
+      "longModerate": "ETF global diversificado (ej: ACWI)",
+      "longAggressive": "ETF del S&P 500 o fondo de acciones tecnológicas"
+    },
+    "referenceNote": "<br><strong>Fuente:</strong> Banco Central de Chile (Tasa BCP 1 año: 4,9%) + primas estimadas según perfil de riesgo.<br><strong>Importante:</strong> Estos son ejemplos ilustrativos y no constituyen recomendación de inversión.<br><strong>Nota:</strong> Las tasas mostradas son <u>mensuales/anuales</u> y representan rentabilidades <u>nominales</u> (no consideran inflación).",
+    "results": {
+      "estimatedValue": "Valor estimado al final del plazo:"
+    },
+    "labels": {
+      "month": "Mes",
+      "year": "Año"
+    },
+    "chart": {
+      "capital": "Capital Invertido",
+      "interest": "Intereses Generados",
+      "total": "Total Patrimonio",
+      "axisMonths": "Meses",
+      "axisYears": "Años",
+      "axisValue": "Valor (MM$)",
+      "suffix": "MM$"
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog"
+    },
+    "postImageAlt": "Imagen del post"
+  },
   "footer": {
     "site": "nicolasmoroso.cl",
     "contactTitle": "Contacto:"

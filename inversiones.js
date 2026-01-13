@@ -3,6 +3,13 @@
    ========================= */
 
    let chartInstance;
+   const getTranslation = (key, fallback) => {
+     if (window.t) {
+       const translated = window.t(key);
+       return translated === key ? fallback : translated;
+     }
+     return fallback;
+   };
 
    Chart.defaults.font.family = "'Montserrat', sans-serif";
    Chart.defaults.color = "#2E4057";
@@ -67,7 +74,7 @@
              ? montoMensual*i
              : montoMensual*((Math.pow(1+tm,i)-1)/tm)
            );
-         labels.push(`Mes ${i}`);
+         labels.push(`${getTranslation('investments.labels.month', 'Mes')} ${i}`);
          const capital = montoInicial + montoMensual*i;
          const interes = totalValue - capital;
          totalDataPoints.push(+totalValue.toFixed(0));
@@ -86,7 +93,7 @@
              ? montoMensual*12*i
              : montoMensual*12*((Math.pow(1+ta,i)-1)/ta)
            );
-         labels.push(`Año ${i}`);
+         labels.push(`${getTranslation('investments.labels.year', 'Año')} ${i}`);
          const capital = montoInicial + montoMensual*12*i;
          const interes = totalValue - capital;
          totalDataPoints.push(+totalValue.toFixed(0));
@@ -101,7 +108,7 @@
              ? montoMensual*12*n
              : montoMensual*12*((Math.pow(1+ta,n)-1)/ta)
            );
-         labels.push(`Año ${n.toFixed(1)}`);
+         labels.push(`${getTranslation('investments.labels.year', 'Año')} ${n.toFixed(1)}`);
          const capital = montoInicial + montoMensual*12*n;
          const interes = totalValue - capital;
          totalDataPoints.push(+totalValue.toFixed(0));
@@ -111,8 +118,9 @@
        }
      }
    
+     const estimatedLabel = getTranslation('investments.results.estimatedValue', 'Valor estimado al final del plazo:');
      document.getElementById('resultado').innerHTML =
-       `Valor estimado al final del plazo: <strong>$${Intl.NumberFormat('es-CL',{ maximumFractionDigits:0 }).format(inversionTotal)}</strong>`;
+       `${estimatedLabel} <strong>$${Intl.NumberFormat('es-CL',{ maximumFractionDigits:0 }).format(inversionTotal)}</strong>`;
    
      actualizarGrafico(labels, capitalDataPoints, interestDataPoints, totalDataPoints, frecuencia);
    }
@@ -124,9 +132,9 @@
        type: 'line',
        data: { labels,
          datasets: [
-           { label:'Capital Invertido', data:capitalDataPoints, borderColor:'blue', backgroundColor:'rgba(0,0,255,0.1)', fill:false, tension:0.2 },
-           { label:'Intereses Generados', data:interestDataPoints, borderColor:'green', backgroundColor:'rgba(0,255,0,0.1)', fill:false, tension:0.2 },
-           { label:'Total Patrimonio', data:totalDataPoints, borderColor:'#457B9D', backgroundColor:'rgba(69,123,157,0.1)', fill:false, tension:0.2 }
+           { label:getTranslation('investments.chart.capital', 'Capital Invertido'), data:capitalDataPoints, borderColor:'blue', backgroundColor:'rgba(0,0,255,0.1)', fill:false, tension:0.2 },
+           { label:getTranslation('investments.chart.interest', 'Intereses Generados'), data:interestDataPoints, borderColor:'green', backgroundColor:'rgba(0,255,0,0.1)', fill:false, tension:0.2 },
+           { label:getTranslation('investments.chart.total', 'Total Patrimonio'), data:totalDataPoints, borderColor:'#457B9D', backgroundColor:'rgba(69,123,157,0.1)', fill:false, tension:0.2 }
          ]
        },
        options: {
@@ -134,9 +142,11 @@
          maintainAspectRatio: false,
          plugins:{ legend:{ display:true, position:'top', labels:{boxWidth:20,boxHeight:20,padding:10} } },
          scales:{
-           x:{ title:{ display:true, text: frecuencia==='mensual'?'Meses':'Años' } },
-           y:{ title:{ display:true, text:'Valor (MM$)' },
-               ticks:{ callback:v=> (v/1e6).toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1})+' MM$' }
+           x:{ title:{ display:true, text: frecuencia==='mensual'
+             ? getTranslation('investments.chart.axisMonths', 'Meses')
+             : getTranslation('investments.chart.axisYears', 'Años') } },
+           y:{ title:{ display:true, text:getTranslation('investments.chart.axisValue', 'Valor (MM$)') },
+               ticks:{ callback:v=> (v/1e6).toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1})+` ${getTranslation('investments.chart.suffix', 'MM$')}` }
            }
          }
        }

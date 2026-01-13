@@ -1,3 +1,11 @@
+const getTranslation = (key, fallback) => {
+  if (window.t) {
+    const translated = window.t(key);
+    return translated === key ? fallback : translated;
+  }
+  return fallback;
+};
+
 document.getElementById('tasa').addEventListener('blur', function(e) {
   let val = e.target.value.replace('%', '').trim();
   if (val) {
@@ -21,7 +29,7 @@ function cconsumoamort() {
   const monthsGrace = parseInt(document.getElementById('gracia').value) || 0;
   const totalMeses = monthsGrace + numPagos;
   if (numPagos <= 0 || monthsGrace < 0) {
-    alert("Revisa los valores de plazo y gracia.");
+    alert(getTranslation('simulator.alerts.invalidGrace', 'Revisa los valores de plazo y gracia.'));
     return;
   }
   const moneda = document.getElementById('monedaSelect').value;
@@ -109,7 +117,7 @@ function cconsumoamort() {
   document.querySelector('#infoSeguro .info-value').textContent = formatearMoneda(seguroTotal, moneda);
   document.querySelector('#infoTimbre .info-value').textContent = formatearMoneda(impuestoTotal, moneda);
   document.querySelector('#infoCuota .info-value').textContent = formatearMoneda(cuota, moneda);
-  document.querySelector('#infoPlazo .info-value').textContent = `${totalMeses} meses`;
+  document.querySelector('#infoPlazo .info-value').textContent = `${totalMeses} ${getTranslation('simulator.months', 'meses')}`;
 }
 
 // Función para calcular la TIR (IRR) usando búsqueda binaria
@@ -264,7 +272,7 @@ function chipotecarioamort() {
   const totalMeses = monthsGrace + numPagos;
   
   if (numPagos <= 0 || monthsGrace < 0) {
-    alert("Revisa los valores de plazo y/o gracia.");
+    alert(getTranslation('simulator.alerts.invalidGraceMortgage', 'Revisa los valores de plazo y/o gracia.'));
     return;
   }
   
@@ -414,7 +422,7 @@ function chipotecarioamort() {
   document.querySelector('#infoCHIPCAE .info-value').textContent = `${CAE.toFixed(2)}%`;
   document.querySelector('#infoCHIPTotalCredito .info-value').textContent = formatearUF(totalPagado.toFixed(2));
   document.querySelector('#infoCHIPTotalIntereses .info-value').textContent = formatearUF(totalIntereses.toFixed(2));
-  document.querySelector('#infoCHIPPlazo .info-value').textContent = `${totalMeses} meses`;
+  document.querySelector('#infoCHIPPlazo .info-value').textContent = `${totalMeses} ${getTranslation('simulator.months', 'meses')}`;
   
   // Además, se muestran los seguros "típicos" mensuales (sin acumulación) para referencia:
   const segDesgMensual = montoFinanciar * (porcentajeFinanciamiento / 100) * tasaSegDesg;
@@ -477,20 +485,20 @@ function cbulletamort() {
   let montoStr = document.getElementById('montoBullet').value.replace(/\./g, '');
   const monto = parseFloat(montoStr);
   if (isNaN(monto) || monto <= 0) {
-    alert("Ingrese un monto válido.");
+    alert(getTranslation('simulator.alerts.invalidAmount', 'Ingrese un monto válido.'));
     return;
   }
   
   const plazoDias = parseInt(document.getElementById('plazoDiasBullet').value);
   if (isNaN(plazoDias) || plazoDias <= 0) {
-    alert("Ingrese un plazo en días válido.");
+    alert(getTranslation('simulator.alerts.invalidTerm', 'Ingrese un plazo en días válido.'));
     return;
   }
   
   let tasaStr = document.getElementById('tasaBullet').value.replace(',', '.');
   const tasaInput = parseFloat(tasaStr);
   if (isNaN(tasaInput) || tasaInput <= 0) {
-    alert("Ingrese una tasa de interés válida.");
+    alert(getTranslation('simulator.alerts.invalidRate', 'Ingrese una tasa de interés válida.'));
     return;
   }
   
@@ -589,4 +597,3 @@ if (btnTabla && panelTabla && overlayTabla && btnCerrarTabla) {
   btnCerrarTabla.addEventListener('click', cerrarTabla);
   overlayTabla.addEventListener('click', cerrarTabla);
 }
-
