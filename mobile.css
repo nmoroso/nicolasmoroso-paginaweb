@@ -46,7 +46,7 @@
   }
     /* Mantén el botón a la derecha */
   .header-agendar {
-    width: 200px;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: right;  
@@ -55,6 +55,17 @@
   .header-button {
    font-size: clamp(0.75rem, 1vw, 0.9rem); 
    padding: 4px 8px;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .language-toggle {
+    font-size: 0.75rem;
+    gap: 4px;
   }
 .desk-btn { display: none; }
 .mobile-btn {

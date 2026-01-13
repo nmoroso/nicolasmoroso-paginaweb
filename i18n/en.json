@@ -1,0 +1,153 @@
+{
+  "meta": {
+    "title": "Home",
+    "description": "Financial Therapy program to organize your finances, set priorities, and move forward with clarity."
+  },
+  "nav": {
+    "home": "Home<span class=\"orange-f\"></span>",
+    "education": "Education",
+    "simulator": "Simulator",
+    "simulatorCredits": "Loans",
+    "simulatorInvestments": "Investments",
+    "blog": "Blog",
+    "about": "About Me",
+    "schedule": "Schedule",
+    "diagnosis": "Assessment"
+  },
+  "hero": {
+    "title": "Do you want to improve your finances but ",
+    "subtitle": "<span class=\"resaltado\">Your emotions</span> influence your decisions.<br>Your decisions shape <span class=\"resaltado\">your finances</span>.<br><s>Don’t follow someone else’s path</s>.<br><span class=\"resaltado-celeste\">Let’s build your own.</span>",
+    "ctaProgram": "Program",
+    "typed": [
+      "don’t know where to start?",
+      "don’t have time to get organized?",
+      "find it all too technical?",
+      "are afraid of making mistakes?",
+      "feel like it’s never the right time?",
+      "have already tried without success?"
+    ]
+  },
+  "about": {
+    "title": "About Me",
+    "paragraph1": "I’m Nicolás, a Commercial Engineer from Universidad Adolfo Ibáñez with a Master’s in Finance and over 7 years of experience helping people and businesses make strategic financial decisions.",
+    "paragraph2": "Throughout my career, I’ve specialized in understanding how banking products work and in designing efficient credit, investment, and planning solutions tailored to each situation. I combine my experience with digital tools to deliver an agile, clear, and results-focused service.",
+    "paragraph3": "I currently advise individuals, entrepreneurs, and companies across industries in financial analysis, strategic planning, and business development. My focus is to provide clarity, practical tools, and personalized support so they can make confident decisions and grow their projects, regardless of size or industry."
+  },
+  "program": {
+    "title": "Program: Financial Therapy",
+    "subtitle": "<strong>Define</strong> your priorities. <strong>Organize</strong> your money. <strong>Move forward</strong> with clarity.",
+    "intro": "Financial Therapy is a 1:1 program where we work together so you can make financial decisions with purpose, based on your personal priorities. The goal is simple: recognize your current <strong>financial well-being</strong>, <strong>set realistic goals</strong>, and <strong>build a plan</strong> that helps you move forward without relying on generic formulas or outside recommendations disconnected from your reality.",
+    "dimensionsIntro": "The approach combines two dimensions:",
+    "dimensionsTechnical": "<strong>Technical:</strong> so you can understand concepts like saving, debt, financial products, and investing without confusion or depending on others.",
+    "dimensionsPersonal": "<strong>Personal:</strong> so your decisions align with your goals and not with outside expectations or impulses.",
+    "outro": "This space is for people who don’t want to “become experts” in finance, but to take control of the essentials: what comes in, what goes out, which decisions have the biggest impact, and how to move forward with strategy and realism.",
+    "statesTitle": "Discover the states of financial well-being",
+    "states": {
+      "survival": {
+        "title": "<strong>😰 Financial Survival</strong>",
+        "body": "You’re barely keeping up. Income only covers the basics and any unexpected expense can throw you off. There’s reliance on credit or outside help, and financial stress is constant."
+      },
+      "stability": {
+        "title": "<strong>🙂 Financial Stability</strong>",
+        "body": "You cover your monthly expenses and avoid problematic debt. There’s some savings, but no clear strategy. You’re out of danger, but you haven’t built a true financial cushion yet."
+      },
+      "calm": {
+        "title": "<strong>🧘‍♂️ Financial Calm</strong>",
+        "body": "You have full control of your finances: you save, plan, and don’t depend on credit. You can handle unexpected events without being destabilized. Your focus starts shifting from the present to the future."
+      },
+      "projection": {
+        "title": "<strong>🧑‍💻 Financial Projection</strong>",
+        "body": "You’re building wealth with intention. You invest, diversify, and think in mid- and long-term goals. Your money starts working for you, and you’re envisioning a freer, more sustainable lifestyle."
+      },
+      "freedom": {
+        "title": "<strong>🤩 Financial Freedom</strong>",
+        "body": "Your economic situation allows you to decide without money being an obstacle. Passive income or investments cover your needs. You’re no longer just managing money—you’re using it as a tool to live on your own terms."
+      }
+    },
+    "diagnosisTitle": "Take the assessment and discover your current state!",
+    "diagnosisCta": "Assessment",
+    "audienceTitle": "This is for people who:",
+    "audience": {
+      "list1": "Want to organize their finances but don’t know where to start.",
+      "list2": "Need clarity to set priorities and stop postponing important decisions.",
+      "list3": "Want to understand financial concepts without unnecessary jargon.",
+      "list4": "Want to define goals and work with a concrete plan to achieve them.",
+      "list5": "Value having a clear structure that can be applied to daily life."
+    },
+    "outcomesTitle": "What results can you expect?",
+    "outcomes": {
+      "list1": "Gain a clear, organized view of your current financial situation.",
+      "list2": "Set financial goals aligned with your real priorities.",
+      "list3": "Design an action plan with saving, investing, and financial product strategies.",
+      "list4": "Make decisions with greater confidence and less improvisation.",
+      "list5": "Feel in control of your progress without relying on outside recommendations or financial trends."
+    },
+    "scheduleCta": "Schedule"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": {
+      "q1": {
+        "title": "<strong>What is Financial Therapy?</strong>",
+        "body": "It’s a practical process of education and guidance that helps organize your personal finances, reduce financial stress, and support clear decision-making. It’s not about austerity—it’s about using money as a tool to reach your life goals."
+      },
+      "q2": {
+        "title": "<strong>How is it different from traditional financial advising?</strong>",
+        "body": "I don’t sell a product tied to the problem. The approach is independent and educational: I provide clarity with tools, simulators, and a plan you can apply to your reality, without conflicts of interest."
+      },
+      "q3": {
+        "title": "<strong>What can I expect from a 1:1 session?</strong>",
+        "body": "In each session we review your current financial situation, define your goals, and work with simulators or practical exercises (loans, investments, budgets). You leave with concrete steps and support materials."
+      },
+      "q4": {
+        "title": "<strong>Do I need prior financial knowledge?</strong>",
+        "body": "No. The idea is to start from zero if needed. The concepts are explained simply and applied to your daily life."
+      },
+      "q5": {
+        "title": "<strong>How long are the sessions and how are they held?</strong>",
+        "body": "Each session lasts about 45 minutes and is held online, so you can connect from anywhere."
+      },
+      "q6": {
+        "title": "<strong>Do the simulators replace advising?</strong>",
+        "body": "No. Simulators are support tools to visualize scenarios. Advising adds interpretation, strategy, and a personalized plan for you."
+      },
+      "q7": {
+        "title": "<strong>What if I already have debt?</strong>",
+        "body": "We can work on a plan to organize and pay it down, evaluating alternatives to reduce financial costs and prevent the debt cycle from growing."
+      },
+      "q8": {
+        "title": "<strong>Does the advising include investments?</strong>",
+        "body": "Yes, we review investment options based on your profile and goals, always in a general and educational way. I don’t provide specific buy or sell recommendations; I teach you how to compare and decide with criteria."
+      },
+      "q9": {
+        "title": "<strong>How do I schedule a session?</strong>",
+        "body": "You can do it directly from the Schedule section on this page. There you choose the day and time."
+      },
+      "q10": {
+        "title": "<strong>Who can take these sessions?</strong>",
+        "body": "Anyone who wants to improve their relationship with money, learn to manage loans, organize personal finances, or start investing with confidence."
+      }
+    }
+  },
+  "contact": {
+    "highlight": "Check the available plans!",
+    "highlightLink": "Click here to schedule",
+    "title": "Questions? Write to me!",
+    "form": {
+      "nameLabel": "Name:",
+      "namePlaceholder": "Enter your name",
+      "phoneLabel": "Phone:",
+      "phonePlaceholder": "Enter your phone",
+      "emailLabel": "Email:",
+      "emailPlaceholder": "Enter your email",
+      "orgLabel": "Organization:",
+      "orgPlaceholder": "Company name",
+      "submit": "Send",
+      "error": "❌ An error occurred. Please try again later."
+    }
+  },
+  "footer": {
+    "site": "nicolasmoroso.cl",
+    "contactTitle": "Contact:"
+  }
+}

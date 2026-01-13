@@ -1,15 +1,37 @@
 /*SCRIPT TIPEO HERO*/
 
-document.addEventListener('DOMContentLoaded', function () {
-  new Typed('#typedText', {
-    strings: [
-      "no sabes por dónde empezar?",
-      "no tienes tiempo para organizarte?",
-      "todo te suena demasiado técnico?",
-      "te da miedo cometer errores?",
-      "sientes que nunca es buen momento?",
-      "ya lo has intentado sin éxito?"
-    ],
+let typedInstance;
+
+const getTypedStrings = () => {
+  const fallbackStrings = [
+    "no sabes por dónde empezar?",
+    "no tienes tiempo para organizarte?",
+    "todo te suena demasiado técnico?",
+    "te da miedo cometer errores?",
+    "sientes que nunca es buen momento?",
+    "ya lo has intentado sin éxito?"
+  ];
+
+  if (window.t) {
+    const translated = window.t('hero.typed');
+    if (Array.isArray(translated) && translated.length) {
+      return translated;
+    }
+  }
+
+  return fallbackStrings;
+};
+
+const initTyped = () => {
+  const typedTarget = document.getElementById('typedText');
+  if (!typedTarget) return;
+
+  if (typedInstance) {
+    typedInstance.destroy();
+  }
+
+  typedInstance = new Typed('#typedText', {
+    strings: getTypedStrings(),
     typeSpeed: 45,
     backSpeed: 30,
     backDelay: 1500,
@@ -17,6 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
     loop: true,
     smartBackspace: true
   });
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+  initTyped();
+});
+
+window.addEventListener('languageChanged', function () {
+  initTyped();
 });
 
 // Observa la aparición de las secciones
