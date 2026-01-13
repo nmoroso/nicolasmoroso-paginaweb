@@ -1220,18 +1220,32 @@ section {
   top: 50%; left: 50%;
   width: 90vw;
   max-width: 800px;
-  max-height: 80vh;
-  overflow-y: hidden;
+  max-height: 85vh;
+  overflow-y: auto;
   transform: translate(-50%, -50%) scale(0.8);
   opacity: 0;
   visibility: hidden;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  padding: 1%;
+  padding: clamp(0.5rem, 1vw, 0.9rem);
   z-index: 1000;
   transition: all 0.3s ease;
  
+}
+
+.referencia-panel h2 {
+  font-size: clamp(1rem, 1.4vw, 1.35rem);
+  margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
+}
+
+.referencia-panel .referencia table {
+  font-size: clamp(0.75rem, 0.9vw, 1rem);
+}
+
+.referencia-panel .referencia th,
+.referencia-panel .referencia td {
+  padding: clamp(0.35rem, 0.6vw, 0.6rem);
 }
 
 /* Botón cerrar dentro */
