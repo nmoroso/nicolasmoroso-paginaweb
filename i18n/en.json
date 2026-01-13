@@ -146,6 +146,170 @@
       "error": "❌ An error occurred. Please try again later."
     }
   },
+  "education": {
+    "meta": {
+      "title": "Education"
+    },
+    "title": "Financial Education Repository",
+    "subtitle": "<br><br>Here you will find free, practical resources to improve your relationship with money. Download, share, and learn at your own pace.",
+    "tabs": {
+      "resources": "Resources",
+      "banks": "Learn from Banks",
+      "finance": "Learn about Finance"
+    },
+    "errors": {
+      "resources": "Error loading resources."
+    }
+  },
+  "simulator": {
+    "meta": {
+      "title": "Simulator"
+    },
+    "selector": {
+      "label": "Select the loan type:",
+      "options": {
+        "consumption": "Consumer Loan",
+        "mortgage": "Mortgage Loan",
+        "bullet": "Bullet Loan"
+      }
+    },
+    "consumption": {
+      "currencyLabel": "Currency to display results:",
+      "currencyPeso": "Chilean Peso ($)",
+      "currencyUf": "UF",
+      "loanAmountLabel": "Loan amount:",
+      "rateLabel": "Monthly interest rate (%):",
+      "installmentsLabel": "Installments:",
+      "graceLabel": "Grace months:",
+      "insuranceLabel": "Include credit life insurance",
+      "calculate": "Calculate",
+      "clear": "Clear",
+      "infoTitle": "Loan Information",
+      "info": {
+        "cae": "APR:",
+        "totalCredit": "Total credit cost:",
+        "totalInterest": "Total interest:",
+        "insurance": "Credit life insurance cost:",
+        "taxes": "Stamp duty cost:",
+        "installment": "Installment amount:",
+        "term": "Total loan term:"
+      }
+    },
+    "mortgage": {
+      "rateLabel": "Annual rate (%):",
+      "termLabel": "Number of periods (months):",
+      "graceLabel": "Number of grace periods (months):",
+      "propertyValueLabel": "Property value (UF):",
+      "financingLabel": "Financing percentage (%):",
+      "calculate": "Calculate",
+      "clear": "Clear",
+      "infoTitle": "Loan Information",
+      "info": {
+        "amount": "Amount to finance:",
+        "netInstallment": "Net installment:",
+        "insuranceLife": "Credit life insurance:",
+        "insuranceFire": "Fire insurance:",
+        "totalInstallment": "Total installment:",
+        "cae": "APR:",
+        "totalCredit": "Total credit cost:",
+        "totalInterest": "Total interest:",
+        "term": "Total term:"
+      }
+    },
+    "bullet": {
+      "currencyLabel": "Currency:",
+      "currencyPeso": "Chilean Peso ($)",
+      "currencyUf": "UF",
+      "rateLabel": "Interest rate (%):",
+      "amountLabel": "Principal amount:",
+      "termLabel": "Term (days):",
+      "insuranceLabel": "Include credit life insurance",
+      "calculate": "Calculate",
+      "clear": "Clear",
+      "infoTitle": "Loan Information",
+      "info": {
+        "totalCredit": "Total credit cost:",
+        "totalInterest": "Total interest:",
+        "insurance": "Credit life insurance cost:",
+        "cae": "APR:"
+      }
+    },
+    "table": {
+      "view": "View loan breakdown",
+      "close": "✕ Close"
+    },
+    "alerts": {
+      "invalidGrace": "Check the term and grace values.",
+      "invalidGraceMortgage": "Check the term and/or grace values.",
+      "invalidAmount": "Enter a valid amount.",
+      "invalidTerm": "Enter a valid term in days.",
+      "invalidRate": "Enter a valid interest rate."
+    },
+    "months": "months"
+  },
+  "investments": {
+    "meta": {
+      "title": "Investments"
+    },
+    "title": "Investment Simulator",
+    "frequencyLabel": "Time Unit",
+    "frequencyMonthly": "Monthly",
+    "frequencyAnnual": "Annual",
+    "termLabel": "Term",
+    "termPlaceholder": "e.g.: 30",
+    "rateLabel": "Rate (%)",
+    "ratePlaceholder": "e.g.: 1%",
+    "initialAmountLabel": "Initial savings amount",
+    "initialAmountPlaceholder": "e.g.: $1,000,000",
+    "monthlyAmountLabel": "Monthly savings amount",
+    "monthlyAmountPlaceholder": "e.g.: $200,000",
+    "calculate": "Calculate",
+    "clear": "Clear",
+    "referenceToggle": "Reference Rates",
+    "referenceClose": "✕ Close",
+    "referenceTitle": "Reference rate table (<span class=\"orange-f\">Monthly</span>/Annual)",
+    "table": {
+      "term": "Term",
+      "conservative": "Conservative",
+      "moderate": "Moderate",
+      "aggressive": "Aggressive",
+      "shortTerm": "Short<br>(0-1 year)",
+      "mediumTerm": "Medium<br>(1-3 years)",
+      "longTerm": "Long<br>(3+ years)",
+      "shortConservative": "Time deposit or liquidity fund (Money Market)",
+      "shortModerate": "Simple mixed fund (fixed income + equities)",
+      "shortAggressive": "Volatile sector ETF or short-term stocks",
+      "mediumConservative": "Local fixed-income fund or renewable deposit",
+      "mediumModerate": "Balanced fund with stocks and bonds",
+      "mediumAggressive": "Emerging markets ETF",
+      "longConservative": "Government bonds or international fixed-income fund",
+      "longModerate": "Diversified global ETF (e.g., ACWI)",
+      "longAggressive": "S&P 500 ETF or tech stock fund"
+    },
+    "referenceNote": "<br><strong>Source:</strong> Central Bank of Chile (BCP 1-year rate: 4.9%) + estimated premiums by risk profile.<br><strong>Important:</strong> These are illustrative examples and do not constitute investment advice.<br><strong>Note:</strong> The rates shown are <u>monthly/annual</u> and represent <u>nominal</u> returns (they do not account for inflation).",
+    "results": {
+      "estimatedValue": "Estimated value at the end of the term:"
+    },
+    "labels": {
+      "month": "Month",
+      "year": "Year"
+    },
+    "chart": {
+      "capital": "Invested Capital",
+      "interest": "Interest Earned",
+      "total": "Total Balance",
+      "axisMonths": "Months",
+      "axisYears": "Years",
+      "axisValue": "Value (MM$)",
+      "suffix": "MM$"
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog"
+    },
+    "postImageAlt": "Post image"
+  },
   "footer": {
     "site": "nicolasmoroso.cl",
     "contactTitle": "Contact:"

@@ -31,7 +31,7 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog</title>
+  <title data-i18n="blog.meta.title">Blog</title>
 
   <link rel="icon" href="../favicon.png" type="image/png">
   <link rel="stylesheet" href="../desk.css">
@@ -111,7 +111,7 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
       <div class="header-logo">
         <a href="../index.html" class="logo">
           <img src="../logo.png" alt="Terapia Financiera" />
-          <span class="logo-text">
+          <span class="logo-text" data-i18n-html="nav.home">
           inicio<span class="orange-f"></span>
           </span>
         </a>
@@ -120,38 +120,46 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
         <ul>
           <li>
 
-            <a href="../educacion.html" class="nav-item">Educación</a>
+            <a href="../educacion.html" class="nav-item" data-i18n="nav.education">Educación</a>
           </li>
           <li class="simulador-dropdown">
-            <a href="#simulador" class="nav-item">Simulador</a>
+            <a href="#simulador" class="nav-item" data-i18n="nav.simulator">Simulador</a>
 
             <ul class="simulador-menu">
-              <li><a href="../simulador.html" class="submenu-item">Créditos</a></li>
-              <li><a href="../inversiones.html" class="submenu-item">Inversiones</a></li>
+              <li><a href="../simulador.html" class="submenu-item" data-i18n="nav.simulatorCredits">Créditos</a></li>
+              <li><a href="../inversiones.html" class="submenu-item" data-i18n="nav.simulatorInvestments">Inversiones</a></li>
             </ul>
           </li>
-          <li><a href="index.html" class="nav-item"><span class="orange-f">Blog</span></a></li>
-          <li><a href="../index.html#about" class="nav-item">Sobre Mí</a></li>
+          <li><a href="index.html" class="nav-item"><span class="orange-f" data-i18n="nav.blog">Blog</span></a></li>
+          <li><a href="../index.html#about" class="nav-item" data-i18n="nav.about">Sobre Mí</a></li>
         </ul>
       </nav>
-      <div class="header-agendar">
-        <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button desk-btn">AGENDAR</a>
-        <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button mobile-btn">AGENDAR</a>
+      <div class="header-actions">
+        <div class="header-agendar">
+          <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button desk-btn" data-i18n="nav.schedule">AGENDAR</a>
+          <a href="https://encuadrado.com/p/nicolas-moroso-1/" class="header-button mobile-btn" data-i18n="nav.schedule">AGENDAR</a>
+        </div>
+
+        <div class="language-toggle" aria-label="Selector de idioma">
+          <button type="button" class="language-toggle-button" data-lang="es">ES</button>
+          <span class="language-toggle-separator">|</span>
+          <button type="button" class="language-toggle-button" data-lang="en">EN</button>
+        </div>
       </div>
       <div class="mobile-menu">
         <ul>
 
-          <li><a href="../educacion.html">Educación</a></li>
+          <li><a href="../educacion.html" data-i18n="nav.education">Educación</a></li>
           <li class="simulador-dropdown">
-            <a>Simulador</a>
+            <a data-i18n="nav.simulator">Simulador</a>
 
             <ul class="simulador-menu">
-              <li><a href="../simulador.html" class="submenu-item">Créditos</a></li>
-              <li><a href="../inversiones.html" class="submenu-item">Inversiones</a></li>
+              <li><a href="../simulador.html" class="submenu-item" data-i18n="nav.simulatorCredits">Créditos</a></li>
+              <li><a href="../inversiones.html" class="submenu-item" data-i18n="nav.simulatorInvestments">Inversiones</a></li>
             </ul>
           </li>
-          <li><a href="index.html"><span class="orange-f">Blog</span></a></li>
-          <li><a href="../index.html#about">Sobre Mí</a></li>
+          <li><a href="index.html"><span class="orange-f" data-i18n="nav.blog">Blog</span></a></li>
+          <li><a href="../index.html#about" data-i18n="nav.about">Sobre Mí</a></li>
         </ul>
       </div>
     </div>
@@ -164,10 +172,10 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
   <footer id="contact">
     <div class="footer-container">
       <div class="footer-logo">
-        <h2>nicolasmoroso.cl</h2>
+        <h2 data-i18n="footer.site">nicolasmoroso.cl</h2>
       </div>
       <div class="footer-section">
-        <h3>Contacto:</h3>
+        <h3 data-i18n="footer.contactTitle">Contacto:</h3>
         <p>
           <img src="../mailto.png" alt="Correo" class="contact-icon mail-icon">
           <a href="mailto:info@nicolasmoroso.cl">info@nicolasmoroso.cl</a>
@@ -189,6 +197,7 @@ src="https://www.facebook.com/tr?id=1460810141740139&ev=PageView&noscript=1"
     <img src="../ws.png" alt="WhatsApp">
   </a>
   <div class="overlay"></div>
+  <script src="../js/i18n.js"></script>
   <script src="../header.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="blog.js"></script>

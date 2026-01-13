@@ -1,4 +1,11 @@
 let allItems = [];
+const getTranslation = (key, fallback) => {
+  if (window.t) {
+    const translated = window.t(key);
+    return translated === key ? fallback : translated;
+  }
+  return fallback;
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1) Carga la tabla completa desde Notion
@@ -89,8 +96,9 @@ function loadResources() {
     })
     .catch(err => {
       console.error('Error cargando recursos:', err);
+      const errorMessage = getTranslation('education.errors.resources', 'Error al cargar recursos.');
       document.getElementById('education-content').innerHTML =
-        '<p>Error al cargar recursos.</p>';
+        `<p>${errorMessage}</p>`;
     });
 }
 

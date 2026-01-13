@@ -16,6 +16,21 @@ function parseFrontMatter(md) {
   return { meta: {}, content: md };
 }
 
+const getTranslation = (key, fallback) => {
+  if (window.t) {
+    const translated = window.t(key);
+    return translated === key ? fallback : translated;
+  }
+  return fallback;
+};
+
+const updateBlogImageAlts = () => {
+  const altText = getTranslation('blog.postImageAlt', 'Imagen del post');
+  document.querySelectorAll('.blog-image').forEach((img) => {
+    img.setAttribute('alt', altText);
+  });
+};
+
 document.addEventListener('DOMContentLoaded', function() {
   const repo = 'nmoroso/nicolasmoroso-paginaweb';
   const branch = 'main';
@@ -70,17 +85,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const wrapper = document.createElement('div');
         wrapper.className = 'blog-post-wrapper';
 
+        const altText = getTranslation('blog.postImageAlt', 'Imagen del post');
         wrapper.innerHTML = `
           <div class="blog-header">
             <h1 class="blog-title">${meta.title || ''}</h1>
             <p class="blog-date">${formattedDate}</p>
           </div>
-          ${imageUrl ? `<div class="blog-image-wrapper"><img src="${resolvedImageUrl}" alt="Imagen del post" class="blog-image" onerror="this.style.display='none'; console.warn('⚠️ No se pudo cargar la imagen:', this.src);"></div>` : ''}
+          ${imageUrl ? `<div class="blog-image-wrapper"><img src="${resolvedImageUrl}" alt="${altText}" class="blog-image" onerror="this.style.display='none'; console.warn('⚠️ No se pudo cargar la imagen:', this.src);"></div>` : ''}
           <div class="blog-content">${html}</div>
         `;
 
         container.appendChild(wrapper);
       });
     })
+    .then(() => updateBlogImageAlts())
     .catch(err => console.error('Error cargando posts', err));
+});
+
+window.addEventListener('languageChanged', () => {
+  updateBlogImageAlts();
 });
